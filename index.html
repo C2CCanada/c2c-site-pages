@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+═══════════════════════════════════════════════════════════════
+  COAST TO COAST HOMES CANADA | HOME PAGE
+  Built April 2026 · Matches Core Install / Booth visual system
+═══════════════════════════════════════════════════════════════
+
+  HOW TO USE IN WIX (read this once, it saves you 20 minutes):
+
+  1. In Wix Editor, add an "HTML iFrame" element to your page
+  2. Set the element to FULL WIDTH and position it at the very top of the page
+     (you can hide the Wix header/nav for this page if you want)
+  3. Paste this entire file into the HTML iFrame code box
+  4. The auto-height script at the bottom will resize the iframe automatically.
+     no more dragging the box taller by hand
+  5. In Wix Page Code (Editor > Pages > [Page] > Page Code), add this snippet:
+     ─────────────────────────────────────────
+     $w.onReady(function () {
+       $w('#html1').onMessage(function (event) {
+         if (event.data && event.data.type === 'setHeight') {
+           $w('#html1').height = event.data.height;
+         }
+       });
+     });
+     ─────────────────────────────────────────
+     (Replace '#html1' with the actual element ID from your Wix editor)
+
+  IMAGE PLACEHOLDERS | update these before publishing:
+  · Logo:            Replace YOUR_WIX_LOGO_URL with your Wix media CDN URL
+  · Colin + Nicole:  Replace YOUR_FOUNDERS_PHOTO_URL with your Wix media CDN URL
+  · Truro photo:     Replace YOUR_TRURO_PHOTO_URL
+  · Deep River photo: Replace YOUR_DEEPRIVER_PHOTO_URL
+    (Upload images in Wix Media Manager → right-click → Copy URL)
+═══════════════════════════════════════════════════════════════
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coast to Coast Homes Canada | Real Estate Investment Partners</title>
+  <meta name="description" content="Colin Ernst and Nicole Fiore help everyday Canadians build long-term wealth through trusted real estate partnerships: private lending, missing middle development, and long-term holds across four provinces.">
+  <meta name="keywords" content="Canadian real estate investment, private lending Canada, missing middle development, real estate partners Canada, Colin Ernst, Nicole Fiore, Coast to Coast Homes">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://coasttocoasthomes.ca/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coast to Coast Homes Canada | Real Estate Investment Partners">
+  <meta property="og:description" content="Colin Ernst and Nicole Fiore help everyday Canadians build long-term wealth through trusted real estate partnerships: private lending, missing middle development, and long-term holds across four provinces.">
+  <meta property="og:url" content="https://coasttocoasthomes.ca/">
+  <meta property="og:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+  <meta property="og:site_name" content="Coast to Coast Homes Canada">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coast to Coast Homes Canada | Real Estate Investment Partners">
+  <meta name="twitter:description" content="Colin Ernst and Nicole Fiore help everyday Canadians build long-term wealth through trusted real estate partnerships: private lending, missing middle development, and long-term holds across four provinces.">
+  <meta name="twitter:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Coast to Coast Homes Canada",
+        "url": "https://coasttocoasthomes.ca",
+        "logo": "https://coasttocoasthomes.ca/logo.png",
+        "description": "Real estate investment company helping everyday Canadians build long-term wealth through private lending, missing middle development, and long-term hold properties across four Canadian provinces.",
+        "foundingDate": "2017",
+        "areaServed": "Canada",
+        "founders": [
+          {"@type": "Person", "name": "Colin Ernst"},
+          {"@type": "Person", "name": "Nicole Fiore"}
+        ],
+        "contactPoint": {"@type": "ContactPoint", "email": "hello@coasttocoasthomes.ca", "contactType": "investor relations"},
+        "sameAs": []
+      },
+      {
+        "@type": "Person",
+        "name": "Colin Ernst",
+        "jobTitle": "Co-Founder & CEO",
+        "worksFor": {"@type": "Organization", "name": "Coast to Coast Homes Canada"},
+        "description": "Co-founder and CEO of Coast to Coast Homes Canada. Built and operates a real estate portfolio spanning four Canadian provinces with 150+ doors across Ontario, British Columbia, Nova Scotia, and New Brunswick.",
+        "knowsAbout": ["real estate investing", "private mortgage lending", "missing middle development", "long-term hold strategy", "Canadian real estate"]
+      },
+      {
+        "@type": "Person",
+        "name": "Nicole Fiore",
+        "jobTitle": "Co-Founder  -  Vision, Marketing & Brand",
+        "worksFor": {"@type": "Organization", "name": "Coast to Coast Homes Canada"},
+        "description": "Co-founder of Coast to Coast Homes Canada, leading vision, marketing, and brand strategy for a multi-province real estate investment portfolio.",
+        "knowsAbout": ["real estate investment", "investor relations", "real estate brand strategy", "Canadian real estate"]
+      }
+    ]
+  }
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:        #2A9D8F;
+    --teal-deep:   #1B7A6F;
+    --teal-light:  #5FBFB3;
+    --teal-wash:   #E8F6F4;
+    --teal-mist:   #F2FAF9;
+    --copper:      #C4956A;
+    --terracotta:  #C17F59;
+    --blush:       #E8CFC0;
+    --ink:         #1A1F2B;
+    --charcoal:    #3A3F4B;
+    --slate:       #6B7280;
+    --stone:       #9CA3AF;
+    --sand:        #E8E2D9;
+    --linen:       #F5F1EB;
+    --cream:       #FAF8F5;
+    --white:       #FFFFFF;
+    --font-serif:  'Instrument Serif', Georgia, serif;
+    --font-sans:   'DM Sans', system-ui, sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    background: var(--white);
+    padding: 0 2.5rem;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--sand);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 0.4s ease both;
+  }
+  .nav__logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+  .nav__logo-text {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--teal-deep);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav__links a {
+    font-family: var(--font-sans);
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+  }
+  .nav__links a:hover { color: var(--teal-deep); }
+  .nav__links a.active { color: var(--teal-deep); }
+  .nav__cta {
+    padding: 0.5rem 1.375rem;
+    background: var(--teal-deep);
+    color: var(--white) !important;
+    border-radius: 3px;
+    transition: background 0.2s ease !important;
+  }
+  .nav__cta:hover { background: var(--copper) !important; color: var(--white) !important; }
+  .nav__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav__hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    .nav__links { display: none; }
+    .nav__hamburger { display: flex; }
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--teal-deep);
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 2rem;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 70% at 80% 40%, rgba(42,157,143,0.2) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 80% at 10% 90%, rgba(196,149,106,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--copper) 0%, var(--teal-light) 60%, transparent 100%);
+  }
+  .hero__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  .hero__content { max-width: 560px; }
+  .hero__eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 1.75rem;
+    display: block;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero__eyebrow::before, .hero__eyebrow::after {
+    content: '·';
+    margin: 0 0.5em;
+    opacity: 0.5;
+  }
+  .hero__headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    line-height: 1.08;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero__headline em {
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+  }
+  .hero__sub {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .hero__tagline {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+    animation: fadeUp 0.7s 0.5s ease both;
+  }
+  .hero__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp 0.9s 0.4s ease both;
+  }
+  .hero__photo-frame {
+    width: 420px;
+    height: 520px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  }
+  .hero__photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .hero__photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, rgba(42,157,143,0.25) 0%, rgba(27,122,111,0.4) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .hero__photo-placeholder span {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 0 2rem;
+    line-height: 1.7;
+  }
+  .hero__photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(27,122,111,0.95) 0%, transparent 100%);
+    padding: 2.5rem 1.75rem 1.5rem;
+    color: var(--white);
+  }
+  .hero__photo-caption strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+  }
+  .hero__photo-caption span {
+    font-size: 0.775rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 900px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero { min-height: auto; padding: 5rem 2rem; }
+    .hero__visual { display: none; }
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 2.25rem;
+    border-radius: 3px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.22s, color 0.22s, box-shadow 0.22s, transform 0.18s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn--light {
+    background: var(--white);
+    color: var(--teal-deep);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .btn--light:hover { background: var(--copper); color: var(--white); box-shadow: 0 4px 20px rgba(196,149,106,0.35); }
+  .btn--ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    border: 1.5px solid rgba(255,255,255,0.3);
+  }
+  .btn--ghost:hover { border-color: var(--copper); color: var(--white); background: rgba(196,149,106,0.1); }
+  .btn--primary {
+    background: var(--teal-deep);
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(27,122,111,0.25);
+  }
+  .btn--primary:hover { background: var(--copper); box-shadow: 0 4px 20px rgba(196,149,106,0.35); }
+  .btn--copper {
+    background: var(--copper);
+    color: var(--white);
+    box-shadow: 0 2px 12px rgba(196,149,106,0.3);
+  }
+  .btn--copper:hover { background: var(--terracotta); }
+
+  /* ─── SECTION UTILITY ─── */
+  .section-eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 1rem;
+  }
+  .section-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+  }
+  .section-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--slate);
+    max-width: 600px;
+  }
+
+  /* ─── STATS STRIP ─── */
+  .stats {
+    background: var(--white);
+    border-bottom: 1px solid var(--sand);
+    padding: 3.5rem 2rem;
+  }
+  .stats__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .stat {
+    text-align: center;
+    padding: 1.25rem;
+    position: relative;
+  }
+  .stat:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 20%; bottom: 20%;
+    width: 1px;
+    background: var(--sand);
+  }
+  .stat__number {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: var(--teal-deep);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .stat__label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 640px) {
+    .stats__inner { grid-template-columns: repeat(2, 1fr); gap: 0; }
+    .stat:nth-child(2)::after { display: none; }
+    .stat:nth-child(1), .stat:nth-child(2) {
+      border-bottom: 1px solid var(--sand);
+    }
+  }
+
+  /* ─── WHAT WE DO ─── */
+  .pillars {
+    background: var(--linen);
+    padding: 6rem 2rem;
+  }
+  .pillars__inner {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  .pillars__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .pillars__headline { color: var(--ink); }
+  .pillars__sub {
+    margin: 1rem auto 0;
+    text-align: center;
+  }
+  .pillars__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .pillar {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pillar:first-child { border-radius: 4px 0 0 4px; }
+  .pillar:last-child { border-radius: 0 4px 4px 0; }
+  .pillar:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,31,43,0.1); z-index: 1; }
+  .pillar__accent {
+    width: 40px;
+    height: 3px;
+    background: var(--copper);
+    margin-bottom: 2rem;
+    border-radius: 2px;
+  }
+  .pillar__title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .pillar__body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .pillar__link {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .pillar__link:hover { color: var(--copper); gap: 0.75rem; }
+  .pillar__link::after { content: '→'; }
+  @media (max-width: 768px) {
+    .pillars__grid { grid-template-columns: 1fr; gap: 2px; }
+    .pillar:first-child { border-radius: 4px 4px 0 0; }
+    .pillar:last-child { border-radius: 0 0 4px 4px; }
+  }
+
+  /* ─── FOUNDERS / STORY ─── */
+  .story {
+    background: var(--ink);
+    padding: 7rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .story::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(27,122,111,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .story__inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .story__photo {
+    position: relative;
+  }
+  .story__img-wrap {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .story__img-wrap img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .story__img-placeholder {
+    width: 100%;
+    height: 480px;
+    background: linear-gradient(145deg, rgba(42,157,143,0.15) 0%, rgba(196,149,106,0.08) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .story__img-placeholder span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 0 3rem;
+    line-height: 2;
+  }
+  .story__badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 100px;
+    height: 100px;
+    background: var(--copper);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(196,149,106,0.4);
+  }
+  .story__badge strong {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--white);
+    line-height: 1;
+  }
+  .story__badge span {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+  }
+  .story__content .section-eyebrow { color: var(--copper); }
+  .story__headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+  .story__body {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+  .story__quote {
+    border-left: 3px solid var(--copper);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(255,255,255,0.04);
+    border-radius: 0 4px 4px 0;
+  }
+  .story__quote p {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+  }
+  @media (max-width: 860px) {
+    .story__inner { grid-template-columns: 1fr; gap: 3rem; }
+    .story__photo { display: none; }
+  }
+
+  /* ─── PORTFOLIO ─── */
+  .portfolio {
+    background: var(--cream);
+    padding: 6.5rem 2rem;
+  }
+  .portfolio__inner { max-width: 1060px; margin: 0 auto; }
+  .portfolio__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .portfolio__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .pcard {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .pcard:hover { box-shadow: 0 12px 40px rgba(26,31,43,0.1); transform: translateY(-3px); }
+  .pcard__image {
+    height: 240px;
+    background: linear-gradient(160deg, var(--teal-wash) 0%, var(--teal-mist) 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pcard__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .pcard__image-placeholder {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-align: center;
+    padding: 1rem;
+    line-height: 2;
+  }
+  .pcard__location {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--ink);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+  }
+  .pcard__status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--copper);
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+  }
+  .pcard__body { padding: 2rem 2.25rem 2.25rem; }
+  .pcard__title {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .pcard__desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  .pcard__meta {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--sand);
+    flex-wrap: wrap;
+  }
+  .pcard__meta-item {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--teal-deep);
+    letter-spacing: 0.04em;
+  }
+  .pcard__meta-item::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--copper);
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  @media (max-width: 720px) {
+    .portfolio__cards { grid-template-columns: 1fr; }
+  }
+
+  /* ─── VALUES ─── */
+  .values {
+    background: var(--teal-wash);
+    padding: 6.5rem 2rem;
+    position: relative;
+  }
+  .values::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--teal-light), transparent);
+  }
+  .values__inner { max-width: 1060px; margin: 0 auto; }
+  .values__header { text-align: center; margin-bottom: 4rem; }
+  .values__headline { color: var(--ink); }
+  .values__sub { color: var(--charcoal); margin: 1rem auto 0; text-align: center; }
+  .values__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .value-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(42,157,143,0.12);
+    transition: box-shadow 0.3s ease;
+  }
+  .value-card:hover { box-shadow: 0 8px 32px rgba(42,157,143,0.12); }
+  .value-card__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--teal-mist);
+    border: 1.5px solid var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.7rem;
+    color: var(--teal-deep);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .value-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .value-card__body {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.8;
+  }
+  @media (max-width: 768px) {
+    .values__grid { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials{background:var(--ink);padding:6rem 2rem;position:relative;overflow:hidden;}
+  .testimonials::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--copper),transparent);}
+  .testimonials__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1;}
+  .testimonials__header{text-align:center;margin-bottom:3.5rem;}
+  .testimonials__eyebrow{display:block;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);margin-bottom:.875rem;}
+  .testimonials__header h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--white);}
+  .testimonials__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+  @media(max-width:860px){.testimonials__grid{grid-template-columns:1fr;}}
+  .testimonial-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:2rem;display:flex;flex-direction:column;}
+  .testimonial-card__mark{font-family:var(--font-serif);font-size:2.75rem;color:var(--teal-light);line-height:.8;display:block;margin-bottom:.875rem;}
+  .testimonial-card__quote{font-family:var(--font-accent);font-size:1rem;font-style:italic;color:rgba(255,255,255,.82);line-height:1.85;margin-bottom:1.25rem;flex:1;}
+  .testimonial-card__attr{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);}
+
+  /* ─── CTA BAND ─── */
+  .newsletter{background:var(--blush);padding:6rem 2rem;text-align:center;}
+  .newsletter__inner{max-width:560px;margin:0 auto;}
+  .newsletter__card{background:var(--white);border:1px solid var(--sand);border-radius:6px;padding:3.25rem;box-shadow:0 4px 32px rgba(26,31,43,.07);}
+  .newsletter__eyebrow{color:var(--copper);}
+  .newsletter__title{font-family:var(--font-serif);font-size:2rem;color:var(--ink);margin-bottom:.5rem;line-height:1.2;}
+  .newsletter__sub{font-size:.9rem;font-weight:300;color:var(--slate);line-height:1.65;margin-bottom:2.25rem;}
+  .newsletter__form{display:flex;gap:.75rem;flex-wrap:wrap;}
+  .newsletter__input{flex:1;min-width:200px;font-family:var(--font-sans);font-size:.9rem;color:var(--ink);background:var(--cream);border:1.5px solid var(--sand);border-radius:3px;padding:.7rem .875rem;outline:none;transition:border-color .18s,box-shadow .18s;}
+  .newsletter__input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,157,143,.1);}
+  .newsletter__submit{padding:.7rem 1.75rem;font-size:.875rem;background:var(--teal-deep);color:var(--white);border:none;border-radius:3px;font-family:var(--font-sans);font-weight:600;cursor:pointer;transition:background .22s,transform .18s;letter-spacing:.03em;}
+  .newsletter__submit:hover{background:var(--copper);transform:translateY(-1px);}
+  .newsletter__trust{font-size:.75rem;font-weight:300;color:var(--stone);margin-top:1rem;letter-spacing:.02em;}
+  @media(max-width:480px){.newsletter__card{padding:2rem 1.25rem;}}
+
+  .cta-band {
+    background: var(--teal-deep);
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 100% at 50% 0%, rgba(42,157,143,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-band::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--copper), transparent);
+  }
+  .cta-band__inner {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-band__eyebrow { color: var(--teal-light); }
+  .cta-band__headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  .cta-band__sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+  .cta-band__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--ink);
+    padding: 4rem 2rem 2.5rem;
+    position: relative;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 2px;
+    background: var(--copper);
+  }
+  .footer__inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer__brand {}
+  .footer__logo {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .footer__brand p {
+    font-size: 0.83rem;
+    font-weight: 300;
+    color: var(--stone);
+    line-height: 1.8;
+    max-width: 240px;
+  }
+  .footer__col-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+  .footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .footer__links a {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--stone);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer__links a:hover { color: var(--teal-light); }
+  .footer__contact p {
+    font-size: 0.83rem;
+    font-weight: 300;
+    color: var(--stone);
+    line-height: 1.9;
+  }
+  .footer__contact a {
+    color: var(--teal-light);
+    text-decoration: none;
+  }
+  .footer__bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer__copy {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.04em;
+  }
+  .footer__tagline {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.25);
+  }
+  @media (max-width: 860px) {
+    .footer__inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 520px) {
+    .footer__inner { grid-template-columns: 1fr; }
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ─── ORPHAN / WIDOW PREVENTION ─── */
+  /* Prevents single words dangling alone on the last line of any text block */
+  p, li {
+    text-wrap: pretty;      /* modern Chrome/Edge/Firefox: smart last-line balancing */
+    overflow-wrap: break-word;
+  }
+  h1, h2, h3, h4 {
+    text-wrap: balance;     /* balances headline line lengths across all browsers */
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <a href="#" class="nav__logo">
+    <!-- Replace with: <img src="YOUR_WIX_LOGO_URL" alt="Coast to Coast Homes"> -->
+    <span class="nav__logo-text">Coast to Coast Homes</span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="opportunities.html">Opportunities</a></li>
+    <li><a href="education.html">Investor Hub</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="mailto:hello@coasttocoasthomes.ca" class="nav__cta">Connect</a></li>
+  </ul>
+  <div class="nav__hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="hero__eyebrow">Coast to Coast Homes Canada</span>
+      <h1 class="hero__headline">
+        Real estate<br>built for<br><em>the long game.</em>
+      </h1>
+      <p class="hero__sub">
+        We help Canadians build lasting wealth through trusted real estate partnerships, purpose-driven development, and investments that stand the test of time, without you having to manage any of it.
+      </p>
+      <div class="hero__actions">
+        <a href="opportunities.html" class="btn btn--light">Current Opportunities</a>
+        <a href="about.html" class="btn btn--ghost">Our Story</a>
+      </div>
+      <p class="hero__tagline">Dream Big. Grow Steady. Lead with Heart.</p>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__photo-frame">
+        <img src="https://static.wixstatic.com/media/ec69c8_2106be83c421490bac4d2999997b2002~mv2.jpg" alt="Colin Ernst and Nicole Fiore">
+        <div class="hero__photo-caption">
+          <strong>Colin Ernst &amp; Nicole Fiore</strong>
+          <span>Co-Founders · Coast to Coast Homes Canada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS STRIP ─── -->
+<section class="stats">
+  <div class="stats__inner">
+    <div class="stat reveal">
+      <span class="stat__number">150+</span>
+      <span class="stat__label">Doors Managed</span>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <span class="stat__number">4</span>
+      <span class="stat__label">Provinces</span>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <span class="stat__number">9</span>
+      <span class="stat__label">Years in Operation</span>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <span class="stat__number">Est.&nbsp;'17</span>
+      <span class="stat__label">Moncton, NB</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT WE DO ─── -->
+<section class="pillars">
+  <div class="pillars__inner">
+    <div class="pillars__header reveal">
+      <span class="section-eyebrow">What We Do</span>
+      <h2 class="section-headline pillars__headline">Three ways to grow together.</h2>
+      <p class="section-sub pillars__sub">
+        We build, manage, and grow real estate across Canada and bring trusted partners along for the journey.
+      </p>
+    </div>
+    <div class="pillars__grid">
+      <div class="pillar reveal">
+        <div class="pillar__accent"></div>
+        <h3 class="pillar__title">Purpose-Driven<br>Development</h3>
+        <p class="pillar__body">
+          We develop homes that communities actually need: missing middle housing, townhomes, and multi-family projects built with energy efficiency and long-term viability in mind. Truro, Nova Scotia is our current active development.
+        </p>
+        <a href="opportunities.html#truro" class="pillar__link">View current projects</a>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar__accent"></div>
+        <h3 class="pillar__title">Asset Management<br>&amp; Acquisitions</h3>
+        <p class="pillar__body">
+          We acquire and manage income-producing properties for the long hold. Our 32-unit Deep River building is proof that disciplined operations and patient capital produce consistent, sustainable results.
+        </p>
+        <a href="opportunities.html#deepriver" class="pillar__link">Learn about Deep River</a>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar__accent"></div>
+        <h3 class="pillar__title">Private Capital<br>Partnerships</h3>
+        <p class="pillar__body">
+          We work with a select group of private investors who want real estate exposure without the day-to-day. These are relationship-first partnerships built on trust, transparency, and a shared commitment to the long game.
+        </p>
+        <a href="opportunities.html#inquiry" class="pillar__link">Express interest</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE STORY ─── -->
+<section class="story">
+  <div class="story__inner">
+    <div class="story__photo reveal">
+      <div class="story__img-wrap">
+        <img src="https://static.wixstatic.com/media/ec69c8_80f7058f3bdf4790b44b9f81d57137c3~mv2.jpg" alt="Colin and Nicole">
+      </div>
+      <div class="story__badge">
+        <strong>2017</strong>
+        <span>Founded</span>
+      </div>
+    </div>
+    <div class="story__content reveal reveal-delay-1">
+      <span class="section-eyebrow">Our Story</span>
+      <h2 class="story__headline">Built by investors who've lived it coast to coast.</h2>
+      <p class="story__body">
+        Colin Ernst grew up on the East Coast in Halifax, Nova Scotia. Nicole Fiore is from Ontario. They met in Montreal, lived in Vancouver, got married in PEI, and eventually put down roots in Moncton, New Brunswick, exploring and falling in love with this country at every stop.
+      </p>
+      <p class="story__body">
+        That journey is more than a name. It shaped how they see real estate: not as a transaction, but as a way to put good people into good homes and build something that lasts.
+      </p>
+      <div class="story__quote">
+        <p>"We've built our wealth through grit and good decisions. Now we want to protect it and help others do the same."</p>
+      </div>
+      <p class="story__body">
+        Since 2017, Coast to Coast Homes Canada has grown from a small portfolio into a multi-province operation spanning Ontario, Nova Scotia, New Brunswick, and British Columbia, managing 150+ doors with the same care and discipline they built from day one.
+      </p>
+      <a href="about.html" class="btn btn--light">Meet Colin &amp; Nicole</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PORTFOLIO TEASER ─── -->
+<section class="portfolio">
+  <div class="portfolio__inner">
+    <div class="portfolio__header reveal">
+      <div>
+        <span class="section-eyebrow">Current Portfolio</span>
+        <h2 class="section-headline">Where we're building.</h2>
+      </div>
+      <a href="opportunities.html" class="btn btn--primary">View All Opportunities</a>
+    </div>
+    <div class="portfolio__cards">
+      <a href="opportunities.html#truro" class="pcard reveal">
+        <div class="pcard__image">
+          <img src="https://static.wixstatic.com/media/ec69c8_a82ef50ec5b5429aa11189353082b768~mv2.jpg" alt="Truro, NS Development">
+          <span class="pcard__location">Truro, NS</span>
+          <span class="pcard__status">Active Development</span>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Truro Community Development</h3>
+          <p class="pcard__desc">
+            New phase now opening. Single-family homes, duplexes, and townhomes built to address real housing need in a growing Nova Scotia community, energy-efficient, community-focused, and built to last.
+          </p>
+          <div class="pcard__meta">
+            <span class="pcard__meta-item">New Phase Open</span>
+            <span class="pcard__meta-item">Nova Scotia</span>
+            <span class="pcard__meta-item">Expression of Interest</span>
+          </div>
+        </div>
+      </a>
+      <a href="opportunities.html#deepriver" class="pcard reveal reveal-delay-1">
+        <div class="pcard__image">
+          <img src="https://static.wixstatic.com/media/ec69c8_da045409cf8a48179ba01b37d6a10c00~mv2.png" alt="Deep River, ON">
+          <span class="pcard__location">Deep River, ON</span>
+          <span class="pcard__status">Established Asset</span>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">Deep River: 32 Units</h3>
+          <p class="pcard__desc">
+            A 32-unit apartment building on the Ottawa River, our flagship long-term hold asset. Professionally managed, fully stabilized, and a clear demonstration of the operational discipline that runs our entire portfolio.
+          </p>
+          <div class="pcard__meta">
+            <span class="pcard__meta-item">32 Units</span>
+            <span class="pcard__meta-item">Ottawa River</span>
+            <span class="pcard__meta-item">Long-Term Hold</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VALUES ─── -->
+<section class="values">
+  <div class="values__inner">
+    <div class="values__header reveal">
+      <span class="section-eyebrow">How We Operate</span>
+      <h2 class="section-headline values__headline">What you can count on.</h2>
+      <p class="section-sub values__sub">
+        We manage the work so you can enjoy the reward. Every investor relationship is built on these principles.
+      </p>
+    </div>
+    <div class="values__grid">
+      <div class="value-card reveal">
+        <div class="value-card__icon">01</div>
+        <h3 class="value-card__title">Integrity</h3>
+        <p class="value-card__body">We do what we say we're going to do, every time. No surprises, no overpromising, no glossing over the hard parts. Honesty is the foundation everything else is built on.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-card__icon">02</div>
+        <h3 class="value-card__title">Stewardship</h3>
+        <p class="value-card__body">We treat your capital like we treat our own. Every asset and investor relationship is managed with diligence, intention, and a long-term view, because that's the only view worth having.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-card__icon">03</div>
+        <h3 class="value-card__title">Partnership</h3>
+        <p class="value-card__body">Relationships are the heartbeat of how we work. We're not a firm that sends quarterly reports and goes silent. We communicate clearly, answer quickly, and show up like the partners we are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="testimonials__inner">
+    <div class="testimonials__header reveal">
+      <span class="testimonials__eyebrow">Words That Fuel Us</span>
+      <h2>What our investors say.</h2>
+    </div>
+    <div class="testimonials__grid">
+
+      <div class="testimonial-card reveal">
+        <span class="testimonial-card__mark">&ldquo;</span>
+        <p class="testimonial-card__quote">As someone who values both time and trust, I've found investing with Coast to Coast Homes to be a seamless experience. Their reporting is clear, their execution is reliable, and I have full confidence in how they manage my investment from end to end.</p>
+        <span class="testimonial-card__attr">A.R. &middot; Private Investor</span>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <span class="testimonial-card__mark">&ldquo;</span>
+        <p class="testimonial-card__quote">Colin and Nicole were my very first partners in real estate and they have never let me down. They are open and honest and always willing to answer any question I have no matter how small. They are real estate's real deal!</p>
+        <span class="testimonial-card__attr">K.H. &middot; Private Investor</span>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <span class="testimonial-card__mark">&ldquo;</span>
+        <p class="testimonial-card__quote">I trust them explicitly in finding a great deal, doing their due diligence and providing the best opportunity possible for their investors. I will definitely invest with them again.</p>
+        <span class="testimonial-card__attr">A.S. &middot; Private Investor</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── EMAIL LIST ─── -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter__inner">
+    <div class="newsletter__card reveal">
+      <span class="section-eyebrow newsletter__eyebrow">Investor Updates</span>
+      <h2 class="newsletter__title">Stay in the loop.</h2>
+      <p class="newsletter__sub">New articles, free resources, and opportunities worth knowing about. It goes to this list first. Straightforward, no fluff, no noise.</p>
+      <form id="form-newsletter" class="newsletter__form" novalidate>
+        <input type="email" class="newsletter__input" placeholder="you@yourcompany.com" name="EMAIL" required>
+        <button type="submit" class="newsletter__submit">Subscribe</button>
+      </form>
+      <p id="mc-msg" style="display:none;margin-top:.625rem;font-size:.82rem;font-weight:500;"></p>
+      <p class="newsletter__trust">No spam. No pressure. Unsubscribe anytime. We treat your inbox the way we treat our own.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BAND ─── -->
+<section class="cta-band">
+  <div class="cta-band__inner reveal">
+    <span class="section-eyebrow cta-band__eyebrow">Ready to Build Something That Lasts?</span>
+    <h2 class="cta-band__headline">
+      You've built your wealth through grit.<br>Now let's protect it together.
+    </h2>
+    <p class="cta-band__sub">
+      We work with a select group of private investors each year. If you're looking for real estate exposure without the day-to-day, we'd love to have a conversation.
+    </p>
+    <div class="cta-band__actions">
+      <a href="opportunities.html" class="btn btn--light">Explore Opportunities</a>
+      <a href="mailto:hello@coasttocoasthomes.ca" class="btn btn--ghost">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">Coast to Coast Homes Canada</span>
+      <p>Real estate development and investment, built on trust and a long-term view. Headquartered in Moncton, New Brunswick.</p>
+    </div>
+    <div>
+      <span class="footer__col-title">Navigate</span>
+      <ul class="footer__links">
+        <li><a href="#">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="education.html">Investor Hub</a></li>
+        <li><a href="tools.html">Tools</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer__col-title">Portfolio</span>
+      <ul class="footer__links">
+        <li><a href="opportunities.html#truro">Truro, NS</a></li>
+        <li><a href="opportunities.html#deepriver">Deep River, ON</a></li>
+        <li><a href="opportunities.html">Private Lending</a></li>
+      </ul>
+    </div>
+    <div class="footer__contact">
+      <span class="footer__col-title">Contact</span>
+      <p>
+        Moncton, New Brunswick<br>
+        <a href="mailto:hello@coasttocoasthomes.ca">hello@coasttocoasthomes.ca</a><br><br>
+        <a href="https://www.coasttocoasthomes.ca">coasttocoasthomes.ca</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">&copy; 2026 Coast to Coast Homes Canada. All rights reserved.</span>
+    <span class="footer__tagline">Dream Big. Grow Steady. Lead with Heart.</span>
+  </div>
+</footer>
+
+<script>
+  // ─── SCROLL REVEAL ───
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ─── WIX AUTO-HEIGHT RESIZE ───
+  // This tells the Wix HTML iFrame element exactly how tall to be.
+  // No more manually dragging the box taller!
+  function notifyWixHeight() {
+    const height = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+  }
+  window.addEventListener('load', notifyWixHeight);
+  window.addEventListener('resize', notifyWixHeight);
+  if (window.ResizeObserver) {
+    new ResizeObserver(notifyWixHeight).observe(document.body);
+  }
+  // Also fire after fonts load (they shift layout slightly)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(notifyWixHeight);
+  }
+</script>
+
+<!-- MAILCHIMP FORM WIRING -->
+<script>
+(function(){
+  var MC="https://coasttocoasthomes.us21.list-manage.com/subscribe/post-json?u=909c9ee1e5cae82141e7db4ad&id=0cb6d0fbc7";
+  var f=document.getElementById("form-newsletter");
+  if(!f)return;
+  var b=f.querySelector("button[type=submit]");
+  var m=document.getElementById("mc-msg");
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var email=f.querySelector("[name=EMAIL]").value;
+    if(!email)return false;
+    b.disabled=true;
+    b.textContent="Sending...";
+    m.style.display="none";
+    var cb="mc_cb_"+Date.now();
+    var url=MC+"&EMAIL="+encodeURIComponent(email)+"&LEADSRC=site-newsletter&c="+cb;
+    window[cb]=function(r){
+      delete window[cb];
+      b.disabled=false;
+      b.textContent="Subscribe";
+      m.style.display="block";
+      if(r.result==="success"){
+        f.reset();
+        m.style.color="#2A9D8F";
+        m.textContent="Thanks! Check your inbox to confirm.";
+      }else{
+        var msg=r.msg||"Something went wrong.";
+        msg=msg.replace(/<[^>]+>/g,"");
+        if(msg.indexOf("already subscribed")>-1){
+          m.style.color="#2A9D8F";
+          m.textContent="You are already subscribed!";
+        }else{
+          m.style.color="#C17F59";
+          m.textContent=msg;
+        }
+      }
+    };
+    var s=document.createElement("script");
+    s.src=url;
+    document.body.appendChild(s);
+  });
+})();
+</script>
+
+</body>
+</html>

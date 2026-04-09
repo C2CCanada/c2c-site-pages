@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+═══════════════════════════════════════════════════════════════
+  COAST TO COAST HOMES CANADA | ABOUT US PAGE
+  Built April 2026 · Matches homepage visual system
+═══════════════════════════════════════════════════════════════
+  Wix setup: same as homepage (see index.html instructions)
+  IMAGE PLACEHOLDERS | update before publishing:
+  · Logo:            Replace YOUR_WIX_LOGO_URL
+  · Colin + Nicole:  Replace YOUR_FOUNDERS_PHOTO_URL
+═══════════════════════════════════════════════════════════════
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Colin Ernst & Nicole Fiore | Coast to Coast Homes Canada</title>
+  <meta name="description" content="Meet Colin Ernst and Nicole Fiore: co-founders of Coast to Coast Homes Canada. 9+ years building and operating a real estate portfolio across Ontario, BC, Nova Scotia, and New Brunswick.">
+  <meta name="keywords" content="Colin Ernst real estate, Nicole Fiore real estate, Coast to Coast Homes founders, Canadian real estate investors, Moncton real estate, Atlantic Canada real estate">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://coasttocoasthomes.ca/about">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us | Colin Ernst & Nicole Fiore | Coast to Coast Homes Canada">
+  <meta property="og:description" content="Meet Colin Ernst and Nicole Fiore: co-founders of Coast to Coast Homes Canada. 9+ years building and operating a real estate portfolio across Ontario, BC, Nova Scotia, and New Brunswick.">
+  <meta property="og:url" content="https://coasttocoasthomes.ca/about">
+  <meta property="og:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+  <meta property="og:site_name" content="Coast to Coast Homes Canada">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us | Colin Ernst & Nicole Fiore | Coast to Coast Homes Canada">
+  <meta name="twitter:description" content="Meet Colin Ernst and Nicole Fiore: co-founders of Coast to Coast Homes Canada. 9+ years building and operating a real estate portfolio across Ontario, BC, Nova Scotia, and New Brunswick.">
+  <meta name="twitter:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Coast to Coast Homes Canada",
+    "description": "The story of Colin Ernst and Nicole Fiore, co-founders of Coast to Coast Homes Canada, and how they built a real estate investment portfolio spanning four Canadian provinces.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Coast to Coast Homes Canada",
+      "foundingDate": "2017",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Colin Ernst",
+          "jobTitle": "Co-Founder & CEO",
+          "description": "Co-founder and CEO of Coast to Coast Homes Canada. 9+ years operating real estate across Ontario, BC, Nova Scotia, and New Brunswick. Builder of systems that run a 150+ door portfolio.",
+          "knowsAbout": ["private mortgage lending", "real estate portfolio management", "missing middle development", "long-term hold real estate strategy"]
+        },
+        {
+          "@type": "Person",
+          "name": "Nicole Fiore",
+          "jobTitle": "Co-Founder, Vision & Brand",
+          "description": "Co-founder of Coast to Coast Homes Canada, leading investor relations, brand, and marketing across a multi-province real estate portfolio.",
+          "knowsAbout": ["investor relations", "real estate branding", "purpose-driven real estate", "real estate marketing Canada"]
+        }
+      ]
+    }
+  }
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:#2A9D8F;--teal-deep:#1B7A6F;--teal-light:#5FBFB3;--teal-wash:#E8F6F4;
+    --teal-mist:#F2FAF9;--copper:#C4956A;--terracotta:#C17F59;--blush:#E8CFC0;
+    --ink:#1A1F2B;--charcoal:#3A3F4B;--slate:#6B7280;--stone:#9CA3AF;
+    --sand:#E8E2D9;--linen:#F5F1EB;--cream:#FAF8F5;--white:#FFFFFF;
+    --font-serif:'Instrument Serif',Georgia,serif;
+    --font-sans:'DM Sans',system-ui,sans-serif;
+    --font-accent:'Cormorant Garamond',Georgia,serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+  /* NAV */
+  .nav{background:var(--white);padding:0 2.5rem;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--sand);position:sticky;top:0;z-index:100;}
+  .nav__logo-text{font-family:var(--font-serif);font-size:1.2rem;color:var(--teal-deep);text-decoration:none;}
+  .nav__links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+  .nav__links a{font-size:0.825rem;font-weight:500;color:var(--charcoal);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
+  .nav__links a:hover,.nav__links a.active{color:var(--teal-deep);}
+  .nav__cta{padding:0.5rem 1.375rem;background:var(--teal-deep) !important;color:var(--white) !important;border-radius:3px;}
+  .nav__cta:hover{background:var(--copper) !important;}
+  @media(max-width:768px){.nav__links{display:none;}}
+
+  /* BUTTONS */
+  .btn{display:inline-block;padding:.875rem 2.25rem;border-radius:3px;font-family:var(--font-sans);font-weight:600;font-size:.875rem;letter-spacing:.03em;text-decoration:none;cursor:pointer;border:none;transition:background .22s,color .22s,box-shadow .22s,transform .18s;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn--light{background:var(--white);color:var(--teal-deep);box-shadow:0 2px 12px rgba(0,0,0,.15);}
+  .btn--light:hover{background:var(--copper);color:var(--white);}
+  .btn--ghost{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.3);}
+  .btn--ghost:hover{border-color:var(--copper);color:var(--white);}
+  .btn--primary{background:var(--teal-deep);color:var(--white);}
+  .btn--primary:hover{background:var(--copper);}
+  .section-eyebrow{display:block;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);margin-bottom:1rem;}
+
+  /* PAGE HERO */
+  .page-hero{background:var(--teal-deep);padding:7rem 2rem 6rem;position:relative;overflow:hidden;text-align:center;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 0%,rgba(42,157,143,.2) 0%,transparent 70%);pointer-events:none;}
+  .page-hero::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--copper) 0%,var(--teal-light) 60%,transparent 100%);}
+  .page-hero__inner{max-width:720px;margin:0 auto;position:relative;z-index:1;}
+  .page-hero .section-eyebrow{color:var(--teal-light);}
+  .page-hero__headline{font-family:var(--font-serif);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--white);line-height:1.1;margin-bottom:1.5rem;animation:fadeUp .7s .1s ease both;}
+  .page-hero__sub{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.8);line-height:1.8;animation:fadeUp .7s .2s ease both;}
+
+  /* STORY SECTION */
+  .origin{background:var(--cream);padding:6.5rem 2rem;}
+  .origin__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+  .origin__content h2{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,2.8rem);color:var(--ink);line-height:1.15;margin-bottom:2rem;}
+  .origin__content p{font-size:.95rem;font-weight:300;color:var(--charcoal);line-height:1.9;margin-bottom:1.25rem;}
+  .origin__img-wrap{border-radius:4px;overflow:hidden;box-shadow:0 20px 60px rgba(26,31,43,.12);}
+  .origin__img-wrap img{width:100%;height:520px;object-fit:cover;object-position:center top;display:block;}
+  .origin__img-placeholder{width:100%;height:520px;background:linear-gradient(145deg,var(--teal-wash) 0%,var(--teal-mist) 100%);display:flex;align-items:center;justify-content:center;}
+  .origin__img-placeholder span{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);text-align:center;padding:0 2rem;line-height:2;}
+  @media(max-width:860px){.origin__inner{grid-template-columns:1fr;gap:2.5rem;}.origin__img-wrap{display:none;}}
+
+  /* TIMELINE */
+  .timeline{background:var(--ink);padding:6.5rem 2rem;}
+  .timeline__inner{max-width:860px;margin:0 auto;}
+  .timeline__header{text-align:center;margin-bottom:4rem;}
+  .timeline__header h2{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.75rem;}
+  .timeline__header p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8;}
+  .timeline__items{position:relative;}
+  .timeline__items::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.1);transform:translateX(-50%);}
+  .timeline__item{display:flex;gap:3rem;align-items:flex-start;margin-bottom:3.5rem;position:relative;}
+  .timeline__item:nth-child(even){flex-direction:row-reverse;}
+  .timeline__year{font-family:var(--font-serif);font-size:1.8rem;color:var(--copper);line-height:1;flex-shrink:0;width:calc(50% - 1.5rem - 12px);text-align:right;}
+  .timeline__item:nth-child(even) .timeline__year{text-align:left;}
+  .timeline__dot{width:14px;height:14px;border-radius:50%;background:var(--copper);flex-shrink:0;margin-top:.35rem;box-shadow:0 0 0 4px rgba(196,149,106,.2);position:relative;z-index:1;}
+  .timeline__text{flex:1;}
+  .timeline__text h3{font-family:var(--font-serif);font-size:1.15rem;color:var(--white);margin-bottom:.5rem;}
+  .timeline__text p{font-size:.875rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.75;}
+  @media(max-width:680px){
+    .timeline__items::before{left:6px;}
+    .timeline__item,.timeline__item:nth-child(even){flex-direction:row;gap:1.5rem;}
+    .timeline__year,.timeline__item:nth-child(even) .timeline__year{text-align:left;font-size:1.2rem;width:3rem;flex-shrink:0;}
+    .timeline__dot{display:none;}
+  }
+
+  /* FOUNDERS */
+  .founders{background:var(--linen);padding:6.5rem 2rem;}
+  .founders__inner{max-width:1060px;margin:0 auto;}
+  .founders__header{text-align:center;margin-bottom:4rem;}
+  .founders__header h2{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,2.6rem);color:var(--ink);margin-bottom:.75rem;}
+  .founders__header p{font-size:.95rem;font-weight:300;color:var(--slate);line-height:1.8;max-width:560px;margin:0 auto;}
+  .founders__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
+  .founder-card{background:var(--white);border-radius:4px;overflow:hidden;border:1px solid var(--sand);transition:box-shadow .3s,transform .3s;}
+  .founder-card:hover{box-shadow:0 12px 40px rgba(26,31,43,.1);transform:translateY(-3px);}
+  .founder-card__photo{height:300px;background:linear-gradient(145deg,var(--teal-wash) 0%,var(--teal-mist) 100%);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+  .founder-card__photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .founder-card__photo-placeholder{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);text-align:center;padding:1rem;line-height:2;}
+  .founder-card__body{padding:2rem;}
+  .founder-card__role{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:.75rem;display:block;}
+  .founder-card__name{font-family:var(--font-serif);font-size:1.35rem;color:var(--ink);margin-bottom:1rem;}
+  .founder-card__bio{font-size:.875rem;font-weight:300;color:var(--charcoal);line-height:1.8;}
+  @media(max-width:820px){.founders__grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.founders__grid{grid-template-columns:1fr;}}
+
+  /* MISSION + VISION */
+  .mission{background:var(--teal-deep);padding:6.5rem 2rem;position:relative;overflow:hidden;}
+  .mission::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 50% 0%,rgba(42,157,143,.2) 0%,transparent 70%);pointer-events:none;}
+  .mission::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--copper),transparent);}
+  .mission__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;position:relative;z-index:1;}
+  .mission__block h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);color:var(--white);margin-bottom:1.5rem;line-height:1.15;}
+  .mission__block p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.75);line-height:1.9;}
+  .mission__block:first-child{border-right:1px solid rgba(255,255,255,.12);padding-right:4rem;}
+  @media(max-width:720px){.mission__inner{grid-template-columns:1fr;gap:3rem;}.mission__block:first-child{border-right:none;padding-right:0;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:3rem;}}
+
+  /* VALUES */
+  .core-values{background:var(--cream);padding:6.5rem 2rem;}
+  .core-values__inner{max-width:1060px;margin:0 auto;}
+  .core-values__header{text-align:center;margin-bottom:4rem;}
+  .core-values__header h2{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,2.6rem);color:var(--ink);margin-bottom:.75rem;}
+  .core-values__header p{font-size:.95rem;font-weight:300;color:var(--slate);line-height:1.8;max-width:520px;margin:0 auto;}
+  .core-values__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .cv-card{padding:2.25rem;border:1px solid var(--sand);border-radius:4px;transition:border-color .3s,box-shadow .3s;}
+  .cv-card:hover{border-color:var(--teal-light);box-shadow:0 8px 32px rgba(42,157,143,.08);}
+  .cv-card__num{font-family:var(--font-serif);font-size:2rem;color:var(--teal-wash);line-height:1;margin-bottom:1rem;}
+  .cv-card__title{font-family:var(--font-serif);font-size:1.2rem;color:var(--ink);margin-bottom:.75rem;}
+  .cv-card__body{font-size:.85rem;font-weight:300;color:var(--charcoal);line-height:1.8;}
+  @media(max-width:768px){.core-values__grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.core-values__grid{grid-template-columns:1fr;}}
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--ink);padding:6rem 2rem;position:relative;overflow:hidden;}
+  .testimonials::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--copper),transparent);}
+  .testimonials__inner{max-width:1060px;margin:0 auto;position:relative;z-index:1;}
+  .testimonials__header{text-align:center;margin-bottom:3.5rem;}
+  .testimonials__eyebrow{display:block;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);margin-bottom:.875rem;}
+  .testimonials__header h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--white);}
+  .testimonials__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+  @media(max-width:860px){.testimonials__grid{grid-template-columns:1fr;}}
+  .testimonial-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:2rem;display:flex;flex-direction:column;}
+  .testimonial-card__mark{font-family:var(--font-serif);font-size:2.75rem;color:var(--teal-light);line-height:.8;display:block;margin-bottom:.875rem;}
+  .testimonial-card__quote{font-family:var(--font-accent);font-size:1rem;font-style:italic;color:rgba(255,255,255,.82);line-height:1.85;margin-bottom:1.25rem;flex:1;}
+  .testimonial-card__attr{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);}
+
+  /* CTA BAND */
+  .cta-band{background:var(--teal-wash);padding:5.5rem 2rem;text-align:center;border-top:1px solid rgba(42,157,143,.2);}
+  .cta-band__inner{max-width:600px;margin:0 auto;}
+  .cta-band__headline{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--ink);line-height:1.2;margin-bottom:1.25rem;}
+  .cta-band__sub{font-size:.95rem;font-weight:300;color:var(--charcoal);line-height:1.8;margin-bottom:2.5rem;}
+  .cta-band__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+  /* FOOTER */
+  .footer{background:var(--ink);padding:4rem 2rem 2.5rem;position:relative;}
+  .footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:48px;height:2px;background:var(--copper);}
+  .footer__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+  .footer__logo{font-family:var(--font-serif);font-size:1.1rem;color:var(--white);margin-bottom:1rem;display:block;}
+  .footer__brand p{font-size:.83rem;font-weight:300;color:var(--stone);line-height:1.8;max-width:240px;}
+  .footer__col-title{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:1.25rem;display:block;}
+  .footer__links{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+  .footer__links a{font-size:.85rem;font-weight:300;color:var(--stone);text-decoration:none;transition:color .2s;}
+  .footer__links a:hover{color:var(--teal-light);}
+  .footer__contact p{font-size:.83rem;font-weight:300;color:var(--stone);line-height:1.9;}
+  .footer__contact a{color:var(--teal-light);text-decoration:none;}
+  .footer__bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+  .footer__copy{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.04em;}
+  .footer__tagline{font-family:var(--font-accent);font-style:italic;font-size:.85rem;color:rgba(255,255,255,.25);}
+  @media(max-width:860px){.footer__inner{grid-template-columns:1fr 1fr;gap:2.5rem;}}
+  @media(max-width:520px){.footer__inner{grid-template-columns:1fr;}}
+
+  /* SCROLL REVEAL */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
+
+  /* ─── ORPHAN / WIDOW PREVENTION ─── */
+  /* Prevents single words dangling alone on the last line of any text block */
+  p, li {
+    text-wrap: pretty;      /* modern Chrome/Edge/Firefox: smart last-line balancing */
+    overflow-wrap: break-word;
+  }
+  h1, h2, h3, h4 {
+    text-wrap: balance;     /* balances headline line lengths across all browsers */
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <a href="index.html" class="nav__logo">
+    <span class="nav__logo-text">Coast to Coast Homes</span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#" class="active">About Us</a></li>
+    <li><a href="opportunities.html">Opportunities</a></li>
+    <li><a href="education.html">Investor Hub</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="mailto:hello@coasttocoasthomes.ca" class="nav__cta">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- ─── PAGE HERO ─── -->
+<section class="page-hero">
+  <div class="page-hero__inner">
+    <span class="section-eyebrow">About Us</span>
+    <h1 class="page-hero__headline">Built on integrity.<br>Driven by purpose.</h1>
+    <p class="page-hero__sub">Coast to Coast Homes Canada was founded on a simple conviction: that real estate, done right, creates lasting wealth for investors, for communities, and for families. Here's our story.</p>
+  </div>
+</section>
+
+<!-- ─── ORIGIN STORY ─── -->
+<section class="origin">
+  <div class="origin__inner">
+    <div class="origin__content reveal">
+      <span class="section-eyebrow">How It Started</span>
+      <h2>Why "Coast to Coast"?</h2>
+      <p>Colin Ernst is from Halifax, Nova Scotia, East Coast born and raised. Nicole Fiore grew up in Ontario. They met in Montreal, lived in Vancouver, got married in PEI, and eventually settled in Moncton, New Brunswick. Together, they've explored and fallen in love with this country from one end to the other.</p>
+      <p>That's not just a name. It's the DNA of how they approach real estate. They've seen communities across Canada, understood what people need, and built a portfolio that reflects a genuine belief in this country's potential.</p>
+      <p>Colin literally drove coast to coast with his best friend years ago. That journey shaped his view that Canada is full of natural beauty, exceptional communities, and real opportunity if you approach it with patience, purpose, and the right partners.</p>
+      <p>Since 2017, that conviction has grown into a 150-door portfolio spanning Ontario, Nova Scotia, New Brunswick, and British Columbia.</p>
+    </div>
+    <div class="origin__img-wrap reveal reveal-delay-1">
+      <img src="https://static.wixstatic.com/media/ec69c8_2106be83c421490bac4d2999997b2002~mv2.jpg" alt="Colin and Nicole">
+    </div>
+  </div>
+</section>
+
+<!-- ─── JOURNEY TIMELINE ─── -->
+<section class="timeline">
+  <div class="timeline__inner">
+    <div class="timeline__header reveal">
+      <span class="section-eyebrow" style="color:var(--copper);">The Journey</span>
+      <h2>Nine years of steady growth.</h2>
+      <p>Not chasing every deal. Building the right ones, in the right markets, with the right people.</p>
+    </div>
+    <div class="timeline__items">
+      <div class="timeline__item reveal">
+        <div class="timeline__year">2016</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__text">
+          <h3>The Beginning</h3>
+          <p>Colin and Nicole recognized real estate as a path to financial freedom and long-term wealth. Their drive to build something meaningful, and something that serves others, only strengthened from there.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__year">2017</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__text">
+          <h3>Coast to Coast Homes Canada Founded</h3>
+          <p>Headquartered in Moncton, New Brunswick. The name reflects their journey and their commitment to building across this country with care and intention.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__year">2019</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__text">
+          <h3>Portfolio Expansion</h3>
+          <p>Early acquisitions across New Brunswick begin the multi-province strategy. Joint ventures and private lending partnerships bring trusted investors into the fold.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__year">2021</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__text">
+          <h3>Truro Development Begins</h3>
+          <p>Active development launches in Truro, Nova Scotia: single-family homes, duplexes, and townhomes built to address real housing need in a growing community. Early phases deliver results that set the foundation for what comes next.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__year">2022</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__text">
+          <h3>Deep River Acquisition</h3>
+          <p>A 32-unit apartment building on the Ottawa River in Deep River, Ontario, the flagship asset, a long-term hold that demonstrates the C2C approach at full scale.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__year">2026</div>
+        <div class="timeline__dot"></div>
+        <div class="timeline__text">
+          <h3>New Phase in Truro. 150+ Doors. 4 Provinces.</h3>
+          <p>A new phase of the Truro development is now opening. The portfolio spans four provinces and continues to grow, always led by integrity, always built for the long game.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOUNDERS & TEAM ─── -->
+<section class="founders">
+  <div class="founders__inner">
+    <div class="founders__header reveal">
+      <span class="section-eyebrow">The People Behind the Portfolio</span>
+      <h2>Real people. Real track record.</h2>
+      <p>Coast to Coast Homes is led by a small, experienced team who believe that the right relationships are the foundation of everything worth building.</p>
+    </div>
+    <div class="founders__grid">
+      <div class="founder-card reveal">
+        <div class="founder-card__photo">
+          <img src="https://static.wixstatic.com/media/ec69c8_e4387462a5284bb6aa7be671da1b8bf0~mv2.png" alt="Colin Ernst">
+        </div>
+        <div class="founder-card__body">
+          <span class="founder-card__role">Co-Founder &amp; CEO</span>
+          <h3 class="founder-card__name">Colin Ernst</h3>
+          <p class="founder-card__bio">Colin leads operations, finance, and strategy at Coast to Coast. He built the operational infrastructure that runs a real estate portfolio spanning four Canadian provinces, a system disciplined enough to scale and grounded enough to be trusted. His approach: acquire right, manage well, and never lose sight of the long game.</p>
+        </div>
+      </div>
+      <div class="founder-card reveal reveal-delay-1">
+        <div class="founder-card__photo">
+          <img src="https://static.wixstatic.com/media/ec69c8_f5cdfcd7412d4f24bd45580bde6f462c~mv2.jpg" alt="Nicole Fiore">
+        </div>
+        <div class="founder-card__body">
+          <span class="founder-card__role">Co-Founder, Vision &amp; Marketing</span>
+          <h3 class="founder-card__name">Nicole Fiore</h3>
+          <p class="founder-card__bio">Nicole shapes the brand, investor relationships, and vision that ties everything together. She brings an instinct for what matters: to investors, to communities, and to the people who live in the homes C2C builds. Marketing copy, communications, and the C2C voice all go through Nicole before they go anywhere else.</p>
+        </div>
+      </div>
+      <div class="founder-card reveal reveal-delay-2">
+        <div class="founder-card__photo">
+          <img src="https://static.wixstatic.com/media/ec69c8_99a54e5955644c92baebbfa3ef07b0b0~mv2.png" alt="Judy Lea">
+        </div>
+        <div class="founder-card__body">
+          <span class="founder-card__role">Executive Assistant &amp; Integrator</span>
+          <h3 class="founder-card__name">Judy Lea</h3>
+          <p class="founder-card__bio">Judy keeps the operation running with clarity and precision. With 30+ years of administrative experience, she built the AI-powered back office system that runs the C2C portfolio and now offers that same infrastructure to other investors through The Core Install. She is the reason this operation works as well as it does.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MISSION + VISION ─── -->
+<section class="mission">
+  <div class="mission__inner">
+    <div class="mission__block reveal">
+      <span class="section-eyebrow" style="color:var(--teal-light);">Our Mission</span>
+      <h2>Built for the long game, because you've already played the short one.</h2>
+      <p>Help everyday Canadians build long-term wealth and peace of mind through trusted real estate partnerships, purpose-driven developments, and education that empowers people to lead courageous, financially confident lives.</p>
+    </div>
+    <div class="mission__block reveal reveal-delay-1">
+      <span class="section-eyebrow" style="color:var(--teal-light);">Our Vision</span>
+      <h2>A world where success is grounded in integrity.</h2>
+      <p>We see a Canada where real estate builds communities, not just portfolios. Where leadership is rooted in courage, communities rise together, and people thrive, not just work. Where freedom isn't found in chasing more, but built through trust, integrity, and the courage to live fully while building what lasts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CORE VALUES ─── -->
+<section class="core-values">
+  <div class="core-values__inner">
+    <div class="core-values__header reveal">
+      <span class="section-eyebrow">How We Show Up</span>
+      <h2>Our core values.</h2>
+      <p>Every investor relationship, every property decision, every communication. These are the six principles that guide how we operate.</p>
+    </div>
+    <div class="core-values__grid">
+      <div class="cv-card reveal">
+        <div class="cv-card__num">01</div>
+        <h3 class="cv-card__title">Integrity</h3>
+        <p class="cv-card__body">We do what we say we're going to do, every time. Honesty, clarity, and decisions that honor trust. No surprises, no spin, no glossing over the hard parts.</p>
+      </div>
+      <div class="cv-card reveal reveal-delay-1">
+        <div class="cv-card__num">02</div>
+        <h3 class="cv-card__title">Courage</h3>
+        <p class="cv-card__body">Bold thinking, brave leadership, dreaming beyond limitation. We step into possibility with conviction, because real growth requires the willingness to act before everything is certain.</p>
+      </div>
+      <div class="cv-card reveal reveal-delay-2">
+        <div class="cv-card__num">03</div>
+        <h3 class="cv-card__title">Stewardship</h3>
+        <p class="cv-card__body">Every asset, investor, and relationship is treated with diligence, intention, and a long-term view. We treat your capital like we treat our own.</p>
+      </div>
+      <div class="cv-card reveal">
+        <div class="cv-card__num">04</div>
+        <h3 class="cv-card__title">Connection</h3>
+        <p class="cv-card__body">Relationships are the heartbeat. Collaboration, community, and deep, authentic human connection. We're not a firm that sends reports and goes silent. We show up like the partners we are.</p>
+      </div>
+      <div class="cv-card reveal reveal-delay-1">
+        <div class="cv-card__num">05</div>
+        <h3 class="cv-card__title">Excellence in Experience</h3>
+        <p class="cv-card__body">Every investor touchpoint should feel professional, warm, and clear. We hold ourselves to the standard of what a truly trusted partnership should feel like, at every stage, every time.</p>
+      </div>
+      <div class="cv-card reveal reveal-delay-2">
+        <div class="cv-card__num">06</div>
+        <h3 class="cv-card__title">Purpose-Driven Growth</h3>
+        <p class="cv-card__body">Value for investors and communities alike. Homes people actually need, opportunities that uplift, and systems that sustain, because real growth means everyone wins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials">
+  <div class="testimonials__inner">
+    <div class="testimonials__header reveal">
+      <span class="testimonials__eyebrow">In Their Own Words</span>
+      <h2>What our partners say.</h2>
+    </div>
+    <div class="testimonials__grid">
+
+      <div class="testimonial-card reveal">
+        <span class="testimonial-card__mark">&ldquo;</span>
+        <p class="testimonial-card__quote">Working with Coast to Coast Homes has been an exceptional experience. From the initial meeting, the legal paperwork to the payments  -  I feel confident in their abilities and I highly recommend Colin and Nicole to anyone seeking sound investment advice and solid returns.</p>
+        <span class="testimonial-card__attr">A.R. &middot; Private Investor</span>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <span class="testimonial-card__mark">&ldquo;</span>
+        <p class="testimonial-card__quote">I have watched you guys grow into some very savvy, intelligent, transparent &amp; extremely strong investors! So proud of you Colin &amp; Nicole!</p>
+        <span class="testimonial-card__attr">S.Y. &middot; Investor &amp; Colleague</span>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <span class="testimonial-card__mark">&ldquo;</span>
+        <p class="testimonial-card__quote">From the very beginning, there was that comfort level that you had with them as people. I have continued to put my registered funds to use with Coast to Coast Homes, because I believe in Colin &amp; Nicole and what they are doing.</p>
+        <span class="testimonial-card__attr">Investor &middot; Registered Funds</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BAND ─── -->
+<section class="cta-band">
+  <div class="cta-band__inner reveal">
+    <span class="section-eyebrow">Ready to Build Something?</span>
+    <h2 class="cta-band__headline">Not just returns. Relationships that earn trust over time.</h2>
+    <p class="cta-band__sub">If the way we work resonates with you, we'd love to connect. We work with a select group of investors each year, built on shared values and a shared commitment to the long game.</p>
+    <div class="cta-band__actions">
+      <a href="opportunities.html" class="btn btn--primary">View Current Opportunities</a>
+      <a href="mailto:hello@coasttocoasthomes.ca" class="btn btn--ghost" style="color:var(--teal-deep);border-color:var(--teal);background:transparent;">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">Coast to Coast Homes Canada</span>
+      <p>Real estate development and investment, built on trust and a long-term view. Headquartered in Moncton, New Brunswick.</p>
+    </div>
+    <div>
+      <span class="footer__col-title">Navigate</span>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="education.html">Investor Hub</a></li>
+        <li><a href="tools.html">Tools</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer__col-title">Portfolio</span>
+      <ul class="footer__links">
+        <li><a href="opportunities.html#truro">Truro, NS</a></li>
+        <li><a href="opportunities.html#deepriver">Deep River, ON</a></li>
+        <li><a href="opportunities.html">Private Lending</a></li>
+      </ul>
+    </div>
+    <div class="footer__contact">
+      <span class="footer__col-title">Contact</span>
+      <p>Moncton, New Brunswick<br><a href="mailto:hello@coasttocoasthomes.ca">hello@coasttocoasthomes.ca</a><br><br><a href="https://www.coasttocoasthomes.ca">coasttocoasthomes.ca</a></p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">&copy; 2026 Coast to Coast Homes Canada. All rights reserved.</span>
+    <span class="footer__tagline">Dream Big. Grow Steady. Lead with Heart.</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}});
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+  function notifyWixHeight() {
+    const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
+    window.parent.postMessage({ type:'setHeight', height:h }, '*');
+  }
+  window.addEventListener('load', notifyWixHeight);
+  window.addEventListener('resize', notifyWixHeight);
+  if(window.ResizeObserver) new ResizeObserver(notifyWixHeight).observe(document.body);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
+</script>
+</body>
+</html>

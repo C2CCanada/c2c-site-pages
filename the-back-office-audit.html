@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Back Office Audit | Coast to Coast Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* C2C Brand Palette */
+    --teal: #2A9D8F;
+    --teal-deep: #1B7A6F;
+    --teal-light: #5FBFB3;
+    --teal-wash: #E8F6F4;
+    --teal-mist: #F2FAF9;
+    --copper: #C4956A;
+    --terracotta: #C17F59;
+    --blush: #E8CFC0;
+    --ink: #1A1F2B;
+    --charcoal: #3A3F4B;
+    --slate: #6B7280;
+    --stone: #9CA3AF;
+    --sand: #E8E2D9;
+    --linen: #F5F1EB;
+    --cream: #FAF8F5;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cream);
+    background: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(170deg, var(--ink) 0%, #0f1318 40%, #132a27 100%);
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(ellipse, rgba(27, 122, 111, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(196, 149, 106, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-brand {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.35rem;
+    color: var(--teal-light);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+  }
+
+  .cover-subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.05rem;
+    color: var(--stone);
+    max-width: 500px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-line {
+    width: 60px;
+    height: 1px;
+    background: var(--copper);
+    margin: 2.5rem auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-byline {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--stone);
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-wide {
+    max-width: 800px;
+  }
+
+  .section h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.2;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+
+  .section h3 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .section p {
+    font-weight: 300;
+    color: var(--sand);
+    margin-bottom: 1.25rem;
+  }
+
+  .section p strong {
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  /* ─── DIVIDERS ─── */
+  .divider {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .divider-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(196, 149, 106, 0.3), transparent);
+  }
+
+  /* ─── PULL QUOTE ─── */
+  .pull-quote {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .pull-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    line-height: 1.5;
+    color: var(--teal-light);
+  }
+
+  /* ─── ASSESSMENT CARDS ─── */
+  .assessment-section {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .assessment-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .assessment-number {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--teal-light);
+    opacity: 0.6;
+  }
+
+  .assessment-title {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--cream);
+  }
+
+  .question-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(196, 149, 106, 0.12);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .question-card:hover {
+    border-color: rgba(196, 149, 106, 0.25);
+  }
+
+  .question-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--cream);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .answer-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    position: relative;
+  }
+
+  .answer-option:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .answer-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 1.5px solid var(--slate);
+    border-radius: 50%;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .answer-option input[type="radio"]:checked {
+    border-color: var(--copper);
+    background: var(--copper);
+    box-shadow: inset 0 0 0 3px var(--ink);
+  }
+
+  .answer-label {
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: var(--sand);
+    cursor: pointer;
+    line-height: 1.5;
+  }
+
+  .answer-label strong {
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  .score-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.65rem;
+    color: var(--slate);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    margin-left: auto;
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  /* ─── RESULTS ─── */
+  .results-section {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .score-display {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .score-total {
+    font-family: 'Instrument Serif', serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--copper);
+  }
+
+  .score-total-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: var(--slate);
+    margin-top: 0.5rem;
+  }
+
+  .tier-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(196, 149, 106, 0.12);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .tier-card.highlight {
+    border-color: rgba(27, 122, 111, 0.4);
+    background: rgba(27, 122, 111, 0.05);
+  }
+
+  .tier-range {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 0.5rem;
+  }
+
+  .tier-name {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .tier-desc {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--sand);
+    line-height: 1.6;
+  }
+
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+  }
+
+  .cost-table th {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--copper);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(196, 149, 106, 0.2);
+  }
+
+  .cost-table td {
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: var(--sand);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .cost-table td:last-child {
+    color: var(--cream);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  /* ─── BRIDGE / CTA ─── */
+  .bridge-section {
+    background: linear-gradient(180deg, var(--ink) 0%, #132a27 50%, var(--ink) 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .bridge-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .bridge-section h2 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.2;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+
+  .bridge-section p {
+    font-weight: 300;
+    color: var(--sand);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .bridge-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 2rem 0;
+    text-align: left;
+  }
+
+  .bridge-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .bridge-feature-icon {
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    background: var(--copper);
+    border-radius: 50%;
+    margin-top: 8px;
+  }
+
+  .bridge-feature-text {
+    font-weight: 300;
+    font-size: 0.92rem;
+    color: var(--sand);
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    background: var(--copper);
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--terracotta);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(196, 149, 106, 0.3);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(196, 149, 106, 0.1);
+  }
+
+  .footer-brand {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.15rem;
+    color: var(--teal-light);
+  }
+
+  /* ─── INTERACTIVE SCORING ─── */
+  #score-output {
+    display: none;
+  }
+
+  #score-output.visible {
+    display: block;
+  }
+
+  .calculate-btn {
+    display: block;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+    padding: 1.1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  .calculate-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(42, 157, 143, 0.3);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .section, .assessment-section, .results-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .question-card {
+      padding: 1.5rem;
+    }
+
+    .answer-option {
+      padding: 0.6rem 0.5rem;
+    }
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    body { background: white; color: #1A1F2B; }
+    .cover { background: #1A1F2B !important; min-height: auto; padding: 3rem 2rem; }
+    .question-card { border-color: #E8E2D9; }
+    .cta-button { color: #1A1F2B; border: 2px solid #1A1F2B; background: transparent; }
+  }
+</style>
+</head>
+<body>
+<!-- ─── BACK TO C2C HOMES ─── -->
+<div style="background:#1B7A6F;padding:0.6rem 2rem;display:flex;align-items:center;justify-content:space-between;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8rem;">
+  <a href="https://www.coasttocoasthomes.ca" target="_top" style="color:rgba(255,255,255,0.9);text-decoration:none;font-weight:500;letter-spacing:0.04em;display:flex;align-items:center;gap:0.5rem;">
+    <span style="font-size:1rem;">←</span> Coast to Coast Homes Canada
+  </a>
+  <a href="https://comforting-nougat-b59f68.netlify.app/education" target="_top" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;">Investor Hub</a>
+</div>
+
+<!-- ═══════════════════ COVER ═══════════════════ -->
+<div class="cover">
+  <div class="cover-brand">Coast to Coast Homes Canada</div>
+  <div class="cover-label">A Self-Assessment for Real Estate Investors</div>
+  <h1>The Back Office Audit</h1>
+  <p class="cover-subtitle">You built the portfolio. But who's running the back office?<br>Take five minutes to find out what your admin layer is really costing&nbsp;you.</p>
+  <div class="cover-line"></div>
+  <p class="cover-byline">Created by Coast to Coast Homes Canada, a real estate investment and development company managing over 150 doors across the&nbsp;country.</p>
+</div>
+
+<!-- ═══════════════════ INTRO ═══════════════════ -->
+<div class="section">
+  <span class="section-label">Before You Begin</span>
+  <h2>The Real Cost of "Good Enough"</h2>
+  <p>You didn't get into real estate to spend your evenings sorting invoices. You built your portfolio through smart decisions and hard work, but somewhere along the way, the administrative side of your business became a second&nbsp;job.</p>
+  <p><strong>This isn't about discipline. It's about infrastructure.</strong></p>
+  <p>This audit measures the three pillars of your back office: how your email works, how your documents are organized, and how much of your operation can run without you. Answer honestly. This is a diagnostic, not a test. There are no wrong answers, only&nbsp;insight.</p>
+</div>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<div class="pull-quote">
+  <blockquote>"The investors we work with aren't disorganized. They're experienced operators running sophisticated portfolios on systems that haven't kept up. This audit shows you exactly where the gap&nbsp;is."</blockquote>
+</div>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- ═══════════════════ SECTION 1: INBOX ═══════════════════ -->
+<form id="audit-form">
+<div class="assessment-section">
+  <div class="assessment-header">
+    <span class="assessment-number">01</span>
+    <span class="assessment-title">Inbox Architecture</span>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">When a new invoice arrives in your email, what happens next?</div>
+    <label class="answer-option">
+      <input type="radio" name="q1" value="3">
+      <span class="answer-label"><strong>A.</strong> It sits in my inbox until I get to it. Sometimes that's days.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q1" value="2">
+      <span class="answer-label"><strong>B.</strong> I have some labels or folders, but I still sort things manually.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q1" value="0">
+      <span class="answer-label"><strong>C.</strong> It's automatically routed, filed, and ready for my bookkeeper, without me touching it.</span>
+    </label>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">How do you manage vendor communications like plumbers, electricians, and property&nbsp;managers?</div>
+    <label class="answer-option">
+      <input type="radio" name="q2" value="3">
+      <span class="answer-label"><strong>A.</strong> Everything lands in my main inbox. I search when I need something.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q2" value="2">
+      <span class="answer-label"><strong>B.</strong> I have a few labels, but important things still slip through.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q2" value="0">
+      <span class="answer-label"><strong>C.</strong> Vendor emails are automatically identified and filed by property.</span>
+    </label>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">How often do you achieve something close to inbox zero?</div>
+    <label class="answer-option">
+      <input type="radio" name="q3" value="3">
+      <span class="answer-label"><strong>A.</strong> Rarely. My inbox is a constant source of low-grade stress.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q3" value="2">
+      <span class="answer-label"><strong>B.</strong> Occasionally, but it takes real effort to get there.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q3" value="0">
+      <span class="answer-label"><strong>C.</strong> Most days. My system handles the volume so I don't have to.</span>
+    </label>
+  </div>
+</div>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- ═══════════════════ SECTION 2: DOCUMENTS ═══════════════════ -->
+<div class="assessment-section">
+  <div class="assessment-header">
+    <span class="assessment-number">02</span>
+    <span class="assessment-title">Document Infrastructure</span>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">When your bookkeeper asks for a specific invoice, how quickly can you find it?</div>
+    <label class="answer-option">
+      <input type="radio" name="q4" value="3">
+      <span class="answer-label"><strong>A.</strong> Hours, sometimes days. I dig through emails and random folders.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q4" value="2">
+      <span class="answer-label"><strong>B.</strong> Usually under 30 minutes, but it involves searching multiple places.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q4" value="0">
+      <span class="answer-label"><strong>C.</strong> Under two minutes. Everything is in a standardized, searchable system.</span>
+    </label>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">How are your critical property documents stored? Think leases, insurance, and&nbsp;permits.</div>
+    <label class="answer-option">
+      <input type="radio" name="q5" value="3">
+      <span class="answer-label"><strong>A.</strong> Scattered across folders, drives, email attachments, maybe some paper files.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q5" value="2">
+      <span class="answer-label"><strong>B.</strong> Mostly digital, but inconsistent naming makes searching painful.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q5" value="0">
+      <span class="answer-label"><strong>C.</strong> Standardized digital structure, mirrored across email and cloud storage.</span>
+    </label>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">Could you find any document related to a specific property from two years ago within five&nbsp;minutes?</div>
+    <label class="answer-option">
+      <input type="radio" name="q6" value="3">
+      <span class="answer-label"><strong>A.</strong> Not a chance. That would be a major archaeological dig.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q6" value="2">
+      <span class="answer-label"><strong>B.</strong> Maybe, with enough time and detective work.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q6" value="0">
+      <span class="answer-label"><strong>C.</strong> Absolutely. Everything is archived and accessible by property, vendor, and year.</span>
+    </label>
+  </div>
+</div>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- ═══════════════════ SECTION 3: AUTOMATION ═══════════════════ -->
+<div class="assessment-section">
+  <div class="assessment-header">
+    <span class="assessment-number">03</span>
+    <span class="assessment-title">Automation &amp; Independence</span>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">Do you use any automation for routine admin like routing emails, processing invoices, or filing&nbsp;PDFs?</div>
+    <label class="answer-option">
+      <input type="radio" name="q7" value="3">
+      <span class="answer-label"><strong>A.</strong> No. Everything is manual. I am the system.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q7" value="2">
+      <span class="answer-label"><strong>B.</strong> A few basic rules, but they break or need babysitting.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q7" value="0">
+      <span class="answer-label"><strong>C.</strong> Custom automations handle the routine work 24/7.</span>
+    </label>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">How much time do you spend on administrative tasks for your properties each week?</div>
+    <label class="answer-option">
+      <input type="radio" name="q8" value="3">
+      <span class="answer-label"><strong>A.</strong> 10+ hours. It's basically a part-time job I didn't sign up for.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q8" value="2">
+      <span class="answer-label"><strong>B.</strong> 5 to 10 hours. Manageable, but it adds up.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q8" value="0">
+      <span class="answer-label"><strong>C.</strong> Less than 5 hours. My infrastructure handles the rest.</span>
+    </label>
+  </div>
+
+  <div class="question-card">
+    <div class="question-text">If you left for two weeks with no notice, what happens to your&nbsp;admin?</div>
+    <label class="answer-option">
+      <input type="radio" name="q9" value="3">
+      <span class="answer-label"><strong>A.</strong> It stops. Nobody else knows where things are or how things work.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q9" value="2">
+      <span class="answer-label"><strong>B.</strong> The basics would survive, but things would pile up fast.</span>
+    </label>
+    <label class="answer-option">
+      <input type="radio" name="q9" value="0">
+      <span class="answer-label"><strong>C.</strong> It keeps running. The system doesn't need me to function.</span>
+    </label>
+  </div>
+
+  <button type="button" class="calculate-btn" onclick="calculateScore()">See My Results</button>
+</div>
+</form>
+
+<!-- ═══════════════════ RESULTS ═══════════════════ -->
+<div id="score-output">
+  <div class="divider"><div class="divider-line"></div></div>
+
+  <div class="results-section">
+    <span class="section-label">Your Results</span>
+
+    <div class="score-display">
+      <div class="score-total" id="total-score"> - </div>
+      <div class="score-total-label">out of 27 points</div>
+    </div>
+
+    <div class="tier-card" id="tier-low" style="display:none;">
+      <div class="tier-range">0 to 5 Points</div>
+      <div class="tier-name">The Well-Built Operation</div>
+      <div class="tier-desc">Your back office has real infrastructure behind it. Emails route themselves, documents are where they should be, and your bookkeeper isn't chasing you. You understand that systems are what create freedom, not working harder. You're in the small minority of investors who've solved this.</div>
+    </div>
+
+    <div class="tier-card" id="tier-mid" style="display:none;">
+      <div class="tier-range">6 to 15 Points</div>
+      <div class="tier-name">The Organized Hustler</div>
+      <div class="tier-desc">You've put effort into staying organized, but your system is held together by your willpower, not by infrastructure. You're spending real hours on tasks that could be automated, and there's a steady risk of important details slipping through. This is where most seasoned investors land. The gap isn't effort. It's architecture.</div>
+    </div>
+
+    <div class="tier-card" id="tier-high" style="display:none;">
+      <div class="tier-range">16 to 27 Points</div>
+      <div class="tier-name">Running on Memory</div>
+      <div class="tier-desc">Your administrative layer is costing you significant time, money, and mental bandwidth. You're likely losing 10+ hours a week to manual admin, and the fear of missing something critical is always in the background. This isn't a personal failing. It's an infrastructure problem, and infrastructure problems have infrastructure&nbsp;solutions.</div>
+    </div>
+
+    <!-- BRIDGE FOR LOW SCORERS (0-5): Already strong, offer AI/automation conversation -->
+    <div id="bridge-low" style="display:none;">
+      <div class="bridge-section">
+        <div class="bridge-inner">
+          <span class="section-label">What Comes Next</span>
+          <h2>Your Foundation Is Solid.<br>Here's What You Build on Top of&nbsp;It.</h2>
+          <p>Congratulations, genuinely. A well-built back office is rare, and it didn't happen by accident.</p>
+          <p>We've spent the last two years pushing our own systems further with AI-powered automations, and we've learned a lot about what's possible when the foundation is already in place. If you'd like to explore where AI could take your operation next, we'd love to have that&nbsp;conversation.</p>
+
+          <p style="color: var(--teal-light); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">Strong systems deserve smarter&nbsp;tools.</p>
+
+          <a href="https://calendar.app.google/2ev5rSnVXaP6QFir6" class="cta-button">Let's Explore What's Next</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRIDGE FOR MID/HIGH SCORERS (6+): Core Install pitch -->
+    <div id="bridge-mid-high" style="display:none;">
+      <h3 style="margin-top: 2.5rem; font-family: 'Instrument Serif', serif; font-weight: 400; color: var(--cream);">What It's Costing You</h3>
+      <p style="font-weight: 300; color: var(--sand); margin-top: 0.75rem;">This isn't just about lost time. It's about the compounding cost of operating without infrastructure: missed deadlines, duplicated work, delayed decisions, and the invisible tax of carrying it all in your&nbsp;head.</p>
+
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Your Score Range</th>
+            <th style="text-align: right;">Estimated Annual Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0 to 5 points</td>
+            <td>Under $5,000</td>
+          </tr>
+          <tr>
+            <td>6 to 15 points</td>
+            <td>$5,000 to $15,000</td>
+          </tr>
+          <tr>
+            <td>16 to 27 points</td>
+            <td>$15,000 to $26,000+</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-weight: 300; color: var(--slate); font-size: 0.85rem;">Based on average time costs for multi-property investors. Includes estimated value of time spent on manual filing, searching, sorting, and bookkeeper&nbsp;coordination.</p>
+    </div>
+
+    <div id="bridge-core-install" style="display:none;">
+      <div class="bridge-section">
+        <div class="bridge-inner">
+          <span class="section-label">What Comes Next</span>
+          <h2>Your Audit Revealed the Gaps.<br>Here's What Fills Them.</h2>
+          <p>This diagnostic was built from the same operational standard that runs a 150-door portfolio at Coast to Coast Homes Canada. The system that solves what this audit reveals is called <strong>The Core&nbsp;Install</strong>.</p>
+          <p>It's not software. It's not a VA. It's not consulting. It's a <strong>standardized infrastructure installation</strong> built directly into your existing Gmail and Google Drive that automates the admin layer so it runs without&nbsp;you.</p>
+
+          <div class="bridge-features">
+            <div class="bridge-feature">
+              <div class="bridge-feature-icon"></div>
+              <div class="bridge-feature-text">Gmail labels and filters that mirror your Drive folder structure exactly</div>
+            </div>
+            <div class="bridge-feature">
+              <div class="bridge-feature-icon"></div>
+              <div class="bridge-feature-text">Automated invoice processing, Interac records, and PDF filing</div>
+            </div>
+            <div class="bridge-feature">
+              <div class="bridge-feature-icon"></div>
+              <div class="bridge-feature-text">Property → vendor → year folder hierarchy your bookkeeper will thank you for</div>
+            </div>
+            <div class="bridge-feature">
+              <div class="bridge-feature-icon"></div>
+              <div class="bridge-feature-text">Custom Apps Script automations that handle the routine work 24/7</div>
+            </div>
+            <div class="bridge-feature">
+              <div class="bridge-feature-icon"></div>
+              <div class="bridge-feature-text">A 60-minute walkthrough so you understand exactly how it works</div>
+            </div>
+          </div>
+
+          <p style="color: var(--teal-light); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">Proven. Standardized. Installed once, runs&nbsp;forever.</p>
+
+          <a href="core-install-long-form-landing-page.html" class="cta-button">See If The Core Install Is Right for You &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="footer">
+  <div class="footer-brand">Coast to Coast Homes Canada</div>
+  <p class="footer-tagline">Dream Big. Grow Steady. Lead with Heart.</p>
+</div>
+
+<script>
+function calculateScore() {
+  const form = document.getElementById('audit-form');
+  const questions = ['q1','q2','q3','q4','q5','q6','q7','q8','q9'];
+  let total = 0;
+  let allAnswered = true;
+
+  questions.forEach(q => {
+    const selected = form.querySelector(`input[name="${q}"]:checked`);
+    if (selected) {
+      total += parseInt(selected.value);
+    } else {
+      allAnswered = false;
+    }
+  });
+
+  if (!allAnswered) {
+    alert('Please answer all nine questions to see your results.');
+    return;
+  }
+
+  document.getElementById('total-score').textContent = total;
+
+  // Show appropriate tier
+  document.getElementById('tier-low').style.display = 'none';
+  document.getElementById('tier-mid').style.display = 'none';
+  document.getElementById('tier-high').style.display = 'none';
+
+  // Hide all bridges
+  document.getElementById('bridge-low').style.display = 'none';
+  document.getElementById('bridge-mid-high').style.display = 'none';
+  document.getElementById('bridge-core-install').style.display = 'none';
+
+  if (total <= 5) {
+    document.getElementById('tier-low').style.display = 'block';
+    document.getElementById('tier-low').classList.add('highlight');
+    document.getElementById('bridge-low').style.display = 'block';
+  } else if (total <= 15) {
+    document.getElementById('tier-mid').style.display = 'block';
+    document.getElementById('tier-mid').classList.add('highlight');
+    document.getElementById('bridge-mid-high').style.display = 'block';
+    document.getElementById('bridge-core-install').style.display = 'block';
+  } else {
+    document.getElementById('tier-high').style.display = 'block';
+    document.getElementById('tier-high').classList.add('highlight');
+    document.getElementById('bridge-mid-high').style.display = 'block';
+    document.getElementById('bridge-core-install').style.display = 'block';
+  }
+
+  // Show results section
+  const output = document.getElementById('score-output');
+  output.classList.add('visible');
+
+  // Smooth scroll to results
+  output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>

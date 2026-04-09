@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Core Install: In 30 days, your rental property admin runs itself. A Coast to Coast Homes Canada service." />
+  <title>The Core Install | Stop Running Your Operation From Memory | Coast to Coast Homes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+
+    /* ============================================================
+       TASK 1: CSS FOUNDATION: CUSTOM PROPERTIES & RESETS
+       ============================================================ */
+
+    :root {
+      /* Primary Palette */
+      --teal:        #2A9D8F;
+      --teal-deep:   #1B7A6F;
+      --teal-light:  #5FBFB3;
+      --teal-wash:   #E8F6F4;
+      --teal-mist:   #F2FAF9;
+
+      /* Warm Accents */
+      --copper:      #C4956A;
+      --terracotta:  #C17F59;
+      --blush:       #E8CFC0;
+
+      /* Neutrals */
+      --ink:         #1A1F2B;
+      --charcoal:    #3A3F4B;
+      --slate:       #6B7280;
+      --stone:       #9CA3AF;
+      --sand:        #E8E2D9;
+      --linen:       #F5F1EB;
+      --cream:       #FAF8F5;
+      --white:       #FFFFFF;
+
+      /* Typography */
+      --font-serif:  'Instrument Serif', Georgia, serif;
+      --font-sans:   'DM Sans', system-ui, sans-serif;
+      --font-accent: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* ─── Base Reset ─── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Orphan prevention */
+    p, li, h1, h2, h3, h4, span, blockquote {
+      text-wrap: pretty;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ─── Animations ─── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      from {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+      to {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
+    }
+
+    /* Animation utility classes */
+    .anim-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.65s ease forwards;
+    }
+
+    .anim-fade-in {
+      opacity: 0;
+      animation: fadeIn 0.65s ease forwards;
+    }
+
+    /* ─── Shared Section Styles ─── */
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section__inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .section__subheadline {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .section__body {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    /* ─── Button Styles ─── */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0.85rem 2rem;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.22s ease, color 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* White text on teal, copper fill on hover */
+    .btn--light {
+      background-color: var(--white);
+      color: var(--teal-deep);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn--light:hover {
+      background-color: var(--copper);
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(196, 149, 106, 0.35);
+    }
+
+    /* Teal fill, copper on hover */
+    .btn--primary {
+      background-color: var(--teal);
+      color: var(--white);
+      box-shadow: 0 2px 10px rgba(42, 157, 143, 0.25);
+    }
+
+    .btn--primary:hover {
+      background-color: var(--copper);
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(196, 149, 106, 0.35);
+    }
+
+    /* ─── Mobile Breakpoint ─── */
+    @media (max-width: 700px) {
+      .section {
+        padding: 3.25rem 1.25rem;
+      }
+    }
+
+
+    /* ─── Pull Quote ─── */
+    .pullquote-section {
+      padding: 4rem 2rem;
+    }
+
+    .pullquote {
+      margin: 0;
+      padding: 0;
+    }
+
+    .pullquote__text {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .pullquote__text::before {
+      content: '\201C';
+      color: var(--copper);
+      font-size: 1.3em;
+      margin-right: 0.05em;
+    }
+
+    .pullquote__text::after {
+      content: '\201D';
+      color: var(--copper);
+      font-size: 1.3em;
+      margin-left: 0.05em;
+    }
+
+
+    /* ============================================================
+       TASK 2: NAV BAR
+       ============================================================ */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--white);
+      border-bottom: 1px solid var(--sand);
+      padding: 0 2rem;
+    }
+
+    .nav__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      position: relative;
+    }
+
+    /* Copper accent line at bottom-left of nav */
+    .nav__accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 48px;
+      height: 2px;
+      background-color: var(--copper);
+      opacity: 0;
+      animation: slideRight 0.55s ease 0.2s forwards;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav__logo img {
+      height: 90px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav__cta {
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--teal-deep);
+      border: 1.5px solid var(--teal-deep);
+      padding: 0.6rem 1.4rem;
+      border-radius: 3px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav__cta:hover {
+      background-color: var(--teal-deep);
+      color: var(--white);
+    }
+
+    @media (max-width: 700px) {
+      .nav__inner {
+        height: 64px;
+      }
+
+      .nav__logo img {
+        height: 60px;
+      }
+
+      .nav__cta {
+        font-size: 0.775rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+
+    /* ============================================================
+       TASK 3: HERO SECTION
+       ============================================================ */
+
+    .hero {
+      background-color: var(--teal-deep);
+      background-image:
+        radial-gradient(ellipse at 80% 20%, rgba(91, 191, 179, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(196, 149, 106, 0.10) 0%, transparent 50%);
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(to right, var(--copper), var(--teal-light)) 1;
+      padding: 6rem 2rem 5.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* Eyebrow */
+    .hero__eyebrow {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeUp 0.65s ease 0.1s forwards;
+    }
+
+    /* Headline */
+    .hero__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.65s ease 0.2s forwards;
+    }
+
+    /* Subheadline */
+    .hero__subheadline {
+      font-family: var(--font-sans);
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 2.25rem;
+      max-width: 660px;
+      opacity: 0;
+      animation: fadeUp 0.65s ease 0.3s forwards;
+    }
+
+    /* Outcome callout */
+    .hero__callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 3px solid var(--copper);
+      border-radius: 0 3px 3px 0;
+      padding: 1.15rem 1.4rem;
+      margin-bottom: 2.5rem;
+      max-width: 620px;
+      opacity: 0;
+      animation: fadeUp 0.65s ease 0.4s forwards;
+    }
+
+    .hero__callout p {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .hero__callout strong {
+      color: var(--blush);
+      font-weight: 600;
+    }
+
+    /* CTA button wrapper */
+    .hero__cta-wrap {
+      opacity: 0;
+      animation: fadeUp 0.65s ease 0.5s forwards;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 4rem 1.25rem 3.5rem;
+      }
+
+      .hero__subheadline {
+        font-size: 1.05rem;
+      }
+
+      .hero__callout {
+        padding: 1rem 1.1rem;
+      }
+    }
+
+
+    /* ============================================================
+       TASK 4: THE PROBLEM SECTION
+       ============================================================ */
+
+    .problem__accent { width: 60px; height: 2px; background: var(--copper); margin: 2.5rem auto 0; }
+
+
+    /* ============================================================
+       TASK 5: WHAT CHANGES (BEFORE/AFTER)
+       ============================================================ */
+
+    .changes__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; max-width: 840px; margin-left: auto; margin-right: auto; }
+    .changes__card { background: var(--white); border-radius: 8px; padding: 2rem 2rem 2.5rem; box-shadow: 0 2px 16px rgba(26,31,43,0.06); text-align: left; border-top: 3px solid transparent; }
+    .changes__card--before { border-top-color: var(--terracotta); }
+    .changes__card--after { border-top-color: var(--teal); }
+    .changes__card-title { font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 1.25rem; }
+    .changes__list { list-style: none; display: flex; flex-direction: column; gap: 0.875rem; }
+    .changes__list li { font-size: 0.9rem; font-weight: 400; color: var(--charcoal); line-height: 1.5; padding-left: 1.5rem; position: relative; }
+    .changes__card--before .changes__list li::before { content: '✕'; position: absolute; left: 0; color: var(--terracotta); font-size: 0.75rem; font-weight: 600; top: 0.15rem; }
+    .changes__card--after .changes__list li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-size: 0.85rem; font-weight: 700; top: 0.05rem; }
+    @media (max-width: 700px) { .changes__grid { grid-template-columns: 1fr; } }
+
+
+    /* ============================================================
+       TASK 6: HOW IT WORKS (TIMELINE)
+       ============================================================ */
+
+    .timeline__track { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin: 3rem auto 2.5rem; max-width: 920px; }
+    .timeline__step { flex: 1; text-align: center; max-width: 200px; }
+    .timeline__circle { width: 48px; height: 48px; border-radius: 50%; background: var(--teal-deep); color: var(--white); font-family: var(--font-sans); font-weight: 600; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+    .timeline__connector { height: 2px; flex: 0.5; background: var(--teal-light); align-self: center; margin-top: -1.5rem; opacity: 0.5; }
+    .timeline__name { font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.625rem; }
+    .timeline__desc { font-size: 0.85rem; font-weight: 300; color: var(--charcoal); line-height: 1.6; }
+    .timeline__note { font-size: 0.85rem; font-weight: 300; color: var(--slate); line-height: 1.6; max-width: 540px; margin: 0 auto; }
+    @media (max-width: 700px) { .timeline__track { flex-direction: column; align-items: center; gap: 0; } .timeline__connector { width: 2px; height: 24px; flex: none; margin: 0; align-self: center; } .timeline__step { max-width: 280px; } }
+
+
+    /* ============================================================
+       TASK 7: WHAT GETS INSTALLED (FEATURE GRID)
+       ============================================================ */
+
+    .features__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; max-width: 960px; margin-left: auto; margin-right: auto; }
+    .features__card { background: var(--white); border-radius: 8px; padding: 2rem 1.5rem; box-shadow: 0 2px 16px rgba(26,31,43,0.06); text-align: left; }
+    .features__icon { width: 10px; height: 10px; border-radius: 50%; background: var(--copper); box-shadow: 0 0 0 4px rgba(196,149,106,0.15); margin-bottom: 1rem; }
+    .features__name { font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.625rem; line-height: 1.4; }
+    .features__desc { font-size: 0.85rem; font-weight: 300; color: var(--charcoal); line-height: 1.65; }
+    @media (max-width: 900px) { .features__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .features__grid { grid-template-columns: 1fr; } }
+
+
+    /* ============================================================
+       TASK 8: WHO BUILT IT (AUTHORITY SECTION)
+       ============================================================ */
+
+    .authority__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .authority__card { background: var(--white); border: 1px solid var(--sand); border-radius: 8px; padding: 2.5rem 2rem; text-align: center; }
+    .authority__avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--linen); border: 2px solid var(--sand); margin: 0 auto 1.25rem; }
+    .authority__name { font-family: var(--font-sans); font-weight: 600; font-size: 1rem; color: var(--ink); margin-bottom: 0.25rem; }
+    .authority__title { font-size: 0.8rem; font-weight: 500; color: var(--copper); margin-bottom: 1rem; letter-spacing: 0.01em; }
+    .authority__bio { font-size: 0.875rem; font-weight: 300; color: var(--charcoal); line-height: 1.7; text-align: left; }
+    @media (max-width: 700px) { .authority__grid { grid-template-columns: 1fr; } }
+
+
+    /* ============================================================
+       TASK 9: 8 CHECKS
+       ============================================================ */
+
+    /* ─── 8 CHECKS ─── */
+    .checks__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2.5rem auto; max-width: 680px; }
+    .checks__item { display: flex; align-items: center; gap: 0.875rem; padding: 0.75rem 1rem; background: var(--white); border-radius: 6px; box-shadow: 0 1px 8px rgba(26,31,43,0.04); }
+    .checks__num { width: 32px; height: 32px; border-radius: 50%; background: var(--copper); color: var(--white); font-family: var(--font-sans); font-weight: 600; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .checks__label { font-family: var(--font-sans); font-weight: 500; font-size: 0.875rem; color: var(--ink); }
+    .checks__note { font-size: 0.85rem; font-weight: 300; color: var(--slate); line-height: 1.6; }
+    @media (max-width: 560px) { .checks__grid { grid-template-columns: 1fr; } }
+
+
+    /* ============================================================
+       TASK 10: FIT
+       ============================================================ */
+
+    /* ─── FIT ─── */
+    .fit__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2.5rem auto; max-width: 800px; text-align: left; }
+    .fit__col { padding: 0 0 0 1.5rem; border-left: 3px solid transparent; }
+    .fit__col--yes { border-left-color: var(--teal); }
+    .fit__col--no { border-left-color: var(--slate); }
+    .fit__col-title { font-family: var(--font-sans); font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 1rem; }
+    .fit__list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .fit__list li { font-size: 0.9rem; font-weight: 400; color: var(--charcoal); line-height: 1.55; padding-left: 1.5rem; position: relative; }
+    .fit__col--yes .fit__list li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 700; font-size: 0.85rem; }
+    .fit__col--no .fit__list li::before { content: '✕'; position: absolute; left: 0; color: var(--slate); font-weight: 600; font-size: 0.75rem; top: 0.15rem; }
+    .fit__note { font-size: 0.875rem; font-weight: 400; color: var(--ink); line-height: 1.6; max-width: 600px; margin: 0 auto; padding: 1.25rem; background: var(--teal-mist); border-radius: 6px; }
+    @media (max-width: 700px) { .fit__grid { grid-template-columns: 1fr; } }
+
+
+    /* ============================================================
+       TASK 11: INVESTMENT
+       ============================================================ */
+
+    /* ─── INVESTMENT ─── */
+    .invest__card { background: var(--white); border: 1px solid var(--sand); border-radius: 8px; padding: 3rem 2.5rem; max-width: 520px; margin: 2rem auto 2.5rem; box-shadow: 0 2px 16px rgba(26,31,43,0.06); }
+    .invest__badge { font-family: var(--font-sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
+    .invest__price { font-family: var(--font-sans); font-weight: 600; font-size: 2.4rem; color: var(--ink); line-height: 1.1; margin-bottom: 0.25rem; }
+    .invest__currency { font-size: 0.9rem; font-weight: 400; color: var(--slate); }
+    .invest__standard { font-size: 0.875rem; font-weight: 300; color: var(--stone); margin-bottom: 1.5rem; }
+    .invest__standard s { text-decoration: line-through; }
+    .invest__divider { width: 40px; height: 2px; background: var(--sand); margin: 0 auto 1.5rem; }
+    .invest__includes { font-size: 0.875rem; font-weight: 300; color: var(--charcoal); line-height: 1.65; margin-bottom: 0.75rem; }
+    .invest__includes strong { font-weight: 600; color: var(--ink); }
+    .invest__capacity { font-size: 0.85rem; font-weight: 500; color: var(--teal-deep); }
+    .invest__anchor { font-family: var(--font-accent); font-style: italic; font-size: 1.1rem; color: var(--charcoal); line-height: 1.65; max-width: 580px; margin: 0 auto 1.25rem; }
+    .invest__custom { font-size: 0.9rem; font-weight: 400; color: var(--charcoal); max-width: 480px; margin: 0 auto 1rem; line-height: 1.6; }
+    .invest__custom-link { color: var(--teal-deep); font-weight: 500; text-decoration: underline; text-decoration-color: var(--copper); text-underline-offset: 3px; transition: color 0.2s ease; }
+    .invest__custom-link:hover { color: var(--copper); }
+    .invest__guarantee { font-size: 0.9rem; font-weight: 400; color: var(--ink); max-width: 480px; margin: 0 auto; line-height: 1.6; }
+
+
+    /* ============================================================
+       TASK 12: FORM SECTION
+       ============================================================ */
+
+    /* ─── FORM SECTION ─── */
+    .form-section__sub { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.88); margin-bottom: 2.5rem; }
+    .form-card { max-width: 560px; margin: 0 auto; background: var(--white); border-radius: 8px; padding: 3rem; box-shadow: 0 4px 32px rgba(0,0,0,0.15); }
+    .fit-q { margin-bottom: 2rem; }
+    .fit-q:last-of-type { margin-bottom: 2.5rem; }
+    .fit-q__text { font-size: 0.95rem; font-weight: 500; color: var(--ink); line-height: 1.5; margin-bottom: 0.375rem; }
+    .fit-q__hint { font-size: 0.8rem; font-weight: 300; color: var(--slate); margin-bottom: 0.75rem; }
+    .fit-q__toggles { display: flex; gap: 0.75rem; justify-content: center; }
+    .toggle { padding: 0.5rem 1.75rem; border-radius: 999px; border: 1.5px solid var(--stone); background: transparent; color: var(--slate); font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+    .toggle:hover { border-color: var(--teal); color: var(--teal); }
+    .toggle.is-selected { background: var(--teal); border-color: var(--teal); color: var(--white); }
+    .fit-q__select-wrap { max-width: 200px; }
+    .fit-q__select { width: 100%; padding: 0.6rem 1rem; border: 1.5px solid var(--sand); border-radius: 6px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--ink); background: var(--white); cursor: pointer; appearance: auto; }
+    .fit-q__select:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+    .fit-q__fields { display: flex; flex-direction: column; gap: 0.75rem; }
+    .fit-q__input { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--sand); border-radius: 6px; font-family: var(--font-sans); font-size: 0.9rem; color: var(--ink); background: var(--white); transition: border-color 0.15s ease; }
+    .fit-q__input::placeholder { color: var(--stone); }
+    .fit-q__input:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+    .form-submit { width: 100%; padding: 1rem; font-size: 1rem; margin-bottom: 1.25rem; }
+    .form-trust { font-size: 0.8rem; font-weight: 400; color: var(--stone); text-align: center; line-height: 1.5; }
+    .form-thankyou { text-align: center; padding: 2rem 0; }
+    .form-thankyou__icon { font-size: 2.5rem; color: var(--teal); margin-bottom: 1rem; }
+    .form-thankyou__heading { font-family: var(--font-serif); font-size: 1.4rem; color: var(--ink); margin-bottom: 0.75rem; }
+    .form-thankyou__body { font-size: 0.95rem; font-weight: 300; color: var(--slate); line-height: 1.6; }
+    .form-thankyou__link { color: var(--teal-deep); font-weight: 500; text-decoration: underline; }
+    @media (max-width: 680px) { .form-card { padding: 2rem 1.25rem; } }
+
+
+    /* ============================================================
+       TASK 13: FOOTER
+       ============================================================ */
+
+    /* ─── FOOTER ─── */
+    .footer { background: var(--ink); color: var(--stone); text-align: center; padding: 1.5rem 2rem; font-size: 0.8rem; font-weight: 300; }
+
+  </style>
+</head>
+<body>
+<!-- ─── BACK TO C2C HOMES ─── -->
+<div style="background:#1B7A6F;padding:0.6rem 2rem;display:flex;align-items:center;justify-content:space-between;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8rem;">
+  <a href="https://coasttocoasthomes.ca" target="_top" style="color:rgba(255,255,255,0.9);text-decoration:none;font-weight:500;letter-spacing:0.04em;display:flex;align-items:center;gap:0.5rem;">
+    <span style="font-size:1rem;">←</span> Coast to Coast Homes Canada
+  </a>
+  <a href="https://comforting-nougat-b59f68.netlify.app/education" target="_top" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;">Investor Hub</a>
+</div>
+
+  <!-- ============================================================
+       TASK 2: NAV BAR
+       ============================================================ -->
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <div class="nav__accent-line" aria-hidden="true"></div>
+
+
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       TASK 3: HERO SECTION
+       ============================================================ -->
+
+  <section class="hero" aria-labelledby="hero-headline">
+    <div class="hero__inner">
+
+      <span class="hero__eyebrow">A Coast to Coast Homes Service</span>
+
+      <h1 class="hero__headline" id="hero-headline">
+        Stop Running Your Operation From Memory
+      </h1>
+
+      <p class="hero__subheadline">
+        In 30 days, your rental property admin runs itself. Every vendor invoice files automatically, your bookkeeper finds what they need without asking, and you get your evenings back.
+      </p>
+
+      <div class="hero__callout" role="note">
+        <p>Our clients recover <strong>10+ hours of admin time per week</strong>, worth approximately <strong>$26,000 a year.</strong></p>
+      </div>
+
+      <div class="hero__cta-wrap">
+        <a class="btn btn--light" href="#fit-check">See If You're a Fit &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- THE PROBLEM -->
+  <section class="section problem" style="background: var(--cream);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">You Built the Portfolio.<br>The Back Office Never Caught Up.</h2>
+      <div class="section__body" style="margin: 0 auto;">
+        <p>You didn't get into real estate to spend your evenings sorting invoices. But somewhere between the second and third property, the admin started piling up. Vendor emails mixed in with everything else. Receipts buried in threads you'll never find again. Your bookkeeper asking for documents you know exist... somewhere.</p>
+        <p>You've tried organizing it yourself. Maybe you set up a few folders, started labelling things. It held for a week. You've thought about hiring someone to manage it, but a VA without a system is just another person sifting through the same mess.</p>
+        <p>The problem isn't effort. It's infrastructure. And it has an infrastructure solution.</p>
+      </div>
+      <div class="problem__accent"></div>
+    </div>
+  </section>
+
+
+  <!-- WHAT CHANGES -->
+  <section class="section changes" style="background: var(--linen);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">What Your Operation Looks Like in 30 Days</h2>
+      <div class="changes__grid">
+        <div class="changes__card changes__card--before">
+          <h3 class="changes__card-title">Before The Core Install</h3>
+          <ul class="changes__list">
+            <li>Invoices buried in your inbox</li>
+            <li>Bookkeeper chasing you for documents</li>
+            <li>Hours lost each week to manual filing</li>
+            <li>The 2am "what am I forgetting" feeling</li>
+            <li>Tax season scramble</li>
+          </ul>
+        </div>
+        <div class="changes__card changes__card--after">
+          <h3 class="changes__card-title">After The Core Install</h3>
+          <ul class="changes__list">
+            <li>Invoices filed automatically by vendor and property</li>
+            <li>Bookkeeper finds everything in a clean Drive folder</li>
+            <li>10+ hours recovered because the system runs 24/7</li>
+            <li>A documented, structured operation you can trust</li>
+            <li>Tax-ready records, organized as they arrive</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="section timeline" style="background: var(--white);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">Four Steps. Minimal Effort on Your End.</h2>
+      <div class="timeline__track">
+        <div class="timeline__step">
+          <div class="timeline__circle">1</div>
+          <h3 class="timeline__name">Onboarding Call</h3>
+          <p class="timeline__desc">A 60-minute call to understand your properties, vendors, and how your operation runs. We map everything before we touch anything.</p>
+        </div>
+        <div class="timeline__connector"></div>
+        <div class="timeline__step">
+          <div class="timeline__circle">2</div>
+          <h3 class="timeline__name">Implementation</h3>
+          <p class="timeline__desc">Judy builds the complete system in your Google Workspace: labels, folders, filters, and automations. Fully tested before you see it.</p>
+        </div>
+        <div class="timeline__connector"></div>
+        <div class="timeline__step">
+          <div class="timeline__circle">3</div>
+          <h3 class="timeline__name">Follow-Up Call</h3>
+          <p class="timeline__desc">Two weeks later, a 60-minute call to fine-tune. Edge cases, adjustments, anything that came up in real-world use.</p>
+        </div>
+        <div class="timeline__connector"></div>
+        <div class="timeline__step">
+          <div class="timeline__circle">4</div>
+          <h3 class="timeline__name">System Autonomy</h3>
+          <p class="timeline__desc">Your operation runs itself. Invoices file, vendors route, and documents organize automatically, 24 hours a day, 7 days a week.</p>
+        </div>
+      </div>
+      <p class="timeline__note">The entire process takes approximately 4 weeks. Most of it happens in the background. You'll spend about 2 hours total.</p>
+    </div>
+  </section>
+
+
+  <!-- WHAT GETS INSTALLED -->
+  <section class="section features" style="background: var(--teal-wash);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">What's Running Under the Hood</h2>
+      <p class="section__subheadline">A complete administrative infrastructure, installed once and running permanently.</p>
+      <div class="features__grid">
+        <div class="features__card">
+          <div class="features__icon"></div>
+          <h3 class="features__name">Gmail Label Hierarchy</h3>
+          <p class="features__desc">Standardized labels that mirror your Drive folder structure exactly, property by property, vendor by vendor.</p>
+        </div>
+        <div class="features__card">
+          <div class="features__icon"></div>
+          <h3 class="features__name">Google Drive Folder Structure</h3>
+          <p class="features__desc">Organized by property, vendor, and year. Everything in one place, named consistently.</p>
+        </div>
+        <div class="features__card">
+          <div class="features__icon"></div>
+          <h3 class="features__name">Automated Gmail Filters</h3>
+          <p class="features__desc">Known vendors route automatically. No dragging, no sorting, no forgetting.</p>
+        </div>
+        <div class="features__card">
+          <div class="features__icon"></div>
+          <h3 class="features__name">Custom AI Automations</h3>
+          <p class="features__desc">PDF invoices processed, Interac e-Transfer records captured, and documents filed. All running 24/7 in the background.</p>
+        </div>
+        <div class="features__card">
+          <div class="features__icon"></div>
+          <h3 class="features__name">System Documentation</h3>
+          <p class="features__desc">A complete reference: vendor list, processing rules, how everything works. Your operation on paper.</p>
+        </div>
+        <div class="features__card">
+          <div class="features__icon"></div>
+          <h3 class="features__name">Colin's 8 Practical Checks</h3>
+          <p class="features__desc">The same decision-making framework Colin uses across the Coast to Coast portfolio. Included with every install.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PULL QUOTE -->
+  <section class="section pullquote-section" style="background: var(--ink);">
+    <div class="section__inner" style="text-align: center;">
+      <blockquote class="pullquote">
+        <p class="pullquote__text">Colin's brain in a box. The same operational standard that runs a 150-door portfolio.</p>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <!-- WHO BUILT IT -->
+  <section class="section authority" style="background: var(--cream);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">Built by Operators. Installed by an Expert.</h2>
+      <div class="authority__grid">
+        <div class="authority__card">
+          <img class="authority__avatar" src="https://static.wixstatic.com/media/ec69c8_c04ac79421f34b709f6fac0b6ffac5d5~mv2.png" alt="Colin Ernst" style="object-fit:cover;">
+          <h3 class="authority__name">Colin Ernst</h3>
+          <p class="authority__title">Co-Founder &amp; CEO, Coast to Coast Homes Canada</p>
+          <p class="authority__bio">Colin built the operational system that runs a Canadian real estate portfolio spanning from coast to coast. Every property, every vendor, every dollar runs through the infrastructure he designed. The Core Install is that system, standardized and made available to other investors.</p>
+        </div>
+        <div class="authority__card">
+          <img class="authority__avatar" src="https://static.wixstatic.com/media/ec69c8_b7e05e1b2be04154b73a105f5c5d6718~mv2.png" alt="Judy Lea" style="object-fit:cover;">
+          <h3 class="authority__name">Judy Lea</h3>
+          <p class="authority__title">Executive Assistant &amp; Core Install Architect</p>
+          <p class="authority__bio">Judy added the AI automation layer: the custom scripts that process invoices, route vendor emails, and file documents around the clock. She handles every installation personally, bringing 30+ years of administrative experience to each build. When we say "installed by an expert," we mean one person, doing the work, every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- COLIN'S 8 CHECKS -->
+  <section class="section checks" style="background: var(--linen);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">Included: How Colin Stays Ahead Across the Portfolio</h2>
+      <p class="section__subheadline">With the administrative layer handled, these are the 8 checks that move you from tracking to decision-making.</p>
+      <div class="checks__grid">
+        <div class="checks__item"><span class="checks__num">1</span><span class="checks__label">Capture What Actually Happened</span></div>
+        <div class="checks__item"><span class="checks__num">2</span><span class="checks__label">Flag Anything Unusual Early</span></div>
+        <div class="checks__item"><span class="checks__num">3</span><span class="checks__label">Look at the Numbers Monthly</span></div>
+        <div class="checks__item"><span class="checks__num">4</span><span class="checks__label">Patterns Reveal What Matters</span></div>
+        <div class="checks__item"><span class="checks__num">5</span><span class="checks__label">Compare Properties Side by Side</span></div>
+        <div class="checks__item"><span class="checks__num">6</span><span class="checks__label">Don't Mix Income Streams</span></div>
+        <div class="checks__item"><span class="checks__num">7</span><span class="checks__label">Private Lending Starts at Intake</span></div>
+        <div class="checks__item"><span class="checks__num">8</span><span class="checks__label">Back Up Every Number</span></div>
+      </div>
+      <p class="checks__note">The full guide is included with every Core Install. Written by Colin, delivered after your system is live.</p>
+    </div>
+  </section>
+
+
+  <!-- WHO THIS IS FOR -->
+  <section class="section fit" style="background: var(--white);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">Is This Right for You?</h2>
+      <div class="fit__grid">
+        <div class="fit__col fit__col--yes">
+          <h3 class="fit__col-title">This Is Built for You If:</h3>
+          <ul class="fit__list">
+            <li>You manage 1–3+ rental properties</li>
+            <li>Your business email runs through Gmail (Google Workspace with your own domain, e.g. you@yourcompany.com)</li>
+            <li>You have regular vendors who send invoices by email</li>
+            <li>You want a system that runs without you managing it</li>
+            <li>You value peace of mind over doing it yourself</li>
+          </ul>
+        </div>
+        <div class="fit__col fit__col--no">
+          <h3 class="fit__col-title">This Probably Isn't the Right Fit If:</h3>
+          <ul class="fit__list">
+            <li>You use Outlook, Yahoo, or a personal @gmail.com address (not Google Workspace)</li>
+            <li>You prefer to customize everything yourself</li>
+            <li>You're still in the first few months of your first property</li>
+            <li>You need ongoing inbox management (a VA role, not an infrastructure install)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fit__note">Not sure if your email setup qualifies? Google Workspace means your professional email (like you@yourcompany.com) runs through Gmail. If you log into Gmail to check your business email, you're likely on it.</p>
+    </div>
+  </section>
+
+
+  <!-- THE INVESTMENT -->
+  <section class="section invest" style="background: var(--cream);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline">The Investment</h2>
+      <div class="invest__card">
+        <p class="invest__badge">Savvy Summit Exclusive</p>
+        <p class="invest__price">$2,997 <span class="invest__currency">CAD + HST</span></p>
+        <p class="invest__standard"><s>Standard price: $3,400 + HST</s></p>
+        <div class="invest__divider"></div>
+        <p class="invest__includes"><strong>Includes:</strong> Gmail labels, Drive folders, filters, AI automations, system documentation, Colin's 8 Practical Checks, onboarding call, follow-up call.</p>
+        <p class="invest__capacity">We take on 3 clients per month to ensure every install gets our full&nbsp;attention.</p>
+      </div>
+      <p class="invest__anchor">Our clients recover approximately $26,000 a year in administrative time. This is a one-time investment in infrastructure that runs permanently.</p>
+      <p class="invest__custom">Have more than 3 properties or a larger portfolio? We can provide a custom quote. <a href="#fit-check" class="invest__custom-link">Let's&nbsp;chat.</a></p>
+      <p class="invest__guarantee">We stand behind every install. If you need more support beyond the included calls, we're there. You won't be left figuring it out&nbsp;alone.</p>
+    </div>
+  </section>
+
+
+  <!-- FIT CHECK FORM -->
+  <section class="section form-section" id="fit-check" style="background: var(--teal-deep);">
+    <div class="section__inner" style="text-align: center;">
+      <h2 class="section__headline" style="color: var(--white);">Ready to Stop Running Your Operation From Memory?</h2>
+      <p class="form-section__sub">Three quick questions to confirm you're a fit.</p>
+      <div class="form-card" id="formCard">
+        <form class="fit-form" id="fitForm" novalidate>
+          <div class="fit-q">
+            <p class="fit-q__text">Does your business email run through Gmail with your own domain?</p>
+            <p class="fit-q__hint">(e.g. you@yourcompany.com, not a personal @gmail.com)</p>
+            <div class="fit-q__toggles" data-q="gws">
+              <button type="button" class="toggle" data-val="yes">Yes</button>
+              <button type="button" class="toggle" data-val="no">No</button>
+            </div>
+          </div>
+          <div class="fit-q">
+            <p class="fit-q__text">How many rental properties do you manage?</p>
+            <div class="fit-q__select-wrap">
+              <select class="fit-q__select" id="propertyCount">
+                <option value="" disabled selected>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+              </select>
+            </div>
+          </div>
+          <div class="fit-q">
+            <p class="fit-q__text">Your contact details</p>
+            <div class="fit-q__fields">
+              <input type="text" class="fit-q__input" id="fullName" placeholder="Full name" required />
+              <input type="email" class="fit-q__input" id="emailAddr" placeholder="Email address" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary form-submit" id="submitBtn">Submit My Fit Check &rarr;</button>
+          <p class="form-trust">Built and proven at Coast to Coast Homes Canada. 3 installs per month. We'll be in touch within 1 to 2 business days.</p>
+        </form>
+        <div class="form-thankyou" id="thankYouYes" hidden>
+          <p class="form-thankyou__icon">✓</p>
+          <h3 class="form-thankyou__heading">Thank you. We'll be in touch within 1 to 2 business days to get started.</h3>
+        </div>
+        <div class="form-thankyou" id="thankYouNo" hidden>
+          <p class="form-thankyou__icon">→</p>
+          <h3 class="form-thankyou__heading">You're not far off.</h3>
+          <p class="form-thankyou__body">The Core Install is built on Google Workspace (Gmail with your own business domain). If you're not set up yet, we can help you get there. It's the first step to getting&nbsp;organized.</p>
+          <a class="btn btn--primary" href="mailto:judy@coasttocoasthomes.ca?subject=Getting%20Started%20with%20Google%20Workspace&body=Hi%20there%2C%0A%0AI%27m%20interested%20in%20The%20Core%20Install%20but%20I%27m%20not%20currently%20on%20Google%20Workspace.%20I%27d%20love%20some%20help%20getting%20set%20up.%0A%0AName%3A%0AEmail%3A%0ANumber%20of%20properties%3A" style="margin-top: 1.25rem;">Get in Touch &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Coast to Coast Homes Canada. All rights reserved.</p>
+  </footer>
+
+  <script>
+    /* ─── YES/NO TOGGLE SELECTION ─── */
+    document.querySelectorAll('.fit-q__toggles').forEach(function(group) {
+      group.querySelectorAll('.toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          group.querySelectorAll('.toggle').forEach(function(b) { b.classList.remove('is-selected'); });
+          btn.classList.add('is-selected');
+        });
+      });
+    });
+
+    /* ─── MAILCHIMP JSONP ─── */
+    var MC_URL = 'https://coasttocoasthomes.us21.list-manage.com/subscribe/post-json?u=909c9ee1e5cae82141e7db4ad&id=0cb6d0fbc7';
+    function mcSubmit(data, onOk, onErr) {
+      var cb = 'mc_' + Date.now();
+      var p = new URLSearchParams(data); p.append('c', cb);
+      var s = document.createElement('script');
+      window[cb] = function(r) { delete window[cb]; if (s.parentNode) s.parentNode.removeChild(s); r.result === 'success' ? onOk() : onErr(r.msg ? r.msg.replace(/<[^>]+>/g,'') : 'Something went wrong.'); };
+      s.src = MC_URL + '&' + p.toString(); document.head.appendChild(s);
+      setTimeout(function(){ if(window[cb]){ delete window[cb]; onErr('Request timed out.'); }}, 10000);
+    }
+
+    /* ─── FORM SUBMIT WITH CONDITIONAL THANK-YOU ─── */
+    document.getElementById('fitForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var gwsGroup = document.querySelector('[data-q="gws"]');
+      var gwsSelected = gwsGroup.querySelector('.toggle.is-selected');
+      var isGws = gwsSelected && gwsSelected.getAttribute('data-val') === 'yes';
+      var gwsVal = gwsSelected ? gwsSelected.getAttribute('data-val') : '';
+      var propCount = document.getElementById('propertyCount').value;
+      var fullName = document.getElementById('fullName').value;
+      var emailAddr = document.getElementById('emailAddr').value;
+      var nameParts = fullName.trim().split(' ');
+      var firstName = nameParts[0] || '';
+      var lastName = nameParts.slice(1).join(' ') || '';
+
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true; btn.textContent = 'Sending...';
+
+      var data = {
+        EMAIL: emailAddr,
+        FNAME: firstName,
+        LNAME: lastName,
+        LEADSRC: 'site-fit-check',
+        PROPCOUNT: propCount,
+        GWS: gwsVal
+      };
+
+      mcSubmit(data,
+        function() {
+          document.getElementById('fitForm').hidden = true;
+          if (isGws) {
+            document.getElementById('thankYouYes').hidden = false;
+          } else {
+            document.getElementById('thankYouNo').hidden = false;
+          }
+        },
+        function(m) {
+          btn.disabled = false; btn.textContent = 'Submit My Fit Check \u2192';
+          var msgEl = document.getElementById('fitFormMsg');
+          if (!msgEl) {
+            msgEl = document.createElement('p');
+            msgEl.id = 'fitFormMsg';
+            msgEl.style.cssText = 'margin-top:.75rem;font-size:.875rem;font-weight:500;text-align:center;color:#C17F59;';
+            btn.parentNode.insertBefore(msgEl, btn.nextSibling);
+          }
+          msgEl.textContent = m;
+        }
+      );
+    });
+
+    /* ─── SCROLL-INTO-VIEW ANIMATION ─── */
+    (function() {
+      var sections = document.querySelectorAll('.section');
+      if (!('IntersectionObserver' in window)) return;
+      sections.forEach(function(s) {
+        s.style.opacity = '0';
+        s.style.transform = 'translateY(18px)';
+        s.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(function(s) { observer.observe(s); });
+    })();
+  </script>
+
+</body>
+</html>

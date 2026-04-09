@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+═══════════════════════════════════════════════════════════════
+  COAST TO COAST HOMES CANADA | INVESTOR EDUCATION HUB
+  Built April 2026 · Matches homepage visual system
+
+  This page is an "Investor Education Hub" : a thought
+  leadership library for real estate investors. It positions
+  C2C as a trusted, knowledgeable partner who gives real
+  value before asking for anything.
+
+  TO UPDATE:
+  - Replace article placeholders with real published content
+  - Wire up the email list form to Mailchimp / ActiveCampaign
+  - Link article cards to actual blog posts or PDFs
+  - "The Back Office Audit" links to the-back-office-audit.html
+═══════════════════════════════════════════════════════════════
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investor Education Hub | Canadian Real Estate Insights | Coast to Coast Homes</title>
+  <meta name="description" content="Real insights from a real portfolio. Articles on private lending, market strategy, and operations from Colin Ernst, Nicole Fiore, and Judy Lea: a team managing real estate across four Canadian provinces.">
+  <meta name="keywords" content="Canadian real estate investing articles, private lending Canada, real estate investment education, how does private lending work Canada, real estate operations, Colin Ernst real estate, missing middle development Canada">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://coasttocoasthomes.ca/investor-hub">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Investor Education Hub | Canadian Real Estate Insights | Coast to Coast Homes">
+  <meta property="og:description" content="Real insights from a real portfolio. Articles on private lending, market strategy, and operations from Colin Ernst, Nicole Fiore, and Judy Lea: a team managing real estate across four Canadian provinces.">
+  <meta property="og:url" content="https://coasttocoasthomes.ca/investor-hub">
+  <meta property="og:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+  <meta property="og:site_name" content="Coast to Coast Homes Canada">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Investor Education Hub | Canadian Real Estate Insights | Coast to Coast Homes">
+  <meta name="twitter:description" content="Real insights from a real portfolio. Articles on private lending, market strategy, and operations from Colin Ernst, Nicole Fiore, and Judy Lea: a team managing real estate across four Canadian provinces.">
+  <meta name="twitter:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Investor Education Hub: Coast to Coast Homes Canada",
+    "description": "A curated library of real estate investment articles, tools, and resources from the team at Coast to Coast Homes Canada.",
+    "url": "https://coasttocoasthomes.ca/investor-hub",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Coast to Coast Homes Canada"
+    },
+    "hasPart": [
+      {"@type": "Article", "name": "The Hundred Small Ones", "author": {"@type": "Person", "name": "Nicole Fiore"}, "about": "Investor trust and consistency in real estate partnerships"},
+      {"@type": "Article", "name": "Market Reality Check", "author": {"@type": "Person", "name": "Colin Ernst"}, "about": "CMHC housing market data and positioning for disciplined Canadian real estate operators"},
+      {"@type": "Article", "name": "10 Hours a Week: Where Are They Going?", "author": {"@type": "Person", "name": "Judy Lea"}, "about": "Rental property administration systems and time recovery for real estate investors"},
+      {"@type": "Article", "name": "What Private Lending in Real Estate Actually Looks Like", "author": {"@type": "Person", "name": "Colin Ernst"}, "about": "How private mortgage lending works in Canadian real estate"},
+      {"@type": "Article", "name": "A Portfolio Is Not a System", "author": {"@type": "Person", "name": "Colin Ernst"}, "about": "Building operational systems for a real estate portfolio"},
+      {"@type": "Article", "name": "Inside a 32-Unit Long-Term Hold: Deep River", "author": {"@type": "Organization", "name": "Coast to Coast Homes Canada"}, "about": "Multi-family long-term hold real estate investment case study"}
+    ]
+  }
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:#2A9D8F;--teal-deep:#1B7A6F;--teal-light:#5FBFB3;--teal-wash:#E8F6F4;
+    --teal-mist:#F2FAF9;--copper:#C4956A;--terracotta:#C17F59;--blush:#E8CFC0;
+    --ink:#1A1F2B;--charcoal:#3A3F4B;--slate:#6B7280;--stone:#9CA3AF;
+    --sand:#E8E2D9;--linen:#F5F1EB;--cream:#FAF8F5;--white:#FFFFFF;
+    --font-serif:'Instrument Serif',Georgia,serif;
+    --font-sans:'DM Sans',system-ui,sans-serif;
+    --font-accent:'Cormorant Garamond',Georgia,serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+  /* NAV */
+  .nav{background:var(--white);padding:0 2.5rem;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--sand);position:sticky;top:0;z-index:100;}
+  .nav__logo-text{font-family:var(--font-serif);font-size:1.2rem;color:var(--teal-deep);text-decoration:none;}
+  .nav__links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+  .nav__links a{font-size:0.825rem;font-weight:500;color:var(--charcoal);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
+  .nav__links a:hover,.nav__links a.active{color:var(--teal-deep);}
+  .nav__cta{padding:0.5rem 1.375rem;background:var(--teal-deep) !important;color:var(--white) !important;border-radius:3px;}
+  .nav__cta:hover{background:var(--copper) !important;}
+  @media(max-width:768px){.nav__links{display:none;}}
+
+  /* BUTTONS */
+  .btn{display:inline-block;padding:.875rem 2.25rem;border-radius:3px;font-family:var(--font-sans);font-weight:600;font-size:.875rem;letter-spacing:.03em;text-decoration:none;cursor:pointer;border:none;transition:background .22s,color .22s,box-shadow .22s,transform .18s;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn--light{background:var(--white);color:var(--teal-deep);box-shadow:0 2px 12px rgba(0,0,0,.15);}
+  .btn--light:hover{background:var(--copper);color:var(--white);}
+  .btn--ghost{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.3);}
+  .btn--ghost:hover{border-color:var(--copper);color:var(--white);}
+  .btn--primary{background:var(--teal-deep);color:var(--white);}
+  .btn--primary:hover{background:var(--copper);}
+  .btn--outline{background:transparent;color:var(--teal-deep);border:1.5px solid var(--teal);}
+  .btn--outline:hover{background:var(--teal-deep);color:var(--white);}
+  .section-eyebrow{display:block;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);margin-bottom:1rem;}
+
+  /* PAGE HERO */
+  .page-hero{background:var(--ink);padding:7rem 2rem 6rem;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(ellipse 70% 80% at 80% 40%,rgba(42,157,143,.1) 0%,transparent 65%),radial-gradient(ellipse 60% 70% at 15% 80%,rgba(196,149,106,.07) 0%,transparent 60%);pointer-events:none;}
+  .page-hero::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--copper) 0%,var(--teal-light) 60%,transparent 100%);}
+  .page-hero__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;}
+  .page-hero__content .section-eyebrow{color:var(--teal-light);}
+  .page-hero__headline{font-family:var(--font-serif);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--white);line-height:1.1;margin-bottom:1.5rem;animation:fadeUp .7s .1s ease both;}
+  .page-hero__sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.75);line-height:1.85;margin-bottom:2rem;animation:fadeUp .7s .2s ease both;}
+  .page-hero__actions{animation:fadeUp .7s .3s ease both;}
+  .page-hero__feature{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:2.5rem;animation:fadeUp .8s .3s ease both;}
+  .page-hero__feature-label{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:1rem;display:block;}
+  .page-hero__feature h3{font-family:var(--font-serif);font-size:1.5rem;color:var(--white);margin-bottom:.875rem;line-height:1.2;}
+  .page-hero__feature p{font-size:.875rem;font-weight:300;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:1.5rem;}
+  .feature-tag{display:inline-block;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .75rem;border-radius:2px;background:var(--teal-deep);color:var(--teal-light);margin-right:.5rem;margin-bottom:.5rem;}
+  @media(max-width:860px){.page-hero__inner{grid-template-columns:1fr;}.page-hero__feature{display:none;}}
+
+  /* FEATURED RESOURCE */
+  .featured-resource{background:var(--teal-wash);padding:5.5rem 2rem;border-bottom:1px solid rgba(42,157,143,.15);}
+  .featured-resource__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:center;}
+  .featured-resource__content h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--ink);line-height:1.15;margin-bottom:1.25rem;}
+  .featured-resource__content p{font-size:.95rem;font-weight:300;color:var(--charcoal);line-height:1.9;margin-bottom:1.25rem;}
+  .featured-resource__visual{background:var(--ink);border-radius:4px;padding:2.5rem;text-align:center;box-shadow:0 16px 48px rgba(26,31,43,.2);}
+  .featured-resource__visual h3{font-family:var(--font-serif);font-size:1.4rem;color:var(--white);margin-bottom:.75rem;line-height:1.2;}
+  .featured-resource__visual p{font-size:.83rem;font-weight:300;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:1.5rem;}
+  .featured-resource__score{font-family:var(--font-serif);font-size:3rem;color:var(--copper);line-height:1;margin-bottom:.5rem;display:block;}
+  .featured-resource__score-label{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);display:block;margin-bottom:1.5rem;}
+  @media(max-width:760px){.featured-resource__inner{grid-template-columns:1fr;}.featured-resource__visual{display:none;}}
+
+  /* TOPIC CATEGORIES */
+  .categories{background:var(--white);padding:5rem 2rem;}
+  .categories__inner{max-width:1060px;margin:0 auto;}
+  .categories__header{text-align:center;margin-bottom:3.5rem;}
+  .categories__header h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--ink);margin-bottom:.75rem;}
+  .categories__header p{font-size:.95rem;font-weight:300;color:var(--slate);line-height:1.8;max-width:540px;margin:0 auto;}
+  .categories__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+  .cat-pill{background:var(--cream);border:1.5px solid var(--sand);border-radius:40px;padding:.875rem 1.5rem;text-align:center;cursor:pointer;transition:background .2s,border-color .2s,color .2s;text-decoration:none;display:block;}
+  .cat-pill:hover,.cat-pill.active{background:var(--teal-deep);border-color:var(--teal-deep);color:var(--white);}
+  .cat-pill__icon{font-size:1.25rem;display:block;margin-bottom:.5rem;}
+  .cat-pill__label{font-size:.8rem;font-weight:500;color:inherit;letter-spacing:.04em;}
+  .cat-pill{color:var(--charcoal);}
+  @media(max-width:680px){.categories__grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:380px){.categories__grid{grid-template-columns:1fr;}}
+
+  /* ARTICLE GRID */
+  .articles{background:var(--cream);padding:6rem 2rem;}
+  .articles__inner{max-width:1060px;margin:0 auto;}
+  .articles__header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem;}
+  .articles__header h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--ink);}
+  .articles__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+  .article-card{background:var(--white);border:1px solid var(--sand);border-radius:4px;overflow:hidden;transition:box-shadow .3s,transform .3s;text-decoration:none;color:inherit;display:block;}
+  .article-card:hover{box-shadow:0 12px 40px rgba(26,31,43,.1);transform:translateY(-3px);}
+  .article-card__image{height:200px;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
+  .article-card__image-bg{position:absolute;inset:0;}
+  .article-card__image-bg--1{background:linear-gradient(145deg,var(--teal-deep) 0%,#0f2420 100%);}
+  .article-card__image-bg--2{background:linear-gradient(145deg,#2a1a10 0%,#4a2e1a 100%);}
+  .article-card__image-bg--3{background:linear-gradient(145deg,#1a2040 0%,#252a40 100%);}
+  .article-card__image-bg--4{background:linear-gradient(145deg,#1f1a2e 0%,#2a253d 100%);}
+  .article-card__image-bg--5{background:linear-gradient(145deg,#0f2420 0%,#1B7A6F 100%);}
+  .article-card__image-bg--6{background:linear-gradient(145deg,#2a1a10 0%,#3a2510 100%);}
+  .article-card__cat{position:relative;z-index:1;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.4);color:rgba(255,255,255,.8);padding:.3rem .75rem;border-radius:2px;margin:0 0 1rem 1.25rem;}
+  .article-card__body{padding:1.75rem;}
+  .article-card__title{font-family:var(--font-serif);font-size:1.15rem;color:var(--ink);margin-bottom:.75rem;line-height:1.3;}
+  .article-card__excerpt{font-size:.85rem;font-weight:300;color:var(--charcoal);line-height:1.75;margin-bottom:1.25rem;}
+  .article-card__meta{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--sand);}
+  .article-card__author{font-size:.75rem;font-weight:500;color:var(--slate);}
+  .article-card__read{font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);transition:color .2s;}
+  .article-card:hover .article-card__read{color:var(--copper);}
+  .article-card__coming{background:var(--linen);border:2px dashed var(--sand);opacity:.75;}
+  .article-card__coming:hover{transform:none;box-shadow:none;}
+  @media(max-width:860px){.articles__grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.articles__grid{grid-template-columns:1fr;}}
+
+  /* COLIN'S 8 CHECKS */
+  /* TOOLS BAND */
+  .tools-band{background:var(--linen);padding:6rem 2rem;border-top:1px solid var(--sand);}
+  .tools-band__inner{max-width:1060px;margin:0 auto;}
+  .tools-band__header{text-align:center;margin-bottom:3.5rem;}
+  .tools-band__eyebrow{display:block;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);margin-bottom:.875rem;}
+  .tools-band__header h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--ink);margin-bottom:.75rem;}
+  .tools-band__header p{font-size:.95rem;font-weight:300;color:var(--slate);line-height:1.8;max-width:540px;margin:0 auto;}
+  .tools-band__grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+  @media(max-width:680px){.tools-band__grid{grid-template-columns:1fr;}}
+  .tool-card{background:var(--white);border:1px solid var(--sand);border-radius:4px;padding:2.5rem;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s;}
+  .tool-card:hover{box-shadow:0 12px 40px rgba(26,31,43,.1);transform:translateY(-3px);}
+  .tool-card__tag{display:inline-block;font-size:.63rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .75rem;border-radius:2px;background:var(--teal-wash);color:var(--teal-deep);margin-bottom:1.25rem;align-self:flex-start;}
+  .tool-card__title{font-family:var(--font-serif);font-size:1.5rem;color:var(--ink);line-height:1.2;margin-bottom:.875rem;}
+  .tool-card__desc{font-size:.875rem;font-weight:300;color:var(--charcoal);line-height:1.8;margin-bottom:1.5rem;flex:1;}
+  .tool-card__detail{font-size:.78rem;font-weight:500;color:var(--copper);margin-bottom:1.5rem;}
+  .tool-card__link{font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);text-decoration:none;transition:color .2s;}
+  .tool-card__link:hover{color:var(--copper);}
+  .tool-card__link::after{content:' →';}
+
+  .resource-band{background:var(--ink);padding:5.5rem 2rem;position:relative;overflow:hidden;}
+  .resource-band::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--copper),transparent);}
+  .resource-band__inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;}
+  .resource-band__content h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--white);line-height:1.15;margin-bottom:1.25rem;}
+  .resource-band__content p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.9;margin-bottom:1.5rem;}
+  .resource-band__list{list-style:none;margin-bottom:2rem;}
+  .resource-band__list li{font-size:.875rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.7;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.75rem;align-items:flex-start;}
+  .resource-band__list li::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--copper);flex-shrink:0;margin-top:.55rem;}
+  .resource-band__card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:2.5rem;text-align:center;}
+  .resource-band__card-num{font-family:var(--font-serif);font-size:5rem;color:var(--copper);line-height:1;display:block;margin-bottom:.5rem;}
+  .resource-band__card h3{font-family:var(--font-serif);font-size:1.25rem;color:var(--white);margin-bottom:.75rem;}
+  .resource-band__card p{font-size:.83rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1.5rem;}
+  @media(max-width:760px){.resource-band__inner{grid-template-columns:1fr;}.resource-band__card{display:none;}}
+  .resource-band__form{display:flex;flex-direction:column;gap:.75rem;text-align:left;margin-top:1.25rem;}
+  .resource-band__form-input{font-family:var(--font-sans);font-size:.875rem;color:var(--white);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:3px;padding:.75rem 1rem;outline:none;transition:border-color .18s,box-shadow .18s;width:100%;}
+  .resource-band__form-input::placeholder{color:rgba(255,255,255,.35);}
+  .resource-band__form-input:focus{border-color:var(--teal-light);box-shadow:0 0 0 3px rgba(95,191,179,.12);}
+  .resource-band__form-btn{font-family:var(--font-sans);font-size:.875rem;font-weight:600;letter-spacing:.03em;background:var(--copper);color:var(--white);border:none;border-radius:3px;padding:.875rem 1.5rem;cursor:pointer;transition:background .22s,transform .18s;width:100%;}
+  .resource-band__form-btn:hover{background:var(--teal-light);transform:translateY(-1px);}
+
+  /* EMAIL LIST */
+  .newsletter{background:var(--blush);padding:6rem 2rem;text-align:center;}
+  .newsletter__inner{max-width:560px;margin:0 auto;}
+  .newsletter__card{background:var(--white);border:1px solid var(--sand);border-radius:6px;padding:3.25rem;box-shadow:0 4px 32px rgba(26,31,43,.07);}
+  .newsletter__eyebrow{color:var(--copper);}
+  .newsletter__title{font-family:var(--font-serif);font-size:2rem;color:var(--ink);margin-bottom:.5rem;line-height:1.2;}
+  .newsletter__sub{font-size:.9rem;font-weight:300;color:var(--slate);line-height:1.65;margin-bottom:2.25rem;}
+  .newsletter__form{display:flex;gap:.75rem;flex-wrap:wrap;}
+  .newsletter__input{flex:1;min-width:200px;font-family:var(--font-sans);font-size:.9rem;color:var(--ink);background:var(--cream);border:1.5px solid var(--sand);border-radius:3px;padding:.7rem .875rem;outline:none;transition:border-color .18s,box-shadow .18s;}
+  .newsletter__input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,157,143,.1);}
+  .newsletter__submit{padding:.7rem 1.75rem;font-size:.875rem;background:var(--teal-deep);color:var(--white);border:none;border-radius:3px;font-family:var(--font-sans);font-weight:600;cursor:pointer;transition:background .22s,transform .18s;letter-spacing:.03em;}
+  .newsletter__submit:hover{background:var(--copper);transform:translateY(-1px);}
+  .newsletter__trust{font-size:.75rem;font-weight:300;color:var(--stone);margin-top:1rem;letter-spacing:.02em;}
+  @media(max-width:480px){.newsletter__card{padding:2rem 1.25rem;}}
+
+  /* CTA BAND */
+  .cta-band{background:var(--teal-deep);padding:5.5rem 2rem;text-align:center;position:relative;}
+  .cta-band::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--copper),transparent);}
+  .cta-band__inner{max-width:600px;margin:0 auto;position:relative;z-index:1;}
+  .cta-band__headline{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--white);line-height:1.2;margin-bottom:1.25rem;}
+  .cta-band__sub{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.8;margin-bottom:2.5rem;}
+  .cta-band__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+  /* FOOTER */
+  .footer{background:var(--ink);padding:4rem 2rem 2.5rem;position:relative;}
+  .footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:48px;height:2px;background:var(--copper);}
+  .footer__inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+  .footer__logo{font-family:var(--font-serif);font-size:1.1rem;color:var(--white);margin-bottom:1rem;display:block;}
+  .footer__brand p{font-size:.83rem;font-weight:300;color:var(--stone);line-height:1.8;max-width:240px;}
+  .footer__col-title{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:1.25rem;display:block;}
+  .footer__links{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+  .footer__links a{font-size:.85rem;font-weight:300;color:var(--stone);text-decoration:none;transition:color .2s;}
+  .footer__links a:hover{color:var(--teal-light);}
+  .footer__contact p{font-size:.83rem;font-weight:300;color:var(--stone);line-height:1.9;}
+  .footer__contact a{color:var(--teal-light);text-decoration:none;}
+  .footer__bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+  .footer__copy{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.04em;}
+  .footer__tagline{font-family:var(--font-accent);font-style:italic;font-size:.85rem;color:rgba(255,255,255,.25);}
+  @media(max-width:860px){.footer__inner{grid-template-columns:1fr 1fr;gap:2.5rem;}}
+  @media(max-width:520px){.footer__inner{grid-template-columns:1fr;}}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
+
+  /* ─── ORPHAN / WIDOW PREVENTION ─── */
+  /* Prevents single words dangling alone on the last line of any text block */
+  p, li {
+    text-wrap: pretty;      /* modern Chrome/Edge/Firefox: smart last-line balancing */
+    overflow-wrap: break-word;
+  }
+  h1, h2, h3, h4 {
+    text-wrap: balance;     /* balances headline line lengths across all browsers */
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <a href="index.html" class="nav__logo"><span class="nav__logo-text">Coast to Coast Homes</span></a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="opportunities.html">Opportunities</a></li>
+    <li><a href="#" class="active">Investor Hub</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="mailto:hello@coasttocoasthomes.ca" class="nav__cta">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- ─── PAGE HERO ─── -->
+<section class="page-hero">
+  <div class="page-hero__inner">
+    <div class="page-hero__content">
+      <span class="section-eyebrow page-hero__content .section-eyebrow" style="color:var(--teal-light);">Investor Education Hub</span>
+      <h1 class="page-hero__headline">Insights for the<br>informed investor.</h1>
+      <p class="page-hero__sub">Real knowledge from a team that manages a real portfolio. No fluff, no funnels. Just the kind of thinking that helps you invest with confidence and clarity.</p>
+      <div class="page-hero__actions">
+        <a href="#articles" class="btn btn--light">Browse Articles</a>
+      </div>
+    </div>
+    <div class="page-hero__feature">
+      <span class="page-hero__feature-label">Featured Free Resource</span>
+      <h3>The Back Office Audit</h3>
+      <p>9 questions. Two minutes. Find out whether your rental property admin is running your operation, or whether your operation is running you.</p>
+      <span class="feature-tag">Free Tool</span>
+      <span class="feature-tag">2 min</span>
+      <span class="feature-tag">Instant Results</span>
+      <br><br>
+      <a href="the-back-office-audit.html" target="_blank" rel="noopener noreferrer" class="btn btn--light" style="width:100%;text-align:center;">Take the Audit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TOPIC CATEGORIES ─── -->
+<section class="categories">
+  <div class="categories__inner reveal">
+    <div class="categories__header">
+      <span class="section-eyebrow">Browse by Topic</span>
+      <h2>Find what's relevant to you.</h2>
+      <p>We write about the things that actually matter to property investors, not the theory, the practice.</p>
+    </div>
+    <div class="categories__grid">
+      <a href="#articles" class="cat-pill active">
+        <span class="cat-pill__icon">🏘</span>
+        <span class="cat-pill__label">All Topics</span>
+      </a>
+      <a href="#articles" class="cat-pill">
+        <span class="cat-pill__icon">🎯</span>
+        <span class="cat-pill__label">Strategy</span>
+      </a>
+      <a href="#articles" class="cat-pill">
+        <span class="cat-pill__icon">⚙️</span>
+        <span class="cat-pill__label">Operations</span>
+      </a>
+      <a href="#articles" class="cat-pill">
+        <span class="cat-pill__icon">💰</span>
+        <span class="cat-pill__label">Private Capital</span>
+      </a>
+      <a href="#articles" class="cat-pill">
+        <span class="cat-pill__icon">📈</span>
+        <span class="cat-pill__label">Market Insights</span>
+      </a>
+      <a href="#articles" class="cat-pill">
+        <span class="cat-pill__icon">📋</span>
+        <span class="cat-pill__label">Case Study</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ARTICLES ─── -->
+<section class="articles" id="articles">
+  <div class="articles__inner">
+    <div class="articles__header reveal">
+      <div>
+        <span class="section-eyebrow">Latest Thinking</span>
+        <h2>From the Coast to Coast Homes team.</h2>
+      </div>
+      <a href="mailto:hello@coasttocoasthomes.ca?subject=Investor Hub" class="btn btn--outline">Suggest a Topic</a>
+    </div>
+    <div class="articles__grid">
+
+      <!-- ARTICLE: The Perfect Partner Playbook | Nicole Fiore -->
+      <a href="partner-playbook-article.html" target="_blank" rel="noopener noreferrer" class="article-card reveal">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--2"></div>
+          <span class="article-card__cat">Strategy</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">What Makes a Real Estate Partnership Actually Work</h3>
+          <p class="article-card__excerpt">Most partnerships fail before the first problem hits  -  not because of bad deals, but because the hard conversations never happened. Nine years of lessons, distilled into a free playbook.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Nicole Fiore</span>
+            <span class="article-card__read">Read + Free Download →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE: The Hundred Small Ones | Nicole -->
+      <a href="articles.html#hundred-small-ones" class="article-card reveal">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--2"></div>
+          <span class="article-card__cat">Strategy</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">The Hundred Small Ones</h3>
+          <p class="article-card__excerpt">Trust isn't built in the big moments. It's built in the hundred small ones that no one sees. A note on consistency, investor trust, and what keeps us showing up every month.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Nicole Fiore</span>
+            <span class="article-card__read">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE: Market Reality Check | Colin -->
+      <a href="articles.html#market-reality-check" class="article-card reveal reveal-delay-1">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--3"></div>
+          <span class="article-card__cat">Market Insights</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">Market Reality Check</h3>
+          <p class="article-card__excerpt">Housing starts are projected to decline through 2028. The easy growth years are behind us. Here's what the CMHC data means for disciplined operators  -  and how we're positioning.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Colin Ernst</span>
+            <span class="article-card__read">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE 1 | 10 Hours a Week | Judy Lea -->
+      <a href="core-install-long-form-landing-page.html" target="_blank" rel="noopener noreferrer" class="article-card reveal">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--1"></div>
+          <span class="article-card__cat">Operations</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">10 Hours a Week: Where Are They Going?</h3>
+          <p class="article-card__excerpt">After 30 years in administration, I can tell you exactly where the time goes  -  and it's not where most investors think. The good news is there's a system that fixes it. One install. Runs itself after that.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Judy Lea</span>
+            <span class="article-card__read">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE 2 | Private Lending -->
+      <a href="articles.html#private-lending" class="article-card reveal reveal-delay-1">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--2"></div>
+          <span class="article-card__cat">Private Capital</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">What Private Lending in Real Estate Actually Looks Like</h3>
+          <p class="article-card__excerpt">A plain-language explainer on how private mortgage lending works, what it means to be a private lender, and the questions you should ask before putting a dollar into any deal.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Colin Ernst</span>
+            <span class="article-card__read">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE 3 | A Portfolio Is Not a System -->
+      <a href="articles.html#portfolio-system" class="article-card reveal reveal-delay-2">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--3"></div>
+          <span class="article-card__cat">Strategy</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">A Portfolio Is Not a System</h3>
+          <p class="article-card__excerpt">A portfolio is a collection of assets. A system is what holds those assets together when something goes wrong. After 9 years across 4 provinces, here's what ours actually looks like.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Colin Ernst</span>
+            <span class="article-card__read">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE 4 | Deep River Case Study -->
+      <a href="articles.html#deep-river" class="article-card reveal">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--5"></div>
+          <span class="article-card__cat">Case Study</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">Inside a 32-Unit Long-Term Hold: Deep River</h3>
+          <p class="article-card__excerpt">What does a well-managed multi-family long-term hold actually look like from the inside? A look at our flagship Deep River asset: what we acquired, how we manage it, and what we've learned.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">C2C Team</span>
+            <span class="article-card__read">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE 5 | AI Operations Assessment -->
+      <a href="ai-assessment-article.html" class="article-card reveal reveal-delay-1">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--5"></div>
+          <span class="article-card__cat">Operations</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">Is Your Multifamily Operation Ready for AI?</h3>
+          <p class="article-card__excerpt">A 10-minute self-assessment built from 9 years of operating a 150-door portfolio. Find out exactly where you're losing time and money to manual processes  -  and what to do about it.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Colin Ernst</span>
+            <span class="article-card__read">Free Download →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ARTICLE 6 | Truro / Longview -->
+      <a href="articles.html#truro" class="article-card reveal reveal-delay-1">
+        <div class="article-card__image">
+          <div class="article-card__image-bg article-card__image-bg--4"></div>
+          <span class="article-card__cat">Market Insights</span>
+        </div>
+        <div class="article-card__body">
+          <h3 class="article-card__title">We've Been Building in Truro Since 2021. Here's What We've Learned.</h3>
+          <p class="article-card__excerpt">14 homes sold. Every one at a profit. A new duplex phase opening now. Here's the ground-level read on why we chose Truro  -  and what the Longview project looks like from the inside.</p>
+          <div class="article-card__meta">
+            <span class="article-card__author">Colin Ernst</span>
+            <span class="article-card__read">Read More →</span>
+          </div>
+        </div>
+      </a>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── TOOLS BAND ─── -->
+<!-- TO DO: Confirm Tax Rescue gets its own landing page, then update tool-card href below -->
+<section class="tools-band">
+  <div class="tools-band__inner">
+    <div class="tools-band__header reveal">
+      <span class="tools-band__eyebrow">Built for Real Estate Operators</span>
+      <h2>Tools That Run Your Back Office.</h2>
+      <p>The audit shows you where the gaps are. These are the systems that close them.</p>
+    </div>
+    <div class="tools-band__grid">
+
+      <!-- CORE INSTALL -->
+      <div class="tool-card reveal">
+        <span class="tool-card__tag">Full System Setup</span>
+        <h3 class="tool-card__title">The Core Install</h3>
+        <p class="tool-card__desc">In 30 days, your rental property admin runs itself. Every vendor invoice files automatically, your bookkeeper finds what they need without asking, and you get your evenings back. Built for investors managing 2&ndash;20+ doors.</p>
+        <span class="tool-card__detail">Clients recover 10+ hours of admin per week &middot; approx. $26,000/yr</span>
+        <a href="core-install-long-form-landing-page.html" target="_blank" rel="noopener noreferrer" class="tool-card__link">See If You're a Fit</a>
+      </div>
+
+      <!-- TAX RESCUE -->
+      <div class="tool-card reveal reveal-delay-1">
+        <span class="tool-card__tag">Done-For-You Service</span>
+        <h3 class="tool-card__title">The 2025 Tax Rescue</h3>
+        <p class="tool-card__desc">We go into your Gmail, pull every vendor receipt and invoice from your tax year, sort everything into CRA business expense categories, and hand you a clean Google Drive folder your accountant can use immediately. You don't touch a thing.</p>
+        <span class="tool-card__detail">$297 &middot; One inbox &middot; One tax year &middot; 48-hr turnaround &middot; Add 2024 for $197 &middot; Extra inboxes $47 each</span>
+        <!-- TO DO: Update href to Stripe payment link once created -->
+        <a href="tax-rescue-landing-page.html" target="_blank" rel="noopener noreferrer" class="tool-card__link">See How It Works</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── EMAIL LIST ─── -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter__inner">
+    <div class="newsletter__card reveal">
+      <span class="section-eyebrow newsletter__eyebrow">Investor Updates</span>
+      <h2 class="newsletter__title">Stay in the loop.</h2>
+      <p class="newsletter__sub">When we publish new articles, release free resources, or have something worth sharing. It goes to this list first. Straightforward, no fluff, no noise.</p>
+      <form id="form-newsletter" class="newsletter__form" novalidate>
+        <input type="email" class="newsletter__input" placeholder="you@yourcompany.com" name="EMAIL" required>
+        <button type="submit" class="newsletter__submit">Subscribe</button>
+      </form>
+      <p id="mc-msg" style="display:none;margin-top:.625rem;font-size:.82rem;font-weight:500;"></p>
+      <p class="newsletter__trust">No spam. No pressure. Unsubscribe anytime. We treat your inbox the way we treat our own.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BAND ─── -->
+<section class="cta-band">
+  <div class="cta-band__inner reveal">
+    <span class="section-eyebrow" style="color:var(--teal-light);">Ready to Go Further?</span>
+    <h2 class="cta-band__headline">Knowledge is the first step.<br>The right partner is the next one.</h2>
+    <p class="cta-band__sub">If what you've read here resonates, we'd love to have a conversation. We work with a select group of investors who are serious about the long game.</p>
+    <div class="cta-band__actions">
+      <a href="opportunities.html" class="btn btn--light">View Current Opportunities</a>
+      <a href="mailto:hello@coasttocoasthomes.ca" class="btn btn--ghost">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">Coast to Coast Homes Canada</span>
+      <p>Real estate development and investment, built on trust and a long-term view. Headquartered in Moncton, New Brunswick.</p>
+    </div>
+    <div>
+      <span class="footer__col-title">Navigate</span>
+      <ul class="footer__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="#">Investor Hub</a></li>
+        <li><a href="tools.html">Tools</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer__col-title">Free Resources</span>
+      <ul class="footer__links">
+        <li><a href="the-back-office-audit.html" target="_blank" rel="noopener noreferrer">Back Office Audit</a></li>
+        <li><a href="#newsletter">Investor Newsletter</a></li>
+        <li><a href="articles.html">All Articles</a></li>
+      </ul>
+    </div>
+    <div class="footer__contact">
+      <span class="footer__col-title">Contact</span>
+      <p>Moncton, New Brunswick<br><a href="mailto:hello@coasttocoasthomes.ca">hello@coasttocoasthomes.ca</a><br><br><a href="https://www.coasttocoasthomes.ca">coasttocoasthomes.ca</a></p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="footer__copy">&copy; 2026 Coast to Coast Homes Canada. All rights reserved.</span>
+    <span class="footer__tagline">Dream Big. Grow Steady. Lead with Heart.</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}});
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+  function notifyWixHeight() {
+    const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
+    window.parent.postMessage({ type:'setHeight', height:h }, '*');
+  }
+  window.addEventListener('load', notifyWixHeight);
+  window.addEventListener('resize', notifyWixHeight);
+  if(window.ResizeObserver) new ResizeObserver(notifyWixHeight).observe(document.body);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
+</script>
+
+<!-- MAILCHIMP FORM WIRING -->
+<script>
+(function(){
+  var MC="https://coasttocoasthomes.us21.list-manage.com/subscribe/post-json?u=909c9ee1e5cae82141e7db4ad&id=0cb6d0fbc7";
+  var f=document.getElementById("form-newsletter");
+  if(!f)return;
+  var b=f.querySelector("button[type=submit]");
+  var m=document.getElementById("mc-msg");
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var email=f.querySelector("[name=EMAIL]").value;
+    if(!email)return false;
+    b.disabled=true;
+    b.textContent="Sending...";
+    m.style.display="none";
+    var cb="mc_cb_"+Date.now();
+    var url=MC+"&EMAIL="+encodeURIComponent(email)+"&LEADSRC=site-newsletter&c="+cb;
+    window[cb]=function(r){
+      delete window[cb];
+      b.disabled=false;
+      b.textContent="Subscribe";
+      m.style.display="block";
+      if(r.result==="success"){
+        f.reset();
+        m.style.color="#2A9D8F";
+        m.textContent="Thanks! Check your inbox to confirm.";
+      }else{
+        var msg=r.msg||"Something went wrong.";
+        msg=msg.replace(/<[^>]+>/g,"");
+        if(msg.indexOf("already subscribed")>-1){
+          m.style.color="#2A9D8F";
+          m.textContent="You are already subscribed!";
+        }else{
+          m.style.color="#C17F59";
+          m.textContent=msg;
+        }
+      }
+    };
+    var s=document.createElement("script");
+    s.src=url;
+    document.head.appendChild(s);
+    setTimeout(function(){
+      if(window[cb]){
+        delete window[cb];
+        b.disabled=false;
+        b.textContent="Subscribe";
+        m.style.display="block";
+        m.style.color="#C17F59";
+        m.textContent="Request timed out. Please try again.";
+      }
+    },10000);
+    return false;
+  });
+})();
+</script>
+</body>
+</html>
