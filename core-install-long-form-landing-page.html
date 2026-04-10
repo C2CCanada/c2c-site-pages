@@ -122,6 +122,7 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: clip;
+      touch-action: pan-y;
     }
 
     /* Orphan prevention */
@@ -171,13 +172,9 @@
 
     /* Animation utility classes */
     .anim-fade-up {
-      opacity: 0;
-      animation: fadeUp 0.65s ease forwards;
     }
 
     .anim-fade-in {
-      opacity: 0;
-      animation: fadeIn 0.65s ease forwards;
     }
 
     /* ─── Shared Section Styles ─── */
@@ -418,8 +415,7 @@
       text-transform: uppercase;
       color: var(--teal-light);
       margin-bottom: 1.4rem;
-      opacity: 0;
-      animation: fadeUp 0.65s ease 0.1s forwards;
+
     }
 
     /* Headline */
@@ -430,8 +426,7 @@
       line-height: 1.12;
       color: var(--white);
       margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.65s ease 0.2s forwards;
+
     }
 
     /* Subheadline */
@@ -443,8 +438,7 @@
       color: rgba(255, 255, 255, 0.95);
       margin-bottom: 2.25rem;
       max-width: 660px;
-      opacity: 0;
-      animation: fadeUp 0.65s ease 0.3s forwards;
+
     }
 
     /* Outcome callout */
@@ -458,8 +452,7 @@
       padding: 1.15rem 1.4rem;
       margin-bottom: 2.5rem;
       max-width: 620px;
-      opacity: 0;
-      animation: fadeUp 0.65s ease 0.4s forwards;
+
     }
 
     .hero__callout p {
@@ -477,8 +470,7 @@
 
     /* CTA button wrapper */
     .hero__cta-wrap {
-      opacity: 0;
-      animation: fadeUp 0.65s ease 0.5s forwards;
+
     }
 
     @media (max-width: 700px) {
@@ -1057,26 +1049,7 @@
       );
     });
 
-    /* ─── SCROLL-INTO-VIEW ANIMATION ─── */
-    (function() {
-      var sections = document.querySelectorAll('.section');
-      if (!('IntersectionObserver' in window)) return;
-      sections.forEach(function(s) {
-        s.style.opacity = '0';
-        s.style.transform = 'translateY(18px)';
-        s.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      });
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      sections.forEach(function(s) { observer.observe(s); });
-    })();
+    /* SCROLL-INTO-VIEW ANIMATION disabled for mobile performance */
   </script>
 
 <script>

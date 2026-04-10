@@ -60,7 +60,7 @@
     --font-accent:'Cormorant Garamond',serif;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:var(--font-sans);background:var(--cream);color:var(--ink);}
+  body{font-family:var(--font-sans);background:var(--cream);color:var(--ink);touch-action:pan-y;}
 
   /* NAV */
   .nav{background:var(--white);padding:0 2.5rem;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--sand);position:relative;z-index:100;}
@@ -163,8 +163,7 @@
   @media(max-width:860px){.footer__inner{grid-template-columns:1fr 1fr;gap:2.5rem;}}
   @media(max-width:520px){.footer__inner{grid-template-columns:1fr;}}
 
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
-  .reveal.is-visible{opacity:1;transform:none;}
+  /* reveal animations disabled for mobile performance */
 </style>
 </head>
 <body>
@@ -535,11 +534,7 @@
 </footer>
 
 <script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}});
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
+  // SCROLL REVEAL disabled for mobile performance
 </script>
 
 <!-- MAILCHIMP WIRING -->

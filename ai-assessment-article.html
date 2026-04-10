@@ -76,7 +76,7 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;min-height:100%;}
-  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100%;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100%;touch-action:pan-y;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
   /* NAV */
@@ -105,9 +105,9 @@
   .article-hero::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--copper) 0%,var(--teal-light) 60%,transparent 100%);}
   .article-hero__inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
   .article-hero__cat{display:inline-block;font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:rgba(42,157,143,.2);color:var(--teal-light);padding:.3rem .875rem;border-radius:2px;margin-bottom:1.5rem;}
-  .article-hero__title{font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);color:var(--white);line-height:1.1;margin-bottom:1.25rem;animation:fadeUp .7s .1s ease both;}
-  .article-hero__sub{font-family:var(--font-accent);font-style:italic;font-size:clamp(1.05rem,2.5vw,1.3rem);color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:2rem;animation:fadeUp .7s .2s ease both;}
-  .article-hero__meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;animation:fadeUp .7s .3s ease both;}
+  .article-hero__title{font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);color:var(--white);line-height:1.1;margin-bottom:1.25rem;}
+  .article-hero__sub{font-family:var(--font-accent);font-style:italic;font-size:clamp(1.05rem,2.5vw,1.3rem);color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:2rem;}
+  .article-hero__meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
   .article-hero__author{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:.04em;}
   .article-hero__author strong{color:var(--copper);}
   .article-hero__tag{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:rgba(196,149,106,.15);color:var(--copper);padding:.25rem .75rem;border-radius:2px;}

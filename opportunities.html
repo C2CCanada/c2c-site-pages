@@ -93,7 +93,7 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;min-height:100%;}
-  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100%;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip;min-height:100%;touch-action:pan-y;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
   @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
@@ -136,8 +136,8 @@
   .page-hero::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--copper) 0%,var(--teal-light) 60%,transparent 100%);}
   .page-hero__inner{max-width:720px;margin:0 auto;position:relative;z-index:1;}
   .page-hero .section-eyebrow{color:var(--teal-light);}
-  .page-hero__headline{font-family:var(--font-serif);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--white);line-height:1.1;margin-bottom:1.5rem;animation:fadeUp .7s .1s ease both;}
-  .page-hero__sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.8);line-height:1.85;animation:fadeUp .7s .2s ease both;}
+  .page-hero__headline{font-family:var(--font-serif);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--white);line-height:1.1;margin-bottom:1.5rem;}
+  .page-hero__sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.8);line-height:1.85;}
 
   /* HOW WE WORK INTRO */
   .approach{background:var(--white);padding:5.5rem 2rem;border-bottom:1px solid var(--sand);}
@@ -290,9 +290,7 @@
   @media(max-width:860px){.footer__inner{grid-template-columns:1fr 1fr;gap:2.5rem;}}
   @media(max-width:520px){.footer__inner{grid-template-columns:1fr;}}
 
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
-  .reveal.is-visible{opacity:1;transform:translateY(0);}
-  .reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
+  /* reveal animations disabled for mobile performance */
 
   /* ─── ORPHAN / WIDOW PREVENTION ─── */
   /* Prevents single words dangling alone on the last line of any text block */
@@ -681,11 +679,7 @@
 </footer>
 
 <script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}});
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
+  // SCROLL REVEAL disabled for mobile performance
   function notifyWixHeight() {
     var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
     window.parent.postMessage({ type: 'setHeight', height: h }, '*');
