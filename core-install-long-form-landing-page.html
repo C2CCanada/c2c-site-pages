@@ -1081,15 +1081,24 @@
 
 <script>
   function notifyWixHeight() {
-    const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
-    window.parent.postMessage({ type:'setHeight', height:h }, '*');
+    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight);
+    window.parent.postMessage({ type: 'setHeight', height: h }, '*');
   }
   var _wixHt;
-  function debouncedWixHeight(){ clearTimeout(_wixHt); _wixHt = setTimeout(notifyWixHeight, 250); }
-  window.addEventListener('load', notifyWixHeight);
+  function debouncedWixHeight(){ clearTimeout(_wixHt); _wixHt = setTimeout(notifyWixHeight, 150); }
+  window.addEventListener('load', function() {
+    notifyWixHeight();
+    setTimeout(notifyWixHeight, 300);
+    setTimeout(notifyWixHeight, 800);
+    setTimeout(notifyWixHeight, 1500);
+    setTimeout(notifyWixHeight, 3000);
+    document.querySelectorAll('img').forEach(function(img) {
+      img.addEventListener('load', debouncedWixHeight);
+    });
+  });
   window.addEventListener('resize', debouncedWixHeight);
-  if(window.ResizeObserver) new ResizeObserver(debouncedWixHeight).observe(document.body);
-  if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
+  if (window.ResizeObserver) { new ResizeObserver(debouncedWixHeight).observe(document.body); }
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(notifyWixHeight); }
 </script>
 </body>
 </html>
