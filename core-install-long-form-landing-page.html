@@ -600,7 +600,7 @@
   <a href="https://coasttocoasthomes.ca" target="_top" style="color:rgba(255,255,255,0.9);text-decoration:none;font-weight:500;letter-spacing:0.04em;display:flex;align-items:center;gap:0.5rem;">
     <span style="font-size:1rem;">←</span> Coast to Coast Homes Canada
   </a>
-  <a href="https://comforting-nougat-b59f68.netlify.app/education" target="_top" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;">Investor Hub</a>
+  <a href="education.html" target="_top" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;">Investor Hub</a>
 </div>
 
   <!-- ============================================================
@@ -849,7 +849,7 @@
 
 
   <!-- THE INVESTMENT -->
-  <section class="section invest" style="background: var(--cream);">
+  <section class="section invest" id="purchase" style="background: var(--cream);">
     <div class="section__inner" style="text-align: center;">
       <h2 class="section__headline">The Investment</h2>
       <div class="invest__card">
@@ -906,13 +906,11 @@
           <p class="form-trust">Built and proven at Coast to Coast Homes Canada. 3 installs per month. We'll be in touch within 1 to 2 business days.</p>
         </form>
         <div class="form-thankyou" id="thankYouYes" hidden>
-          <p class="form-thankyou__icon">✓</p>
           <h3 class="form-thankyou__heading">Thank you. We'll be in touch within 1 to 2 business days to get started.</h3>
         </div>
         <div class="form-thankyou" id="thankYouNo" hidden>
-          <p class="form-thankyou__icon">→</p>
           <h3 class="form-thankyou__heading">You're not far off.</h3>
-          <p class="form-thankyou__body">The Core Install is built on Google Workspace (Gmail with your own business domain). If you're not set up yet, we can help you get there. It's the first step to getting&nbsp;organized.</p>
+          <p class="form-thankyou__body">The Core Install is built on Google Workspace (Gmail with your own business domain). If you're not set up yet, we can help you get there. It's the first step to getting organized.</p>
           <a class="btn btn--primary" href="mailto:judy@coasttocoasthomes.ca?subject=Getting%20Started%20with%20Google%20Workspace&body=Hi%20there%2C%0A%0AI%27m%20interested%20in%20The%20Core%20Install%20but%20I%27m%20not%20currently%20on%20Google%20Workspace.%20I%27d%20love%20some%20help%20getting%20set%20up.%0A%0AName%3A%0AEmail%3A%0ANumber%20of%20properties%3A" style="margin-top: 1.25rem;">Get in Touch &rarr;</a>
         </div>
       </div>
@@ -976,6 +974,8 @@
       mcSubmit(data,
         function() {
           document.getElementById('fitForm').hidden = true;
+          document.querySelector('.form-section .section__headline').hidden = true;
+          document.querySelector('.form-section__sub').hidden = true;
           if (isGws) {
             document.getElementById('thankYouYes').hidden = false;
           } else {
