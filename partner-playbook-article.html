@@ -64,7 +64,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap">
 <style>
   :root {
     --teal:#2A9D8F;--teal-deep:#1B7A6F;--teal-light:#5FBFB3;--teal-wash:#E8F6F4;
@@ -319,7 +318,7 @@
     <span class="download-gate__eyebrow">Free Download</span>
     <h2 class="download-gate__title">The Perfect Partner Playbook</h2>
     <p class="download-gate__sub">How to vet, structure, and succeed in real estate partnerships. From a team that's done it across four provinces.</p>
-    <img src="https://static.wixstatic.com/media/ec69c8_dc049476b96c40f29683327efca24010~mv2.png" alt="The Perfect Partner Playbook guide for structuring real estate partnerships by Coast to Coast Homes Canada" style="max-width:280px;width:100%;margin:0 auto 2rem;display:block;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.25);">
+    <img src="https://static.wixstatic.com/media/ec69c8_dc049476b96c40f29683327efca24010~mv2.png" alt="The Perfect Partner Playbook guide for structuring real estate partnerships by Coast to Coast Homes Canada" style="max-width:280px;width:100%;margin:0 auto 2rem;display:block;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.25);" loading="lazy">
     <ul class="download-gate__includes">
       <li>The 5 non-negotiables before you sign anything</li>
       <li>Our top 3 partnership agreement clauses (including the buyout formula we use)</li>
@@ -445,5 +444,17 @@
 })();
 </script>
 
+<script>
+  function notifyWixHeight() {
+    const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
+    window.parent.postMessage({ type:'setHeight', height:h }, '*');
+  }
+  var _wixHt;
+  function debouncedWixHeight(){ clearTimeout(_wixHt); _wixHt = setTimeout(notifyWixHeight, 250); }
+  window.addEventListener('load', notifyWixHeight);
+  window.addEventListener('resize', debouncedWixHeight);
+  if(window.ResizeObserver) new ResizeObserver(debouncedWixHeight).observe(document.body);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
+</script>
 </body>
 </html>

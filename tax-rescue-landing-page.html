@@ -28,8 +28,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap">
-<link rel="preload" as="image" href="https://static.wixstatic.com/media/ec69c8_ab4f3d9afcc94fb8b34e67c329764881~mv2.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'DM Sans', Arial, sans-serif; color: #2c3238; background: #f0ebe0; }
@@ -267,7 +265,7 @@
   <div class="inner">
     <p style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#134b6f;margin-bottom:20px;">Here's What It Looks Like</p>
 
-    <img src="https://static.wixstatic.com/media/ec69c8_ab4f3d9afcc94fb8b34e67c329764881~mv2.png" alt="Tax Rescue AI-powered document extraction sample results for Canadian real estate investors" style="max-width:600px;width:100%;margin:0 auto;border-radius:8px;box-shadow:0 4px 24px rgba(19,75,111,0.15);display:block;">
+    <img src="https://static.wixstatic.com/media/ec69c8_ab4f3d9afcc94fb8b34e67c329764881~mv2.png" alt="Tax Rescue AI-powered document extraction sample results for Canadian real estate investors" style="max-width:600px;width:100%;margin:0 auto;border-radius:8px;box-shadow:0 4px 24px rgba(19,75,111,0.15);display:block;" loading="lazy">
 
     <p style="font-size:13px;color:#888;font-style:italic;margin-top:16px;">
       Sample results from a real client delivery
@@ -490,5 +488,17 @@
   </div>
 </div>
 
+<script>
+  function notifyWixHeight() {
+    const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
+    window.parent.postMessage({ type:'setHeight', height:h }, '*');
+  }
+  var _wixHt;
+  function debouncedWixHeight(){ clearTimeout(_wixHt); _wixHt = setTimeout(notifyWixHeight, 250); }
+  window.addEventListener('load', notifyWixHeight);
+  window.addEventListener('resize', debouncedWixHeight);
+  if(window.ResizeObserver) new ResizeObserver(debouncedWixHeight).observe(document.body);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
+</script>
 </body>
 </html>

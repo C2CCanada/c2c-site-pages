@@ -68,7 +68,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap">
 
   <style>
 
@@ -842,13 +841,13 @@
       <h2 class="section__headline">Built by Operators. Installed by an Expert.</h2>
       <div class="authority__grid">
         <div class="authority__card">
-          <img class="authority__avatar" src="https://static.wixstatic.com/media/ec69c8_c04ac79421f34b709f6fac0b6ffac5d5~mv2.png" alt="Colin Ernst, Co-Founder and CEO of Coast to Coast Homes Canada, designer of The Core Install back office system" style="object-fit:cover;">
+          <img class="authority__avatar" src="https://static.wixstatic.com/media/ec69c8_c04ac79421f34b709f6fac0b6ffac5d5~mv2.png" alt="Colin Ernst, Co-Founder and CEO of Coast to Coast Homes Canada, designer of The Core Install back office system" style="object-fit:cover;" loading="lazy">
           <h3 class="authority__name">Colin Ernst</h3>
           <p class="authority__title">Co-Founder &amp; CEO, Coast to Coast Homes Canada</p>
           <p class="authority__bio">Colin built the operational system that runs a Canadian real estate portfolio spanning from coast to coast. Every property, every vendor, every dollar runs through the infrastructure he designed. The Core Install is that system, standardized and made available to other investors.</p>
         </div>
         <div class="authority__card">
-          <img class="authority__avatar" src="https://static.wixstatic.com/media/ec69c8_b7e05e1b2be04154b73a105f5c5d6718~mv2.png" alt="Judy Lea, Executive Assistant and Core Install Architect at Coast to Coast Homes Canada" style="object-fit:cover;">
+          <img class="authority__avatar" src="https://static.wixstatic.com/media/ec69c8_b7e05e1b2be04154b73a105f5c5d6718~mv2.png" alt="Judy Lea, Executive Assistant and Core Install Architect at Coast to Coast Homes Canada" style="object-fit:cover;" loading="lazy">
           <h3 class="authority__name">Judy Lea</h3>
           <p class="authority__title">Executive Assistant &amp; Core Install Architect</p>
           <p class="authority__bio">Judy added the AI automation layer: the custom scripts that process invoices, route vendor emails, and file documents around the clock. She handles every installation personally, bringing 30+ years of administrative experience to each build. When we say "installed by an expert," we mean one person, doing the work, every time.</p>
@@ -1081,5 +1080,17 @@
     })();
   </script>
 
+<script>
+  function notifyWixHeight() {
+    const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
+    window.parent.postMessage({ type:'setHeight', height:h }, '*');
+  }
+  var _wixHt;
+  function debouncedWixHeight(){ clearTimeout(_wixHt); _wixHt = setTimeout(notifyWixHeight, 250); }
+  window.addEventListener('load', notifyWixHeight);
+  window.addEventListener('resize', debouncedWixHeight);
+  if(window.ResizeObserver) new ResizeObserver(debouncedWixHeight).observe(document.body);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
+</script>
 </body>
 </html>
