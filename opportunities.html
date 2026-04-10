@@ -111,8 +111,8 @@
   .nav__hamburger.is-active span:nth-child(2){opacity:0;}
   .nav__hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
   @media(max-width:768px){
-    .nav__links{flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:0 2rem;box-shadow:0 8px 24px rgba(26,31,43,.1);gap:0;z-index:100;max-height:0;overflow:hidden;transition:max-height 0.35s ease, padding 0.35s ease;}
-    .nav__links.is-open{max-height:400px;padding:1rem 2rem 1.5rem;}
+    .nav__links{flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:0 2rem;box-shadow:0 8px 24px rgba(26,31,43,.1);gap:0;z-index:100;display:none;}
+    .nav__links.is-open{display:flex;padding:1rem 2rem 1.5rem;}
     .nav__links a{padding:0.6rem 0;font-size:0.9rem;display:block;}
     .nav__hamburger{display:flex;}
   }
@@ -697,7 +697,6 @@
     });
   });
   window.addEventListener('resize', debouncedWixHeight);
-  if (window.ResizeObserver) { new ResizeObserver(debouncedWixHeight).observe(document.body); }
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(notifyWixHeight); }
 </script>
 

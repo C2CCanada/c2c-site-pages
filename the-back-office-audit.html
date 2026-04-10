@@ -1026,7 +1026,6 @@ function calculateScore() {
     });
   });
   window.addEventListener('resize', debouncedWixHeight);
-  if (window.ResizeObserver) { new ResizeObserver(debouncedWixHeight).observe(document.body); }
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(notifyWixHeight); }
 </script>
 </body>
