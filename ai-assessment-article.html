@@ -14,7 +14,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Is Your Multifamily Operation Ready for AI? | Coast to Coast Homes Canada</title>
+<link rel="icon" type="image/png" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<link rel="apple-touch-icon" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<title>Is Your Multifamily Operation Ready for AI? | C2C Homes</title>
 <meta name="description" content="Most real estate investors aren't disorganized. They're just still the engine. Colin Ernst on the difference between an organized operation and an operational one: and a free assessment to find out where you stand.">
 <meta name="keywords" content="real estate AI operations, multifamily property management AI, real estate automation Canada, Colin Ernst Coast to Coast, property management systems">
 <meta name="robots" content="index, follow">
@@ -48,9 +50,21 @@
   "dateModified": "2026-04-10"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.coasttocoasthomes.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://www.coasttocoasthomes.ca/articles"},
+    {"@type": "ListItem", "position": 3, "name": "Is Your Multifamily Operation Ready for AI?", "item": "https://www.coasttocoasthomes.ca/ai-assessment"}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap">
 <style>
   :root {
     --teal:#2A9D8F;--teal-deep:#1B7A6F;--teal-light:#5FBFB3;--teal-wash:#E8F6F4;
@@ -62,8 +76,8 @@
     --font-accent:'Cormorant Garamond',Georgia,serif;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  html{scroll-behavior:smooth;min-height:100%;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100%;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
   /* NAV */
@@ -74,7 +88,17 @@
   .nav__links a:hover{color:var(--teal-deep);}
   .nav__cta{padding:0.5rem 1.375rem;background:var(--teal-deep) !important;color:var(--white) !important;border-radius:3px;text-decoration:none;font-size:.825rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;}
   .nav__cta:hover{background:var(--copper) !important;}
-  @media(max-width:768px){.nav__links{display:none;}}
+  .nav__hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:101;}
+  .nav__hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform 0.3s ease, opacity 0.3s ease;}
+  .nav__hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav__hamburger.is-active span:nth-child(2){opacity:0;}
+  .nav__hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:768px){
+    .nav__links{flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:0 2rem;box-shadow:0 8px 24px rgba(26,31,43,.1);gap:0;z-index:100;max-height:0;overflow:hidden;transition:max-height 0.35s ease, padding 0.35s ease;}
+    .nav__links.is-open{max-height:400px;padding:1rem 2rem 1.5rem;}
+    .nav__links a{padding:0.6rem 0;font-size:0.9rem;display:block;}
+    .nav__hamburger{display:flex;}
+  }
 
   /* ARTICLE HERO */
   .article-hero{background:var(--ink);padding:5.5rem 2rem 5rem;position:relative;overflow:hidden;}
@@ -182,6 +206,9 @@
     <li><a href="https://www.coasttocoasthomes.ca/investor-hub" target="_top">Investor Hub</a></li>
     <li><a href="https://www.coasttocoasthomes.ca/investor-hub#connect" target="_top" class="nav__cta">Connect</a></li>
   </ul>
+  <div class="nav__hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- ARTICLE HERO -->
@@ -403,6 +430,24 @@
     });
   });
 }());
+</script>
+<script>
+(function(){
+  var h=document.querySelector('.nav__hamburger');
+  var m=document.querySelector('.nav__links');
+  if(h&&m){
+    h.addEventListener('click',function(){
+      m.classList.toggle('is-open');
+      h.classList.toggle('is-active');
+    });
+    m.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click',function(){
+        m.classList.remove('is-open');
+        h.classList.remove('is-active');
+      });
+    });
+  }
+})();
 </script>
 
 </body>

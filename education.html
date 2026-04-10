@@ -20,7 +20,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Investor Education Hub | Canadian Real Estate Insights | Coast to Coast Homes</title>
+<link rel="icon" type="image/png" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<link rel="apple-touch-icon" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<title>Investor Education | Real Estate Insights | C2C Homes</title>
   <meta name="description" content="Real insights from a real portfolio. Articles on private lending, market strategy, and operations from Colin Ernst, Nicole Fiore, and Judy Lea: a team managing real estate across four Canadian provinces.">
   <meta name="keywords" content="Canadian real estate investing articles, private lending Canada, real estate investment education, how does private lending work Canada, real estate operations, Colin Ernst real estate, missing middle development Canada">
   <meta name="robots" content="index, follow">
@@ -63,9 +65,20 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.coasttocoasthomes.ca/"},
+      {"@type": "ListItem", "position": 2, "name": "Investor Education Hub", "item": "https://www.coasttocoasthomes.ca/investor-hub"}
+    ]
+  }
+  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap">
 <style>
   :root {
     --teal:#2A9D8F;--teal-deep:#1B7A6F;--teal-light:#5FBFB3;--teal-wash:#E8F6F4;
@@ -77,8 +90,8 @@
     --font-accent:'Cormorant Garamond',Georgia,serif;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  html{scroll-behavior:smooth;min-height:100%;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100%;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
   @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
@@ -90,7 +103,17 @@
   .nav__links a:hover,.nav__links a.active{color:var(--teal-deep);}
   .nav__cta{padding:0.5rem 1.375rem;background:var(--teal-deep) !important;color:var(--white) !important;border-radius:3px;}
   .nav__cta:hover{background:var(--copper) !important;}
-  @media(max-width:768px){.nav__links{display:none;}}
+  .nav__hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:101;}
+  .nav__hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform 0.3s ease, opacity 0.3s ease;}
+  .nav__hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav__hamburger.is-active span:nth-child(2){opacity:0;}
+  .nav__hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:768px){
+    .nav__links{flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:0 2rem;box-shadow:0 8px 24px rgba(26,31,43,.1);gap:0;z-index:100;max-height:0;overflow:hidden;transition:max-height 0.35s ease, padding 0.35s ease;}
+    .nav__links.is-open{max-height:400px;padding:1rem 2rem 1.5rem;}
+    .nav__links a{padding:0.6rem 0;font-size:0.9rem;display:block;}
+    .nav__hamburger{display:flex;}
+  }
 
   /* BUTTONS */
   .btn{display:inline-block;padding:.875rem 2.25rem;border-radius:3px;font-family:var(--font-sans);font-weight:600;font-size:.875rem;letter-spacing:.03em;text-decoration:none;cursor:pointer;border:none;transition:background .22s,color .22s,box-shadow .22s,transform .18s;}
@@ -305,6 +328,9 @@
     <li><a href="https://www.coasttocoasthomes.ca/tools" target="_top">Tools</a></li>
     <li><a href="#connect" class="nav__cta">Connect</a></li>
   </ul>
+  <div class="nav__hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- ─── PAGE HERO ─── -->
@@ -805,6 +831,24 @@
     },10000);
     return false;
   });
+})();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('.nav__hamburger');
+  var m=document.querySelector('.nav__links');
+  if(h&&m){
+    h.addEventListener('click',function(){
+      m.classList.toggle('is-open');
+      h.classList.toggle('is-active');
+    });
+    m.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click',function(){
+        m.classList.remove('is-open');
+        h.classList.remove('is-active');
+      });
+    });
+  }
 })();
 </script>
 </body>

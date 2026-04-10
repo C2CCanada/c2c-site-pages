@@ -37,7 +37,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coast to Coast Homes Canada | Real Estate Investment Partners</title>
+<link rel="icon" type="image/png" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<link rel="apple-touch-icon" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<title>Coast to Coast Homes Canada | Real Estate Investing</title>
   <meta name="description" content="Colin Ernst and Nicole Fiore help everyday Canadians build long-term wealth through trusted real estate partnerships: private lending, missing middle development, and long-term holds across four provinces.">
   <meta name="keywords" content="Canadian real estate investment, private lending Canada, missing middle development, real estate partners Canada, Colin Ernst, Nicole Fiore, Coast to Coast Homes">
   <meta name="robots" content="index, follow">
@@ -64,12 +66,18 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": "RealEstateAgent",
         "name": "Coast to Coast Homes Canada",
-        "url": "https://coasttocoasthomes.ca",
+        "url": "https://www.coasttocoasthomes.ca",
         "logo": "https://coasttocoasthomes.ca/logo.png",
-        "description": "Real estate investment company helping everyday Canadians build long-term wealth through private lending, missing middle development, and long-term hold properties across four Canadian provinces.",
+        "description": "Help everyday Canadians build long-term wealth and peace of mind through trusted real estate partnerships, purpose-driven developments, and education that empowers people to lead courageous, financially confident lives.",
         "foundingDate": "2017",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Moncton",
+          "addressRegion": "New Brunswick",
+          "addressCountry": "CA"
+        },
         "areaServed": "Canada",
         "founders": [
           {"@type": "Person", "name": "Colin Ernst"},
@@ -102,6 +110,7 @@
   </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -128,7 +137,7 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; min-height: 100%; }
 
   body {
     font-family: var(--font-sans);
@@ -136,6 +145,7 @@
     background: var(--cream);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    min-height: 100%;
   }
 
   @keyframes fadeUp {
@@ -205,6 +215,7 @@
     gap: 5px;
     cursor: pointer;
     padding: 4px;
+    z-index: 101;
   }
   .nav__hamburger span {
     display: block;
@@ -212,10 +223,15 @@
     height: 2px;
     background: var(--ink);
     border-radius: 2px;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
+  .nav__hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav__hamburger.is-active span:nth-child(2) { opacity: 0; }
+  .nav__hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   @media (max-width: 768px) {
-    .nav__links { display: none; }
+    .nav__links { flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 0 2rem; box-shadow: 0 8px 24px rgba(26,31,43,.1); gap: 0; z-index: 100; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+    .nav__links.is-open { max-height: 400px; padding: 1rem 2rem 1.5rem; }
+    .nav__links a { padding: 0.6rem 0; font-size: 0.9rem; display: block; }
     .nav__hamburger { display: flex; }
   }
 
@@ -1108,7 +1124,7 @@
     </div>
     <div class="hero__visual">
       <div class="hero__photo-frame">
-        <img src="https://static.wixstatic.com/media/ec69c8_2106be83c421490bac4d2999997b2002~mv2.jpg" alt="Colin Ernst and Nicole Fiore">
+        <img src="https://static.wixstatic.com/media/ec69c8_2106be83c421490bac4d2999997b2002~mv2.jpg" alt="Colin Ernst and Nicole Fiore, Co-Founders of Coast to Coast Homes Canada real estate investment company">
         <div class="hero__photo-caption">
           <strong>Colin Ernst &amp; Nicole Fiore</strong>
           <span>Co-Founders · Coast to Coast Homes Canada</span>
@@ -1184,7 +1200,7 @@
   <div class="story__inner">
     <div class="story__photo reveal">
       <div class="story__img-wrap">
-        <img src="https://static.wixstatic.com/media/ec69c8_80f7058f3bdf4790b44b9f81d57137c3~mv2.jpg" alt="Colin and Nicole">
+        <img src="https://static.wixstatic.com/media/ec69c8_80f7058f3bdf4790b44b9f81d57137c3~mv2.jpg" alt="Colin Ernst and Nicole Fiore reviewing real estate portfolio operations">
       </div>
       <div class="story__badge">
         <strong>2017</strong>
@@ -1224,7 +1240,7 @@
     <div class="portfolio__cards">
       <a href="https://www.coasttocoasthomes.ca/opportunities" target="_top" class="pcard reveal">
         <div class="pcard__image">
-          <img src="https://static.wixstatic.com/media/ec69c8_a82ef50ec5b5429aa11189353082b768~mv2.jpg" alt="Truro, NS Development">
+          <img src="https://static.wixstatic.com/media/ec69c8_a82ef50ec5b5429aa11189353082b768~mv2.jpg" alt="Longview residential development project in Truro, Nova Scotia by Coast to Coast Homes">
           <span class="pcard__location">Truro, NS</span>
           <span class="pcard__status">Active Development</span>
         </div>
@@ -1242,7 +1258,7 @@
       </a>
       <a href="https://www.coasttocoasthomes.ca/opportunities" target="_top" class="pcard reveal reveal-delay-1">
         <div class="pcard__image">
-          <img src="https://static.wixstatic.com/media/ec69c8_da045409cf8a48179ba01b37d6a10c00~mv2.png" alt="Deep River, ON">
+          <img src="https://static.wixstatic.com/media/ec69c8_da045409cf8a48179ba01b37d6a10c00~mv2.png" alt="32-unit apartment building in Deep River, Ontario managed by Coast to Coast Homes Canada">
           <span class="pcard__location">Deep River, ON</span>
           <span class="pcard__status">Established Asset</span>
         </div>
@@ -1476,6 +1492,24 @@
     s.src=url;
     document.body.appendChild(s);
   });
+})();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('.nav__hamburger');
+  var m=document.querySelector('.nav__links');
+  if(h&&m){
+    h.addEventListener('click',function(){
+      m.classList.toggle('is-open');
+      h.classList.toggle('is-active');
+    });
+    m.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click',function(){
+        m.classList.remove('is-open');
+        h.classList.remove('is-active');
+      });
+    });
+  }
 })();
 </script>
 

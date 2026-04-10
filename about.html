@@ -14,7 +14,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | Colin Ernst & Nicole Fiore | Coast to Coast Homes Canada</title>
+<link rel="icon" type="image/png" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<link rel="apple-touch-icon" href="https://static.wixstatic.com/media/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<title>About Us | Colin Ernst & Nicole Fiore | C2C Homes</title>
   <meta name="description" content="Meet Colin Ernst and Nicole Fiore: co-founders of Coast to Coast Homes Canada. 9+ years building and operating a real estate portfolio across Ontario, BC, Nova Scotia, and New Brunswick.">
   <meta name="keywords" content="Colin Ernst real estate, Nicole Fiore real estate, Coast to Coast Homes founders, Canadian real estate investors, Moncton real estate, Atlantic Canada real estate">
   <meta name="robots" content="index, follow">
@@ -65,9 +67,21 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.coasttocoasthomes.ca/"},
+      {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.coasttocoasthomes.ca/about"}
+    ]
+  }
+  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap">
+<link rel="preload" as="image" href="https://static.wixstatic.com/media/ec69c8_2106be83c421490bac4d2999997b2002~mv2.jpg">
 <style>
   :root {
     --teal:#2A9D8F;--teal-deep:#1B7A6F;--teal-light:#5FBFB3;--teal-wash:#E8F6F4;
@@ -79,8 +93,8 @@
     --font-accent:'Cormorant Garamond',Georgia,serif;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  html{scroll-behavior:smooth;min-height:100%;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100%;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
   @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
@@ -92,7 +106,17 @@
   .nav__links a:hover,.nav__links a.active{color:var(--teal-deep);}
   .nav__cta{padding:0.5rem 1.375rem;background:var(--teal-deep) !important;color:var(--white) !important;border-radius:3px;}
   .nav__cta:hover{background:var(--copper) !important;}
-  @media(max-width:768px){.nav__links{display:none;}}
+  .nav__hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:101;}
+  .nav__hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform 0.3s ease, opacity 0.3s ease;}
+  .nav__hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav__hamburger.is-active span:nth-child(2){opacity:0;}
+  .nav__hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:768px){
+    .nav__links{flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:0 2rem;box-shadow:0 8px 24px rgba(26,31,43,.1);gap:0;z-index:100;max-height:0;overflow:hidden;transition:max-height 0.35s ease, padding 0.35s ease;}
+    .nav__links.is-open{max-height:400px;padding:1rem 2rem 1.5rem;}
+    .nav__links a{padding:0.6rem 0;font-size:0.9rem;display:block;}
+    .nav__hamburger{display:flex;}
+  }
 
   /* BUTTONS */
   .btn{display:inline-block;padding:.875rem 2.25rem;border-radius:3px;font-family:var(--font-sans);font-weight:600;font-size:.875rem;letter-spacing:.03em;text-decoration:none;cursor:pointer;border:none;transition:background .22s,color .22s,box-shadow .22s,transform .18s;}
@@ -262,6 +286,9 @@
     <li><a href="https://www.coasttocoasthomes.ca/tools" target="_top">Tools</a></li>
     <li><a href="https://www.coasttocoasthomes.ca/investor-hub#connect" target="_top" class="nav__cta">Connect</a></li>
   </ul>
+  <div class="nav__hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- ─── PAGE HERO ─── -->
@@ -285,7 +312,7 @@
       <p>Since 2017, that conviction has grown into a 150-door portfolio spanning Ontario, Nova Scotia, New Brunswick, and British Columbia.</p>
     </div>
     <div class="origin__img-wrap reveal reveal-delay-1">
-      <img src="https://static.wixstatic.com/media/ec69c8_2106be83c421490bac4d2999997b2002~mv2.jpg" alt="Colin and Nicole">
+      <img src="https://static.wixstatic.com/media/ec69c8_2106be83c421490bac4d2999997b2002~mv2.jpg" alt="Colin Ernst and Nicole Fiore, Co-Founders of Coast to Coast Homes Canada">
     </div>
   </div>
 </section>
@@ -362,7 +389,7 @@
     <div class="founders__grid">
       <div class="founder-card reveal">
         <div class="founder-card__photo">
-          <img src="https://static.wixstatic.com/media/ec69c8_9791d216f2a447318ede3ade89564b8f~mv2.jpg" alt="Colin Ernst" style="object-position:center 25%;transform:scale(1.3);">
+          <img src="https://static.wixstatic.com/media/ec69c8_9791d216f2a447318ede3ade89564b8f~mv2.jpg" alt="Colin Ernst, Co-Founder and CEO of Coast to Coast Homes Canada" style="object-position:center 25%;transform:scale(1.3);">
         </div>
         <div class="founder-card__body">
           <span class="founder-card__role">Co-Founder &amp; CEO</span>
@@ -372,7 +399,7 @@
       </div>
       <div class="founder-card reveal reveal-delay-1">
         <div class="founder-card__photo">
-          <img src="https://static.wixstatic.com/media/ec69c8_f5cdfcd7412d4f24bd45580bde6f462c~mv2.jpg" alt="Nicole Fiore" style="object-position:center 25%;transform:scale(1.3);">
+          <img src="https://static.wixstatic.com/media/ec69c8_f5cdfcd7412d4f24bd45580bde6f462c~mv2.jpg" alt="Nicole Fiore, Co-Founder of Coast to Coast Homes Canada" style="object-position:center 25%;transform:scale(1.3);">
         </div>
         <div class="founder-card__body">
           <span class="founder-card__role">Co-Founder, Vision &amp; Marketing</span>
@@ -382,7 +409,7 @@
       </div>
       <div class="founder-card reveal reveal-delay-2">
         <div class="founder-card__photo">
-          <img src="https://static.wixstatic.com/media/ec69c8_b0f852d32849414e93ce4570fa8c5ce7~mv2.png" alt="Judy Lea">
+          <img src="https://static.wixstatic.com/media/ec69c8_b0f852d32849414e93ce4570fa8c5ce7~mv2.png" alt="Judy Lea, Executive Assistant and Integrator at Coast to Coast Homes Canada">
         </div>
         <div class="founder-card__body">
           <span class="founder-card__role">Executive Assistant &amp; Integrator</span>
@@ -547,6 +574,24 @@
   window.addEventListener('resize', notifyWixHeight);
   if(window.ResizeObserver) new ResizeObserver(notifyWixHeight).observe(document.body);
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
+</script>
+<script>
+(function(){
+  var h=document.querySelector('.nav__hamburger');
+  var m=document.querySelector('.nav__links');
+  if(h&&m){
+    h.addEventListener('click',function(){
+      m.classList.toggle('is-open');
+      h.classList.toggle('is-active');
+    });
+    m.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click',function(){
+        m.classList.remove('is-open');
+        h.classList.remove('is-active');
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>
