@@ -228,6 +228,25 @@
   .newsletter__trust{font-size:.75rem;font-weight:300;color:var(--stone);margin-top:1rem;letter-spacing:.02em;}
   @media(max-width:480px){.newsletter__card{padding:2rem 1.25rem;}}
 
+  /* CONNECT FORM */
+  .connect{background:var(--cream);padding:6rem 2rem;}
+  .connect__inner{max-width:600px;margin:0 auto;text-align:center;}
+  .connect__title{font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);color:var(--ink);margin-bottom:.75rem;line-height:1.2;}
+  .connect__sub{font-size:.95rem;font-weight:300;color:var(--slate);line-height:1.75;margin-bottom:2.5rem;}
+  .connect__form{display:flex;flex-direction:column;gap:1rem;max-width:420px;margin:0 auto;}
+  .connect__row{display:flex;gap:1rem;}
+  .connect__input{flex:1;font-family:var(--font-sans);font-size:.9rem;color:var(--ink);background:var(--white);border:1.5px solid var(--sand);border-radius:3px;padding:.75rem .875rem;outline:none;transition:border-color .18s,box-shadow .18s;}
+  .connect__input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,157,143,.1);}
+  .connect__select{flex:1;font-family:var(--font-sans);font-size:.9rem;color:var(--ink);background:var(--white);border:1.5px solid var(--sand);border-radius:3px;padding:.75rem .875rem;outline:none;transition:border-color .18s,box-shadow .18s;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='%236B7280'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .875rem center;}
+  .connect__select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,157,143,.1);}
+  .connect__submit{padding:.8rem 1.75rem;font-size:.9rem;background:var(--teal-deep);color:var(--white);border:none;border-radius:3px;font-family:var(--font-sans);font-weight:600;cursor:pointer;transition:background .22s,transform .18s;letter-spacing:.03em;}
+  .connect__submit:hover{background:var(--copper);transform:translateY(-1px);}
+  .connect__trust{font-size:.75rem;font-weight:300;color:var(--stone);margin-top:1rem;letter-spacing:.02em;}
+  .connect__thankyou{text-align:center;padding:1rem 0;}
+  .connect__thankyou h3{font-family:var(--font-serif);font-size:1.4rem;color:var(--teal-deep);margin-bottom:.75rem;}
+  .connect__thankyou p{font-size:.9rem;font-weight:300;color:var(--charcoal);line-height:1.7;}
+  @media(max-width:480px){.connect__row{flex-direction:column;}}
+
   /* CTA BAND */
   .cta-band{background:var(--teal-deep);padding:5.5rem 2rem;text-align:center;position:relative;}
   .cta-band::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--copper),transparent);}
@@ -280,7 +299,7 @@
     <li><a href="opportunities.html">Opportunities</a></li>
     <li><a href="#" class="active">Investor Hub</a></li>
     <li><a href="tools.html">Tools</a></li>
-    <li><a href="mailto:hello@coasttocoasthomes.ca" class="nav__cta">Connect</a></li>
+    <li><a href="#connect" class="nav__cta">Connect</a></li>
   </ul>
 </nav>
 
@@ -353,7 +372,7 @@
         <span class="section-eyebrow">Latest Thinking</span>
         <h2>From the Coast to Coast Homes team.</h2>
       </div>
-      <a href="mailto:hello@coasttocoasthomes.ca?subject=Investor Hub" class="btn btn--outline">Suggest a Topic</a>
+      <a href="#connect" class="btn btn--outline">Suggest a Topic</a>
     </div>
     <div class="articles__grid">
 
@@ -566,7 +585,38 @@
     <p class="cta-band__sub">If what you've read here resonates, we'd love to have a conversation. We work with a select group of investors who are serious about the long game.</p>
     <div class="cta-band__actions">
       <a href="opportunities.html" class="btn btn--light">View Current Opportunities</a>
-      <a href="mailto:hello@coasttocoasthomes.ca" class="btn btn--ghost">Get in Touch</a>
+      <a href="#connect" class="btn btn--ghost">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONNECT FORM ─── -->
+<section class="connect" id="connect">
+  <div class="connect__inner reveal">
+    <span class="section-eyebrow" style="color:var(--copper);">Start a Conversation</span>
+    <h2 class="connect__title">We'd love to hear from you.</h2>
+    <p class="connect__sub">Whether you're exploring your first investment or looking for a trusted partner for your next one, we're happy to connect. No pressure, no pitch. Just a real conversation.</p>
+    <form id="form-connect" class="connect__form" novalidate>
+      <div class="connect__row">
+        <input type="text" class="connect__input" placeholder="First name" name="FNAME" required>
+        <input type="text" class="connect__input" placeholder="Last name" name="LNAME">
+      </div>
+      <input type="email" class="connect__input" placeholder="Email address" name="EMAIL" required>
+      <select class="connect__select" name="INTEREST">
+        <option value="" disabled selected>What brings you here?</option>
+        <option value="Investing with C2C">Investing with Coast to Coast</option>
+        <option value="Learning about real estate">Learning about real estate investing</option>
+        <option value="The Core Install">The Core Install (back office setup)</option>
+        <option value="Partnership opportunity">Partnership or JV opportunity</option>
+        <option value="Just exploring">Just exploring for now</option>
+      </select>
+      <button type="submit" class="connect__submit">Connect with Us</button>
+    </form>
+    <p id="connect-msg" style="display:none;margin-top:.625rem;font-size:.82rem;font-weight:500;"></p>
+    <p class="connect__trust">No spam. No pressure. We'll follow up personally within 1 to 2 business days.</p>
+    <div class="connect__thankyou" id="connect-thankyou" hidden>
+      <h3>Thank you for reaching out.</h3>
+      <p>We'll be in touch within 1 to 2 business days. In the meantime, check your inbox for a welcome note from our team.</p>
     </div>
   </div>
 </section>
@@ -613,6 +663,19 @@
     entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target);}});
   }, { threshold: 0.1 });
   revealEls.forEach(el => observer.observe(el));
+
+  // If the URL has a hash, force-reveal that section and scroll to it after page loads
+  if(window.location.hash){
+    var target = document.querySelector(window.location.hash);
+    if(target){
+      // Immediately reveal the target and any reveal children
+      target.classList.add('is-visible');
+      target.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+      // Scroll after a short delay to let the page fully render
+      setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 300);
+    }
+  }
+
   function notifyWixHeight() {
     const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
     window.parent.postMessage({ type:'setHeight', height:h }, '*');
@@ -670,6 +733,67 @@
         delete window[cb];
         b.disabled=false;
         b.textContent="Subscribe";
+        m.style.display="block";
+        m.style.color="#C17F59";
+        m.textContent="Request timed out. Please try again.";
+      }
+    },10000);
+    return false;
+  });
+})();
+</script>
+
+<!-- CONNECT FORM WIRING -->
+<script>
+(function(){
+  var MC="https://coasttocoasthomes.us21.list-manage.com/subscribe/post-json?u=909c9ee1e5cae82141e7db4ad&id=0cb6d0fbc7";
+  var f=document.getElementById("form-connect");
+  if(!f)return;
+  var b=f.querySelector("button[type=submit]");
+  var m=document.getElementById("connect-msg");
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var email=f.querySelector("[name=EMAIL]").value;
+    var fname=f.querySelector("[name=FNAME]").value;
+    if(!email||!fname)return false;
+    b.disabled=true;
+    b.textContent="Sending...";
+    m.style.display="none";
+    var cb="mc_conn_"+Date.now();
+    var url=MC
+      +"&EMAIL="+encodeURIComponent(email)
+      +"&FNAME="+encodeURIComponent(fname)
+      +"&LNAME="+encodeURIComponent(f.querySelector("[name=LNAME]").value||"")
+      +"&LEADSRC=site-connect"
+      +"&c="+cb;
+    var interest=f.querySelector("[name=INTEREST]").value;
+    if(interest) url+="&MMERGE6="+encodeURIComponent(interest);
+    window[cb]=function(r){
+      delete window[cb];
+      if(r.result==="success"||( r.msg && r.msg.indexOf("already subscribed")>-1)){
+        f.hidden=true;
+        m.style.display="none";
+        document.querySelector(".connect__trust").hidden=true;
+        document.getElementById("connect-thankyou").hidden=false;
+      }else{
+        b.disabled=false;
+        b.textContent="Connect with Us";
+        m.style.display="block";
+        var msg=r.msg||"Something went wrong.";
+        msg=msg.replace(/<[^>]+>/g,"");
+        m.style.color="#C17F59";
+        m.textContent=msg;
+      }
+    };
+    var s=document.createElement("script");
+    s.src=url;
+    document.head.appendChild(s);
+    setTimeout(function(){
+      if(window[cb]){
+        delete window[cb];
+        b.disabled=false;
+        b.textContent="Connect with Us";
         m.style.display="block";
         m.style.color="#C17F59";
         m.textContent="Request timed out. Please try again.";
