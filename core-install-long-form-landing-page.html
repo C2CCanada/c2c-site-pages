@@ -121,7 +121,7 @@
       background: var(--cream);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     /* Orphan prevention */
@@ -312,8 +312,7 @@
        ============================================================ */
 
     .nav {
-      position: sticky;
-      top: 0;
+      position: relative;
       z-index: 100;
       background-color: var(--white);
       border-bottom: 1px solid var(--sand);
