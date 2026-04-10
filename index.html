@@ -1438,10 +1438,12 @@
     );
     window.parent.postMessage({ type: 'setHeight', height: height }, '*');
   }
+  var _wixHt;
+  function debouncedWixHeight(){ clearTimeout(_wixHt); _wixHt = setTimeout(notifyWixHeight, 250); }
   window.addEventListener('load', notifyWixHeight);
-  window.addEventListener('resize', notifyWixHeight);
+  window.addEventListener('resize', debouncedWixHeight);
   if (window.ResizeObserver) {
-    new ResizeObserver(notifyWixHeight).observe(document.body);
+    new ResizeObserver(debouncedWixHeight).observe(document.body);
   }
   // Also fire after fonts load (they shift layout slightly)
   if (document.fonts && document.fonts.ready) {

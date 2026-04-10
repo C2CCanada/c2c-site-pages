@@ -570,9 +570,11 @@
     const h = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);
     window.parent.postMessage({ type:'setHeight', height:h }, '*');
   }
+  var _wixHt;
+  function debouncedWixHeight(){ clearTimeout(_wixHt); _wixHt = setTimeout(notifyWixHeight, 250); }
   window.addEventListener('load', notifyWixHeight);
-  window.addEventListener('resize', notifyWixHeight);
-  if(window.ResizeObserver) new ResizeObserver(notifyWixHeight).observe(document.body);
+  window.addEventListener('resize', debouncedWixHeight);
+  if(window.ResizeObserver) new ResizeObserver(debouncedWixHeight).observe(document.body);
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(notifyWixHeight);
 </script>
 <script>
