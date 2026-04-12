@@ -364,19 +364,19 @@
       <!-- PHOTO STACK: 3 images for Truro / Longview -->
       <div class="property-img-stack property-img-stack--3">
 
-        <!-- PHOTO 1: Colin & Nicole at the site -->
+        <!-- PHOTO 1: Longview development -->
         <div class="property-img-wrap">
-          <img src="https://static.wixstatic.com/media/ec69c8_a82ef50ec5b5429aa11189353082b768~mv2.jpg" alt="Colin and Nicole Ernst at the Longview site, Truro" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+          <img src="https://static.wixstatic.com/media/ec69c8_be65d68c8d534ca9967de737e367b3be~mv2.jpg" width="530" height="280" alt="Longview residential development, Truro Nova Scotia" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
         </div>
 
         <!-- PHOTO 2: Aerial -->
         <div class="property-img-wrap">
-          <img src="https://static.wixstatic.com/media/ec69c8_bc2e793fd11245cbb397bca98981aff5~mv2.jpg" alt="Aerial view, Longview development, Truro Nova Scotia" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+          <img src="https://static.wixstatic.com/media/ec69c8_26d2d8c3aa944810b6f643e83e3352ba~mv2.jpg" width="530" height="230" alt="Aerial view, Longview development, Truro Nova Scotia" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
         </div>
 
         <!-- PHOTO 3: Interior suite -->
         <div class="property-img-wrap">
-          <img src="https://static.wixstatic.com/media/ec69c8_ad5923ac174949549555f1ce2ba3efe9~mv2.png" alt="Interior suite, Longview Truro" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+          <img src="https://static.wixstatic.com/media/ec69c8_3239cb99ff724a85b19aeb0d4105215e~mv2.jpg" width="530" height="210" alt="Interior suite, Longview Truro" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
         </div>
 
       </div>
@@ -464,7 +464,7 @@
 
         <!-- INTERIOR PHOTO -->
         <div class="property-img-wrap">
-          <img src="https://static.wixstatic.com/media/ec69c8_da045409cf8a48179ba01b37d6a10c00~mv2.png" alt="Deep River exterior, 30 Montcalm" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+          <img src="https://static.wixstatic.com/media/ec69c8_7b736d776f454c5086ade8ced8d542a0~mv2.png" width="530" height="280" alt="Deep River exterior, 30 Montcalm" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
         </div>
 
       </div>
@@ -519,7 +519,7 @@
       <h4>What's Coming Next: 42-Unit Building  -  Under Construction</h4>
       <div class="property-photo-strip__grid">
         <div class="property-img-wrap">
-          <img src="https://static.wixstatic.com/media/ec69c8_f37a5197f1044b85a90b63de4d82f2b9~mv2.png" alt="42-unit building schematic, Deep River" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+          <img src="https://static.wixstatic.com/media/ec69c8_4a11f5ec995f4ed199d74ba82b6dc6f5~mv2.png" width="530" height="220" alt="42-unit development, Deep River Ontario" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
         </div>
         <div style="display:flex;flex-direction:column;justify-content:center;padding:1rem 0;">
           <p style="font-size:.9rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.9;margin-bottom:1rem;">On the same parcel of land as 30 Montcalm, a 42-unit building is currently being constructed from the ground up. This is purpose-built, new construction in a market we already know deeply  -  same team, same discipline, same long-term approach.</p>
@@ -795,6 +795,20 @@
       });
     });
   }
+})();
+</script>
+<script>
+/* ── Wix iframe anchor scroll fix ── */
+(function(){
+  document.addEventListener('click',function(e){
+    var link=e.target.closest('a[href^="#"]');
+    if(!link)return;
+    var id=link.getAttribute('href').slice(1);
+    var el=document.getElementById(id);
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+  var h=window.location.hash;
+  if(h){setTimeout(function(){var el=document.getElementById(h.slice(1));if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},400);}
 })();
 </script>
 </body>

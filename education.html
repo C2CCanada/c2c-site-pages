@@ -399,7 +399,7 @@
         <span class="section-eyebrow">Latest Thinking</span>
         <h2>From the Coast to Coast Homes team.</h2>
       </div>
-      <a href="#connect" class="btn btn--outline">Suggest a Topic</a>
+      <a href="mailto:hello@coasttocoasthomes.ca?subject=Suggest%20a%20Topic" class="btn btn--outline">Suggest a Topic</a>
     </div>
     <div class="articles__grid">
 
@@ -420,7 +420,7 @@
       </a>
 
       <!-- ARTICLE: The Hundred Small Ones | Nicole -->
-      <a href="https://www.coasttocoasthomes.ca/articles" target="_top" class="article-card reveal">
+      <a href="https://www.coasttocoasthomes.ca/articles#hundred-small-ones" target="_top" class="article-card reveal">
         <div class="article-card__image">
           <div class="article-card__image-bg article-card__image-bg--2"></div>
           <span class="article-card__cat">Strategy</span>
@@ -436,7 +436,7 @@
       </a>
 
       <!-- ARTICLE: Market Reality Check | Colin -->
-      <a href="https://www.coasttocoasthomes.ca/articles" target="_top" class="article-card reveal reveal-delay-1">
+      <a href="https://www.coasttocoasthomes.ca/articles#market-reality-check" target="_top" class="article-card reveal reveal-delay-1">
         <div class="article-card__image">
           <div class="article-card__image-bg article-card__image-bg--3"></div>
           <span class="article-card__cat">Market Insights</span>
@@ -468,7 +468,7 @@
       </a>
 
       <!-- ARTICLE 2 | Private Lending -->
-      <a href="https://www.coasttocoasthomes.ca/articles" target="_top" class="article-card reveal reveal-delay-1">
+      <a href="https://www.coasttocoasthomes.ca/articles#private-lending" target="_top" class="article-card reveal reveal-delay-1">
         <div class="article-card__image">
           <div class="article-card__image-bg article-card__image-bg--2"></div>
           <span class="article-card__cat">Private Capital</span>
@@ -484,7 +484,7 @@
       </a>
 
       <!-- ARTICLE 3 | A Portfolio Is Not a System -->
-      <a href="https://www.coasttocoasthomes.ca/articles" target="_top" class="article-card reveal reveal-delay-2">
+      <a href="https://www.coasttocoasthomes.ca/articles#portfolio-system" target="_top" class="article-card reveal reveal-delay-2">
         <div class="article-card__image">
           <div class="article-card__image-bg article-card__image-bg--3"></div>
           <span class="article-card__cat">Strategy</span>
@@ -500,7 +500,7 @@
       </a>
 
       <!-- ARTICLE 4 | Deep River Case Study -->
-      <a href="https://www.coasttocoasthomes.ca/articles" target="_top" class="article-card reveal">
+      <a href="https://www.coasttocoasthomes.ca/articles#deep-river" target="_top" class="article-card reveal">
         <div class="article-card__image">
           <div class="article-card__image-bg article-card__image-bg--5"></div>
           <span class="article-card__cat">Case Study</span>
@@ -532,7 +532,7 @@
       </a>
 
       <!-- ARTICLE 6 | Truro / Longview -->
-      <a href="https://www.coasttocoasthomes.ca/articles" target="_top" class="article-card reveal reveal-delay-1">
+      <a href="https://www.coasttocoasthomes.ca/articles#truro" target="_top" class="article-card reveal reveal-delay-1">
         <div class="article-card__image">
           <div class="article-card__image-bg article-card__image-bg--4"></div>
           <span class="article-card__cat">Market Insights</span>
@@ -852,6 +852,20 @@
       });
     });
   }
+})();
+</script>
+<script>
+/* ── Wix iframe anchor scroll fix ── */
+(function(){
+  document.addEventListener('click',function(e){
+    var link=e.target.closest('a[href^="#"]');
+    if(!link)return;
+    var id=link.getAttribute('href').slice(1);
+    var el=document.getElementById(id);
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+  var h=window.location.hash;
+  if(h){setTimeout(function(){var el=document.getElementById(h.slice(1));if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},400);}
 })();
 </script>
 </body>
