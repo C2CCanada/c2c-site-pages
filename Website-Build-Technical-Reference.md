@@ -964,25 +964,48 @@ No npm, no React component, no configuration. Works immediately.
 - **Meta tags, canonical URLs, structured data** — already present from SEO Round 1
 - **Google Fonts** — loaded directly from Google's CDN, not Wix
 
-### Post-Migration SEO Additions (May 2026)
+### Post-Migration SEO & Accessibility (May 2026)
 
 1. **FAQ schema (FAQPage JSON-LD)** added to `index.html`, `about.html`, and `opportunities.html` — 11 Q&A pairs targeting "People Also Ask" boxes and AI answer engines. Schema lives in `<head>`, not visible to users.
 
-2. **AODA accessibility fixes** applied to all 13 pages:
+2. **AODA accessibility fixes** applied to all pages:
    - `<label>` elements added to all email form inputs
-   - Skip navigation link added (`<a href="#main-content">`) after `<body>` on every page
+   - Skip navigation link added after `<body>` on every page using `top:-40px` / `onfocus top:0` / `onblur top:-40px` pattern (not `left:-9999px` — that approach isn't properly focusable)
    - ARIA landmarks added (`role="navigation"`, `role="contentinfo"`) to nav and footer elements
+   - `<main id="main-content">` landmark added to all 15 pages, wrapping content between nav and footer
 
-3. **Sitemap** created at `sitemap.xml` covering all 10 public pages. Submitted to Google Search Console.
+3. **Sitemap** created at `sitemap.xml` covering all public pages. Submitted to Google Search Console.
 
 4. **Google Search Console** verified via TXT DNS record added to Vercel DNS. Homepage submitted for immediate indexing.
+
+5. **BreadcrumbList schema** added to all 5 article pages — enables breadcrumb trails in Google search results (Home > Articles > Article Title).
+
+6. **robots.txt** created at repo root:
+   ```
+   User-agent: *
+   Allow: /
+   Sitemap: https://www.coasttocoasthomes.ca/sitemap.xml
+   ```
+
+7. **Bing Webmaster Tools** verified via HTML meta tag on `index.html`. Sitemap submitted — covers Bing search and Microsoft Copilot (AI search).
+
+### PageSpeed Scores (May 2026 baseline)
+
+| | Mobile | Desktop |
+|--|--------|---------|
+| Performance | 87 | 99 |
+| Accessibility | 89 | 91 |
+| Best Practices | 100 | 100 |
+| SEO | 100 | 100 |
+
+Note: Accessibility score of 89/91 reflects one known color contrast issue (teal/dark palette fails WCAG AA ratio) — intentionally not fixed to preserve brand design. All other accessibility flags resolved.
 
 ### Google Workspace — Still To Do
 
 Google Workspace is currently billed through Wix (US$289/year for 3 users vs US$216/year direct). Migration steps:
-1. Confirm domain is live on Vercel first
+1. Confirm domain is live on Vercel first ✓
 2. Set up new Google Workspace subscription directly at workspace.google.com
-3. MX records are already in Vercel DNS — no DNS changes needed
+3. MX records are already in Vercel DNS — no DNS changes needed ✓
 4. Cancel Wix-managed subscription
 5. Colin and Nicole's accounts are not affected — they live in Google, not Wix
 
