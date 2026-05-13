@@ -371,9 +371,10 @@
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;" onfocus="this.style.left='0'">Skip to main content</a>
 
 <!-- ─── NAV ─── -->
-<nav class="nav">
+<nav class="nav" role="navigation">
   <a href="https://www.coasttocoasthomes.ca/" target="_top" class="nav__logo"><span class="nav__logo-text">Coast to Coast Homes</span></a>
   <ul class="nav__links">
     <li><a href="https://www.coasttocoasthomes.ca/" target="_top">Home</a></li>
@@ -685,6 +686,7 @@
       <h2 class="newsletter__title">Stay in the loop.</h2>
       <p class="newsletter__sub">When we publish new articles, release free resources, or have something worth sharing. It goes to this list first. Straightforward, no fluff, no noise.</p>
       <form id="form-newsletter" class="newsletter__form" novalidate>
+<label for="EMAIL" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email Address</label>
         <input type="email" class="newsletter__input" placeholder="you@yourcompany.com" name="EMAIL" required>
         <button type="submit" class="newsletter__submit">Subscribe</button>
       </form>
@@ -718,6 +720,7 @@
         <input type="text" class="connect__input" placeholder="First name" name="FNAME" required>
         <input type="text" class="connect__input" placeholder="Last name" name="LNAME">
       </div>
+<label for="EMAIL" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email Address</label>
       <input type="email" class="connect__input" placeholder="Email address" name="EMAIL" required>
       <select class="connect__select" name="INTEREST">
         <option value="" disabled selected>What brings you here?</option>
@@ -739,7 +742,7 @@
 </section>
 
 <!-- ─── FOOTER ─── -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="footer__inner">
     <div class="footer__brand">
       <span class="footer__logo">Coast to Coast Homes Canada</span>

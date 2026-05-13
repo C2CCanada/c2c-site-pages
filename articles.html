@@ -233,9 +233,10 @@
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;" onfocus="this.style.left='0'">Skip to main content</a>
 
 <!-- ─── NAV ─── -->
-<nav class="nav">
+<nav class="nav" role="navigation">
   <a href="https://www.coasttocoasthomes.ca/" target="_top" class="nav__logo"><span class="nav__logo-text">Coast to Coast Homes</span></a>
   <ul class="nav__links">
     <li><a href="https://www.coasttocoasthomes.ca/" target="_top">Home</a></li>
@@ -416,7 +417,9 @@
         <p style="font-size:.875rem;font-weight:300;color:var(--slate);line-height:1.7;margin-bottom:1.25rem;">Get investor updates, new articles, and free resources: directly to your inbox.</p>
         <form id="form-foundation-subscribe" style="display:flex;flex-direction:column;gap:.625rem;max-width:420px;" novalidate>
           <input type="text" name="FNAME" placeholder="First name" required style="font-family:'DM Sans',system-ui,sans-serif;font-size:.875rem;color:var(--ink);background:var(--white);border:1px solid var(--sand);border-radius:3px;padding:.7rem 1rem;outline:none;transition:border-color .18s;width:100%;">
-          <input type="email" name="EMAIL" placeholder="your@email.com" required style="font-family:'DM Sans',system-ui,sans-serif;font-size:.875rem;color:var(--ink);background:var(--white);border:1px solid var(--sand);border-radius:3px;padding:.7rem 1rem;outline:none;transition:border-color .18s;width:100%;">
+<label for="EMAIL" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email Address</label>
+    <label for="EMAIL" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email Address</label>
+      <input type="email" name="EMAIL" placeholder="your@email.com" required style="font-family:'DM Sans',system-ui,sans-serif;font-size:.875rem;color:var(--ink);background:var(--white);border:1px solid var(--sand);border-radius:3px;padding:.7rem 1rem;outline:none;transition:border-color .18s;width:100%;">
           <button type="submit" style="font-family:'DM Sans',system-ui,sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.03em;background:var(--teal-deep);color:var(--white);border:none;border-radius:3px;padding:.8rem 1.5rem;cursor:pointer;transition:background .22s;align-self:flex-start;">Subscribe to Updates →</button>
         </form>
       </div>
@@ -592,6 +595,7 @@
     <h2>Stay in the loop.</h2>
     <p>When we publish new articles, release free resources, or have something worth sharing  -  it goes to this list first. No noise, no funnels.</p>
     <form id="form-newsletter-articles" class="newsletter-band__form" novalidate>
+<label for="EMAIL" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email Address</label>
       <input type="email" name="EMAIL" placeholder="Your email address" required>
       <button type="submit">Subscribe</button>
     </form>
@@ -599,7 +603,7 @@
 </section>
 
 <!-- ─── FOOTER ─── -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="footer__inner">
     <div class="footer__brand">
       <span class="footer__logo">Coast to Coast Homes Canada</span>

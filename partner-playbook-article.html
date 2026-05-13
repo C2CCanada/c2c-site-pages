@@ -191,6 +191,7 @@
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;" onfocus="this.style.left='0'">Skip to main content</a>
 
 <!-- ─── BACK TO C2C HOMES ─── -->
 <div style="background:#1B7A6F;padding:0.6rem 2rem;display:flex;align-items:center;justify-content:space-between;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8rem;">
@@ -201,7 +202,7 @@
 </div>
 
 <!-- ─── NAV ─── -->
-<nav class="nav">
+<nav class="nav" role="navigation">
   <a href="https://www.coasttocoasthomes.ca/" target="_top" class="nav__logo"><span class="nav__logo-text">Coast to Coast Homes</span></a>
   <ul class="nav__links">
     <li><a href="https://www.coasttocoasthomes.ca/" target="_top">Home</a></li>
@@ -331,6 +332,7 @@
 
     <form id="form-playbook-download" class="download-gate__form" novalidate>
       <input type="text" class="download-gate__input" name="first_name" placeholder="First name" required>
+<label for="EMAIL" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email Address</label>
       <input type="email" class="download-gate__input" name="email" placeholder="your@email.com" required>
       <button type="submit" class="download-gate__btn">Send Me the Playbook →</button>
       <p class="download-gate__trust">No spam. One great resource. Unsubscribe anytime.</p>
@@ -352,7 +354,7 @@
 </section>
 
 <!-- ─── FOOTER ─── -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="footer__inner">
     <span class="footer__logo">Coast to Coast Homes Canada</span>
     <ul class="footer__links">

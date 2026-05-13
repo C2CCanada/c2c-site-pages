@@ -1067,12 +1067,53 @@
     text-wrap: balance;     /* balances headline line lengths across all browsers */
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Coast to Coast Homes Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Coast to Coast Homes Canada is a Canadian real estate investment company founded in 2017 and headquartered in Moncton, New Brunswick. They help Canadians build long-term wealth through purpose-driven developments, asset management, and private capital partnerships across Ontario, British Columbia, Nova Scotia, and New Brunswick."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I invest in real estate with Coast to Coast Homes Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Coast to Coast Homes Canada takes a relationship-first approach. Investors start by expressing interest through a short form, then have a personal conversation with co-founders Colin or Nicole to discuss opportunities and fit. Full documentation is provided before any commitment is made."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What provinces does Coast to Coast Homes Canada operate in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Coast to Coast Homes Canada operates in four provinces: Ontario, British Columbia, Nova Scotia, and New Brunswick."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long has Coast to Coast Homes Canada been operating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Coast to Coast Homes Canada was founded in 2017 and has been operating for over nine years, growing to a portfolio of 150+ doors across four Canadian provinces."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;" onfocus="this.style.left='0'">Skip to main content</a>
 
 <!-- ─── NAV ─── -->
-<nav class="nav">
+<nav class="nav" role="navigation">
   <a href="https://www.coasttocoasthomes.ca/" target="_top" class="nav__logo">
     <!-- Replace with: <img src="YOUR_WIX_LOGO_URL" alt="Coast to Coast Homes"> -->
     <span class="nav__logo-text">Coast to Coast Homes</span>
@@ -1336,6 +1377,7 @@
       <h2 class="newsletter__title">Stay in the loop.</h2>
       <p class="newsletter__sub">New articles, free resources, and opportunities worth knowing about. It goes to this list first. Straightforward, no fluff, no noise.</p>
       <form id="form-newsletter" class="newsletter__form" novalidate>
+<label for="EMAIL" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email Address</label>
         <input type="email" class="newsletter__input" placeholder="you@yourcompany.com" name="EMAIL" required>
         <button type="submit" class="newsletter__submit">Subscribe</button>
       </form>
@@ -1363,7 +1405,7 @@
 </section>
 
 <!-- ─── FOOTER ─── -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="footer__inner">
     <div class="footer__brand">
       <span class="footer__logo">Coast to Coast Homes Canada</span>
