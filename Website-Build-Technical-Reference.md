@@ -908,4 +908,88 @@ grep -rn 'coasttocoasthomes.ca' *.html | grep -v 'target="_top"' | grep -v 'mail
 
 ---
 
-*Last updated: April 12, 2026*
+---
+
+## 15. Migration from Wix to Vercel (May 2026)
+
+### Why We Moved
+
+Wix was the original host because it simplified early setup — but it created dependencies that were hard to unwind: images on Wix CDN, DNS tied to Wix nameservers, Google Workspace billed through Wix, and iframe limitations affecting SEO. Moving to Vercel gave us direct control over hosting, DNS, and deployment.
+
+### What the Migration Involved
+
+1. **GitHub repo already existed** — the HTML files were already version-controlled. Vercel connects directly to GitHub and deploys on every push to `main`. No build step required for static HTML.
+
+2. **Images were on Wix CDN** — all `src` attributes pointed to `static.wixstatic.com`. These would break if the Wix account was ever cancelled. Fixed by:
+   - Extracting all 17 unique Wix CDN URLs from the HTML files
+   - Downloading all images locally into an `images/` folder in the repo
+   - Running `sed` across all HTML files to replace `https://static.wixstatic.com/media/` with `images/`
+   - Committing and pushing — Vercel redeployed automatically
+
+3. **DNS was controlled by Wix** — the domain `coasttocoasthomes.ca` was registered through HostPapa but had Wix nameservers (`ns8.wixdns.net`, `ns9.wixdns.net`). Changed to Vercel nameservers (`ns1.vercel-dns.com`, `ns2.vercel-dns.com`) in HostPapa's domain management panel.
+
+4. **Email MX records had to be preserved** — Google Workspace email routes through Google's MX records. When switching nameservers, those records don't carry over automatically. Before completing the nameserver switch, we:
+   - Ran `dig MX coasttocoasthomes.ca` to capture the 5 live MX records
+   - Added all 5 to Vercel's DNS Records panel manually
+   - Only then confirmed the nameserver change was correct
+
+   **This is the most dangerous step in any DNS migration.** If MX records aren't in the new DNS before propagation completes, email goes down. Always capture them first.
+
+5. **DNS propagation** — nameserver changes take 15 minutes to a few hours. Verify completion by running `dig coasttocoasthomes.ca` and confirming the A record resolves to Vercel IPs (`216.198.79.1` or `216.198.79.65`), not Wix IPs (`185.230.63.x`).
+
+### Vercel DNS Records Added
+
+| Type | Name | Value | Priority |
+|------|------|-------|----------|
+| MX | @ | aspmx.l.google.com | 10 |
+| MX | @ | alt1.aspmx.l.google.com | 20 |
+| MX | @ | alt2.aspmx.l.google.com | 30 |
+| MX | @ | alt3.aspmx.l.google.com | 40 |
+| MX | @ | alt4.aspmx.l.google.com | 50 |
+| TXT | @ | google-site-verification=0dJRE3tBOe213J176kWT27uAkuF9ADQC10M | — |
+
+### Vercel Analytics
+
+For static HTML sites (not Next.js), add this one line before `</body>` on every page:
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+No npm, no React component, no configuration. Works immediately.
+
+### Things That Didn't Need Changing
+
+- **Mailchimp forms** — all forms use client-side JSONP to submit directly to Mailchimp. They are completely independent of the hosting platform. Zero changes required.
+- **Meta tags, canonical URLs, structured data** — already present from SEO Round 1
+- **Google Fonts** — loaded directly from Google's CDN, not Wix
+
+### Post-Migration SEO Additions (May 2026)
+
+1. **FAQ schema (FAQPage JSON-LD)** added to `index.html`, `about.html`, and `opportunities.html` — 11 Q&A pairs targeting "People Also Ask" boxes and AI answer engines. Schema lives in `<head>`, not visible to users.
+
+2. **AODA accessibility fixes** applied to all 13 pages:
+   - `<label>` elements added to all email form inputs
+   - Skip navigation link added (`<a href="#main-content">`) after `<body>` on every page
+   - ARIA landmarks added (`role="navigation"`, `role="contentinfo"`) to nav and footer elements
+
+3. **Sitemap** created at `sitemap.xml` covering all 10 public pages. Submitted to Google Search Console.
+
+4. **Google Search Console** verified via TXT DNS record added to Vercel DNS. Homepage submitted for immediate indexing.
+
+### Google Workspace — Still To Do
+
+Google Workspace is currently billed through Wix (US$289/year for 3 users vs US$216/year direct). Migration steps:
+1. Confirm domain is live on Vercel first
+2. Set up new Google Workspace subscription directly at workspace.google.com
+3. MX records are already in Vercel DNS — no DNS changes needed
+4. Cancel Wix-managed subscription
+5. Colin and Nicole's accounts are not affected — they live in Google, not Wix
+
+### Vercel Plan
+
+Site is currently on Hobby (free) plan. **Upgrade to Pro ($20/month) required** — Hobby is for personal/non-commercial use only and `coasttocoasthomes.ca` is a business site.
+
+---
+
+*Last updated: May 13, 2026*
