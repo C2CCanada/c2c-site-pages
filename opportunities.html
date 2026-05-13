@@ -399,7 +399,7 @@
 </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;" onfocus="this.style.left='0'">Skip to main content</a>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;z-index:9999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;text-decoration:none;transition:top 0.1s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
 
 <!-- ─── NAV ─── -->
 <nav class="nav" role="navigation">
@@ -418,6 +418,7 @@
 </nav>
 
 <!-- ─── PAGE HERO ─── -->
+<main id="main-content">
 <section class="page-hero">
   <div class="page-hero__inner">
     <span class="section-eyebrow">Current Portfolio &amp; Opportunities</span>
@@ -740,6 +741,7 @@
 </section>
 
 <!-- ─── FOOTER ─── -->
+</main>
 <footer class="footer" role="contentinfo">
   <div class="footer__inner">
     <div class="footer__brand">

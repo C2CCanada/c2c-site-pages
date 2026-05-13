@@ -189,7 +189,7 @@
 </script>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:0;z-index:999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;" onfocus="this.style.left='0'">Skip to main content</a>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;z-index:9999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;text-decoration:none;transition:top 0.1s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
 
 <!-- BACK TO C2C HOMES -->
 <div style="background:#1B7A6F;padding:0.6rem 2rem;display:flex;align-items:center;justify-content:space-between;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8rem;">
@@ -215,6 +215,7 @@
 </nav>
 
 <!-- ARTICLE HERO -->
+<main id="main-content">
 <section class="article-hero">
   <div class="article-hero__inner">
     <span class="article-hero__cat">Operations</span>
@@ -361,6 +362,7 @@
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer class="footer" role="contentinfo">
   <div class="footer__inner">
     <span class="footer__logo">Coast to Coast Homes Canada</span>
