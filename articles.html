@@ -668,7 +668,7 @@
       var m=f.querySelector(".mc-msg");
       if(!m){m=document.createElement("p");m.className="mc-msg";m.style.cssText="margin-top:.5rem;font-size:.82rem;font-weight:500;";f.appendChild(m);}
       m.textContent="";
-      var d={EMAIL:f.querySelector("[name=EMAIL]").value,LEADSRC:leadsrc};
+      var d={EMAIL:f.querySelector("[name=EMAIL]").value,LEADSRC:leadsrc,TAGS:leadsrc};
       if(hasName){var fn=f.querySelector("[name=FNAME]");if(fn)d.FNAME=fn.value;}
       mcSubmit(d,
         function(){b.disabled=false;b.textContent=b.dataset.orig;f.reset();m.style.color="#5FBFB3";m.textContent="You are subscribed. Welcome to the list.";},

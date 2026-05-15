@@ -422,7 +422,8 @@
       mcSubmit({
         EMAIL: form.querySelector('[name=email]').value,
         FNAME: form.querySelector('[name=first_name]').value,
-        LEADSRC: 'site-ai-assessment'
+        LEADSRC: 'site-ai-assessment',
+        TAGS: 'site-ai-assessment'
       },
       function () {
         if (PDF_URL) downloadLink.href = PDF_URL;
