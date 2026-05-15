@@ -831,7 +831,7 @@
     b.textContent="Sending...";
     m.style.display="none";
     var cb="mc_cb_"+Date.now();
-    var url=MC+"&EMAIL="+encodeURIComponent(email)+"&LEADSRC=site-newsletter&c="+cb;
+    var url=MC+"&EMAIL="+encodeURIComponent(email)+"&LEADSRC=site-newsletter&TAGS=site-newsletter&c="+cb;
     window[cb]=function(r){
       delete window[cb];
       b.disabled=false;
@@ -894,9 +894,10 @@
       +"&FNAME="+encodeURIComponent(fname)
       +"&LNAME="+encodeURIComponent(f.querySelector("[name=LNAME]").value||"")
       +"&LEADSRC=site-connect"
+      +"&TAGS=site-connect"
       +"&c="+cb;
     var interest=f.querySelector("[name=INTEREST]").value;
-    if(interest) url+="&MMERGE6="+encodeURIComponent(interest);
+    if(interest) url+="&INTEREST="+encodeURIComponent(interest);
     window[cb]=function(r){
       delete window[cb];
       if(r.result==="success"||( r.msg && r.msg.indexOf("already subscribed")>-1)){

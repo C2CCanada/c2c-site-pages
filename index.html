@@ -1490,7 +1490,7 @@
     b.textContent="Sending...";
     m.style.display="none";
     var cb="mc_cb_"+Date.now();
-    var url=MC+"&EMAIL="+encodeURIComponent(email)+"&LEADSRC=site-newsletter&c="+cb;
+    var url=MC+"&EMAIL="+encodeURIComponent(email)+"&LEADSRC=site-newsletter&TAGS=site-newsletter&c="+cb;
     window[cb]=function(r){
       delete window[cb];
       b.disabled=false;
