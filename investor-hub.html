@@ -81,7 +81,7 @@
       {
         "@type": "BlogPosting",
         "headline": "10 Hours a Week: Where Are They Going?",
-        "url": "https://www.coasttocoasthomes.ca/core-install",
+        "url": "https://www.coasttocoasthomes.ca/digital-employees",
         "datePublished": "2026-03-01",
         "author": {"@type": "Person", "name": "Judy Lea"}
       },
@@ -352,8 +352,8 @@
   .footer__contact p{font-size:.83rem;font-weight:300;color:var(--stone);line-height:1.9;}
   .footer__contact a{color:var(--teal-light);text-decoration:none;}
   .footer__bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-  .footer__copy{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.04em;}
-  .footer__tagline{font-family:var(--font-accent);font-style:italic;font-size:.85rem;color:rgba(255,255,255,.25);}
+  .footer__copy{font-size:.75rem;font-weight:400;color:rgba(255,255,255,0.72);letter-spacing:.04em;}
+  .footer__tagline{font-family:var(--font-accent);font-style:italic;font-size:.85rem;color:rgba(255,255,255,0.72);}
   @media(max-width:860px){.footer__inner{grid-template-columns:1fr 1fr;gap:2.5rem;}}
   @media(max-width:520px){.footer__inner{grid-template-columns:1fr;}}
 
@@ -369,6 +369,12 @@
     text-wrap: balance;     /* balances headline line lengths across all browsers */
   }
 </style>
+<style id="nav-fit">/* menu fit for the longer menu (12 Nov 2026) */
+.nav__links a{white-space:nowrap}
+@media (min-width:769px) and (max-width:1380px){.nav__links{gap:1.3rem}.nav__links a{font-size:.74rem;letter-spacing:.04em}}
+@media (min-width:769px) and (max-width:1150px){.nav{padding-left:1.25rem;padding-right:1.25rem}.nav__links{gap:.85rem}.nav__links a{font-size:.68rem;letter-spacing:.02em}.nav__cta{padding-left:.9rem!important;padding-right:.9rem!important}}
+@media (min-width:769px) and (max-width:1000px){.nav__links li:has(a[href$="/tools"]),.nav__links li:has(a[href$="/investor-hub"]){display:none}}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;z-index:9999;padding:8px 16px;background:#1A1F2B;color:#fff;font-size:14px;text-decoration:none;transition:top 0.1s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
@@ -382,6 +388,9 @@
     <li><a href="https://www.coasttocoasthomes.ca/opportunities" target="_top">Opportunities</a></li>
     <li><a href="https://www.coasttocoasthomes.ca/investor-hub" target="_top" class="active">Investor Hub</a></li>
     <li><a href="https://www.coasttocoasthomes.ca/tools" target="_top">Tools</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/articles" target="_top">Articles</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/digital-employees" target="_top">Digital Employees</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/walk-and-talk" target="_top">Walk and Talk</a></li>
     <li><a href="#connect" class="nav__cta">Connect</a></li>
   </ul>
   <div class="nav__hamburger" aria-label="Open menu">
@@ -592,14 +601,14 @@
       </a>
 
       <!-- ARTICLE 1 | 10 Hours a Week | Judy Lea -->
-      <a href="/core-install-long-form-landing-page" class="article-card reveal">
+      <a href="/digital-employees" class="article-card reveal">
         <div class="article-card__image">
           <div class="article-card__image-bg article-card__image-bg--1"></div>
           <span class="article-card__cat">Operations</span>
         </div>
         <div class="article-card__body">
           <h3 class="article-card__title">10 Hours a Week: Where Are They Going?</h3>
-          <p class="article-card__excerpt">After 30 years in administration, I can tell you exactly where the time goes  -  and it's not where most investors think. The good news is there's a system that fixes it. One install. Runs itself after that.</p>
+          <p class="article-card__excerpt">After 30 years in administration, I can tell you exactly where the time goes  -  and it's not where most investors think. The good news is you can hand most of it to a digital employee.</p>
           <div class="article-card__meta">
             <span class="article-card__author">Judy Lea</span>
             <span class="article-card__read">Read More →</span>
@@ -703,13 +712,13 @@
     </div>
     <div class="tools-band__grid">
 
-      <!-- CORE INSTALL -->
+      <!-- DIGITAL EMPLOYEES -->
       <div class="tool-card reveal">
-        <span class="tool-card__tag">Full System Setup</span>
-        <h3 class="tool-card__title">The Core Install</h3>
-        <p class="tool-card__desc">In 30 days, your rental property admin runs itself. Every vendor invoice files automatically, your bookkeeper finds what they need without asking, and you get your evenings back. Built for investors managing 2&ndash;20+ doors.</p>
-        <span class="tool-card__detail">Clients recover 10+ hours of admin per week &middot; approx. $26,000/yr</span>
-        <a href="/core-install-long-form-landing-page" class="tool-card__link">See If You're a Fit</a>
+        <span class="tool-card__tag">Built for You</span>
+        <h3 class="tool-card__title">Digital Employees</h3>
+        <p class="tool-card__desc">AI staff built around one job in your business: filing invoices, tracking bills, comparing contractor quotes, preparing partner reports. You stay the manager and approve the work.</p>
+        <span class="tool-card__detail">One job at a time &middot; book a call to scope yours</span>
+        <a href="/digital-employees" class="tool-card__link">Hire Your First One</a>
       </div>
 
       <!-- TAX RESCUE -->
@@ -775,7 +784,7 @@
         <option value="" disabled selected>What brings you here?</option>
         <option value="Investing with C2C">Investing with Coast to Coast</option>
         <option value="Learning about real estate">Learning about real estate investing</option>
-        <option value="The Core Install">The Core Install (back office setup)</option>
+        <option value="Digital employees">Digital employees for my business</option>
         <option value="Partnership opportunity">Partnership or JV opportunity</option>
         <option value="Just exploring">Just exploring for now</option>
       </select>

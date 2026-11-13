@@ -224,12 +224,18 @@
   .footer__contact p{font-size:.83rem;font-weight:300;color:var(--stone);line-height:1.9;}
   .footer__contact a{color:var(--teal-light);text-decoration:none;}
   .footer__bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-  .footer__copy{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.04em;}
-  .footer__tagline{font-family:var(--font-accent);font-style:italic;font-size:.85rem;color:rgba(255,255,255,.25);}
+  .footer__copy{font-size:.75rem;font-weight:400;color:rgba(255,255,255,0.72);letter-spacing:.04em;}
+  .footer__tagline{font-family:var(--font-accent);font-style:italic;font-size:.85rem;color:rgba(255,255,255,0.72);}
   @media(max-width:860px){.footer__inner{grid-template-columns:1fr 1fr;gap:2.5rem;}}
   @media(max-width:520px){.footer__inner{grid-template-columns:1fr;}}
 
   /* reveal animations disabled for mobile performance */
+</style>
+<style id="nav-fit">/* menu fit for the longer menu (12 Nov 2026) */
+.nav__links a{white-space:nowrap}
+@media (min-width:769px) and (max-width:1380px){.nav__links{gap:1.3rem}.nav__links a{font-size:.74rem;letter-spacing:.04em}}
+@media (min-width:769px) and (max-width:1150px){.nav{padding-left:1.25rem;padding-right:1.25rem}.nav__links{gap:.85rem}.nav__links a{font-size:.68rem;letter-spacing:.02em}.nav__cta{padding-left:.9rem!important;padding-right:.9rem!important}}
+@media (min-width:769px) and (max-width:1000px){.nav__links li:has(a[href$="/tools"]),.nav__links li:has(a[href$="/investor-hub"]){display:none}}
 </style>
 </head>
 <body>
@@ -244,6 +250,9 @@
     <li><a href="https://www.coasttocoasthomes.ca/opportunities" target="_top">Opportunities</a></li>
     <li><a href="https://www.coasttocoasthomes.ca/investor-hub" target="_top" class="active">Investor Hub</a></li>
     <li><a href="https://www.coasttocoasthomes.ca/tools" target="_top">Tools</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/articles" target="_top" class="active">Articles</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/digital-employees" target="_top">Digital Employees</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/walk-and-talk" target="_top">Walk and Talk</a></li>
     <li><a href="https://www.coasttocoasthomes.ca/opportunities#inquiry" target="_top" class="nav__cta">Connect</a></li>
   </ul>
   <div class="nav__hamburger" aria-label="Open menu">
@@ -509,13 +518,13 @@
         </div>
         <h3>What We Did About It</h3>
         <p>After nine years of managing a 150-door portfolio across four provinces, we've built and rebuilt our back-office systems more times than I'd like to admit. What works isn't complicated. It's a consistent structure: every property documented the same way, every vendor interaction captured, every quarter reviewed against the same template.</p>
-        <p>The Core Install is the version of those systems that we've made available externally. It's not a course. It's a working set of templates and workflows you can put into use the same week you get them. If you've been meaning to get your operations organised, this is the practical starting point.</p>
+        <p>Today the repetitive parts of those systems are run by our digital employees: AI staff built around one job each, like filing every invoice that lands in our inbox. If you've been meaning to get your operations organised, that's the practical starting point.</p>
         <p>But before you invest in anything, take the audit. Nine questions, two minutes, instant results. It will tell you exactly where your back office is working against you  -  and where it's actually fine.</p>
       </div>
       <div class="article__cta">
         <span class="article__cta-label">Related Tool</span>
         <a href="https://www.coasttocoasthomes.ca/the-back-office-audit" target="_top" class="btn btn--outline" style="margin-right:1rem;">Take the Free Audit →</a>
-        <a href="/core-install-long-form-landing-page" class="btn btn--primary">Explore the Core Install →</a>
+        <a href="/digital-employees" class="btn btn--primary">Meet the Digital Employees →</a>
       </div>
     </article>
 
@@ -574,13 +583,13 @@
         </div>
         <h3>How Ours Works</h3>
         <p>Our system covers three areas: communication, documentation, and decision-making. Communication means investors hear from us on a schedule, not only when there's good news. Documentation means every property has the same records in the same place, regardless of province or property type. Decision-making means we've defined in advance what requires escalation and what gets handled at the operational level without pulling anyone else in.</p>
-        <p>None of this happened all at once. It got built over years, one failure at a time. The Core Install is the practical output of that process  -  the templates and workflows that represent what we actually use, stripped of everything that turned out not to matter.</p>
+        <p>None of this happened all at once. It got built over years, one failure at a time. Our digital employees are the practical output of that process  -  the jobs we used to do by hand, written down and handed to AI staff, stripped of everything that turned out not to matter.</p>
         <p>If you're building a portfolio right now, start the system before you need it. Not because it's complicated, but because building it under pressure is significantly harder than building it in advance.</p>
       </div>
       <div class="article__cta">
         <span class="article__cta-label">Take the first step</span>
         <a href="https://www.coasttocoasthomes.ca/the-back-office-audit" target="_top" class="btn btn--outline" style="margin-right:1rem;">Free Back Office Audit →</a>
-        <a href="/core-install-long-form-landing-page" class="btn btn--primary">The Core Install →</a>
+        <a href="/digital-employees" class="btn btn--primary">Digital Employees →</a>
       </div>
     </article>
 

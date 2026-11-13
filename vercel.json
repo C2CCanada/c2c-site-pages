@@ -1,4 +1,21 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/core-install",
+      "destination": "/digital-employees",
+      "permanent": true
+    },
+    {
+      "source": "/core-install-order",
+      "destination": "/digital-employees",
+      "permanent": true
+    },
+    {
+      "source": "/core-install-long-form-landing-page",
+      "destination": "/digital-employees",
+      "permanent": true
+    }
+  ]
 }

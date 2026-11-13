@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  COAST TO COAST HOMES CANADA | DIGITAL EMPLOYEES
+  Replaces the Core Install (retired 12 Nov 2026). No prices on the site:
+  every CTA is "Book a call", which opens an email to Judy.
+  Idea cards: Judy's October 2026 newsletter. Built by Marketing/website-build/build_c2c_digital_employees.py
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<link rel="apple-touch-icon" href="images/ec69c8_cd7459d869c64019b818a3b351627440~mv2.png">
+<title>Digital Employees for Real Estate Investors | C2C Homes</title>
+<meta name="description" content="We build digital employees for real estate investors and operators: AI staff that file invoices, compare contractor quotes and prepare partner reports, with you approving the work. Book a call.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.coasttocoasthomes.ca/digital-employees">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Let&#8217;s hire your first digital employee">
+<meta property="og:description" content="We build digital employees for real estate investors and operators: AI staff that file invoices, compare contractor quotes and prepare partner reports, with you approving the work. Book a call.">
+<meta property="og:url" content="https://www.coasttocoasthomes.ca/digital-employees">
+<meta property="og:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+<meta property="og:site_name" content="Coast to Coast Homes Canada">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Let&#8217;s hire your first digital employee">
+<meta name="twitter:description" content="We build digital employees for real estate investors and operators: AI staff that file invoices, compare contractor quotes and prepare partner reports, with you approving the work. Book a call.">
+<meta name="twitter:image" content="https://coasttocoasthomes.ca/og-image.jpg">
+<meta name="theme-color" content="#1B7A6F">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Digital employees",
+  "serviceType": "AI digital employees for real estate investors and operators",
+  "provider": {
+    "@type": "Organization",
+    "name": "Coast to Coast Homes Canada",
+    "url": "https://www.coasttocoasthomes.ca"
+  },
+  "areaServed": "CA",
+  "url": "https://www.coasttocoasthomes.ca/digital-employees",
+  "description": "AI staff built around one recurring job in a real estate business, such as filing invoices, comparing contractor quotes or preparing partner reports, with the owner approving the work."
+}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a digital employee?", "acceptedAnswer": {"@type": "Answer", "text": "An AI staff member built for one recurring job, with a written job description, a manager, and clear limits on what it does without approval."}}, {"@type": "Question", "name": "Is it the same as a chatbot?", "acceptedAnswer": {"@type": "Answer", "text": "No. A chatbot answers questions. A digital employee does a recurring job, like filing invoices or preparing a report, and checks in with you."}}, {"@type": "Question", "name": "Will it replace my staff?", "acceptedAnswer": {"@type": "Answer", "text": "It takes the repetitive part of a job so your people spend their time on the work that needs them."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the job. Book a call and we'll scope your first one."}}, {"@type": "Question", "name": "Is my information safe?", "acceptedAnswer": {"@type": "Answer", "text": "You decide what it can see and do. We start read-only where we can, and you approve anything that changes your files."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.coasttocoasthomes.ca/"}, {"@type": "ListItem", "position": 2, "name": "Digital Employees", "item": "https://www.coasttocoasthomes.ca/digital-employees"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:#2A9D8F;--teal-deep:#1B7A6F;--teal-light:#5FBFB3;--teal-wash:#E8F6F4;
+    --teal-mist:#F2FAF9;--copper:#C4956A;--terracotta:#C17F59;--blush:#E8CFC0;
+    --ink:#1A1F2B;--charcoal:#3A3F4B;--slate:#6B7280;--stone:#9CA3AF;
+    --sand:#E8E2D9;--linen:#F5F1EB;--cream:#FAF8F5;--white:#FFFFFF;
+    --font-serif:'Instrument Serif',Georgia,serif;
+    --font-sans:'DM Sans',system-ui,sans-serif;
+    --font-accent:'Cormorant Garamond',Georgia,serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip;touch-action:pan-y;}
+
+  .nav{background:var(--white);padding:0 2.5rem;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--sand);position:relative;z-index:100;}
+  .nav__logo-text{font-family:var(--font-serif);font-size:1.2rem;color:var(--teal-deep);text-decoration:none;}
+  .nav__links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+  .nav__links a{font-size:0.825rem;font-weight:500;color:var(--charcoal);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:color .2s;}
+  .nav__links a:hover{color:var(--teal-deep);}
+  .nav__cta{padding:0.5rem 1.375rem;background:var(--teal-deep) !important;color:var(--white) !important;border-radius:3px;text-decoration:none;font-size:.825rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:background .2s;}
+  .nav__cta:hover{background:var(--copper) !important;}
+  .nav__hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:101;}
+  .nav__hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform 0.3s ease,opacity 0.3s ease;}
+  .nav__hamburger.is-active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav__hamburger.is-active span:nth-child(2){opacity:0;}
+  .nav__hamburger.is-active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  @media(max-width:768px){
+    .nav__links{flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:0 2rem;box-shadow:0 8px 24px rgba(26,31,43,.1);gap:0;z-index:100;display:none;}
+    .nav__links.is-open{display:flex;padding:1rem 2rem 1.5rem;}
+    .nav__links a{padding:0.6rem 0;font-size:0.9rem;display:block;}
+    .nav__hamburger{display:flex;}
+  }
+
+  .article-hero{background:var(--ink);padding:5.5rem 2rem 5rem;position:relative;overflow:hidden;}
+  .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 75% 40%,rgba(42,157,143,.08) 0%,transparent 65%);pointer-events:none;}
+  .article-hero::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--copper) 0%,var(--teal-light) 60%,transparent 100%);}
+  .article-hero__inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
+  .article-hero__cat{display:inline-block;font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:rgba(42,157,143,.2);color:var(--teal-light);padding:.3rem .875rem;border-radius:2px;margin-bottom:1.5rem;}
+  .article-hero__title{font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.2rem);color:var(--white);line-height:1.1;margin-bottom:1.25rem;}
+  .article-hero__sub{font-family:var(--font-accent);font-style:italic;font-size:clamp(1.05rem,2.5vw,1.3rem);color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:2rem;}
+  .article-hero__meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+  .article-hero__author{font-size:.8rem;font-weight:500;color:rgba(255,255,255,.55);letter-spacing:.04em;}
+  .article-hero__author strong{color:var(--copper);}
+  .article-hero__tag{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:rgba(196,149,106,.15);color:var(--copper);padding:.25rem .75rem;border-radius:2px;}
+
+  .article-body{max-width:720px;margin:0 auto;padding:5rem 2rem;}
+  .article-body p{font-size:.975rem;font-weight:300;color:var(--charcoal);line-height:1.95;margin-bottom:1.5rem;}
+  .article-body p strong{font-weight:600;color:var(--ink);}
+  .article-body h2{font-family:var(--font-serif);font-size:1.6rem;color:var(--ink);margin:3rem 0 1.25rem;line-height:1.2;}
+
+  .pull-quote{background:var(--teal-wash);border-left:3px solid var(--teal);border-radius:0 4px 4px 0;padding:1.75rem 2rem;margin:2.5rem 0;}
+  .pull-quote p{font-family:var(--font-accent);font-style:italic;font-size:1.2rem;color:var(--teal-deep);line-height:1.55;margin:0;}
+  .pull-quote cite{display:block;font-family:var(--font-sans);font-style:normal;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--copper);margin-top:.875rem;}
+
+  .step-list{list-style:none;margin:2rem 0 2.5rem;padding:0;counter-reset:steps;}
+  .step-list li{counter-increment:steps;display:flex;gap:1.25rem;align-items:flex-start;padding:.875rem 0;border-bottom:1px solid var(--sand);}
+  .step-list li:last-child{border-bottom:none;}
+  .step-list li::before{content:counter(steps);font-family:var(--font-accent);font-size:1.5rem;font-weight:600;color:var(--copper);min-width:2rem;line-height:1;}
+  .step-list li p{font-size:.9rem;font-weight:300;color:var(--charcoal);line-height:1.75;margin:0;}
+  .step-list li strong{font-weight:600;color:var(--ink);}
+
+  .cta-band{background:var(--ink);padding:4rem 2rem;position:relative;overflow:hidden;}
+  .cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 100% at 85% 0%,rgba(42,157,143,.09) 0%,transparent 60%);pointer-events:none;}
+  .cta-band__inner{max-width:620px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+  .cta-band__text{font-size:1rem;font-weight:300;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1.75rem;}
+  .cta-band__link{display:inline-block;padding:.875rem 2.25rem;background:var(--copper);color:var(--white);border-radius:3px;font-family:var(--font-sans);font-size:.9rem;font-weight:600;letter-spacing:.03em;text-decoration:none;transition:background .22s,transform .18s;}
+  .cta-band__link:hover{background:var(--teal-light);transform:translateY(-1px);}
+
+  .back-band{background:var(--linen);border-top:1px solid var(--sand);padding:3rem 2rem;text-align:center;}
+  .back-band p{font-size:.9rem;font-weight:300;color:var(--slate);margin-bottom:1.25rem;line-height:1.7;}
+  .btn{display:inline-block;padding:.875rem 2.25rem;border-radius:3px;font-family:var(--font-sans);font-weight:600;font-size:.875rem;letter-spacing:.03em;text-decoration:none;cursor:pointer;border:none;transition:background .22s,color .22s,transform .18s;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn--outline{background:transparent;color:var(--teal-deep);border:1.5px solid var(--teal);}
+  .btn--outline:hover{background:var(--teal-deep);color:var(--white);}
+
+  .footer{background:var(--ink);padding:3rem 2rem 2rem;}
+  .footer__inner{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.07);}
+  .footer__logo{font-family:var(--font-serif);font-size:1rem;color:var(--white);}
+  .footer__links{display:flex;gap:2rem;list-style:none;}
+  .footer__links a{font-size:.8rem;font-weight:300;color:var(--stone);text-decoration:none;transition:color .2s;}
+  .footer__links a:hover{color:var(--teal-light);}
+  .footer__copy{max-width:760px;margin:.875rem auto 0;font-size:.72rem;font-weight:400;color:rgba(255,255,255,0.72);letter-spacing:.04em;}
+
+  p,li{text-wrap:pretty;overflow-wrap:break-word;}
+  h1,h2,h3,h4{text-wrap:balance;}
+
+  .hero-cta{display:inline-block;margin-top:.5rem;padding:.95rem 2.25rem;background:var(--copper);color:var(--white);border-radius:3px;font-size:.92rem;font-weight:600;letter-spacing:.03em;text-decoration:none;transition:background .22s,transform .18s;}
+  .hero-cta:hover{background:var(--teal-light);transform:translateY(-1px);}
+  .hero-cta--ghost{background:transparent;border:1.5px solid var(--copper);color:var(--white);}
+  .hero-ctas{display:flex;gap:.875rem;flex-wrap:wrap;}
+  .hero-note{display:block;margin-top:1rem;font-size:.8rem;color:rgba(255,255,255,.55);letter-spacing:.03em;}
+  .ideas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin:2rem 0 1.5rem;}
+  .idea{background:var(--white);border:1px solid var(--sand);border-top:3px solid var(--teal);border-radius:4px;padding:1.5rem 1.4rem;}
+  .idea:nth-child(even){border-top-color:var(--copper);}
+  .idea__no{display:block;font-size:.65rem;font-weight:600;letter-spacing:.14em;color:var(--copper);margin-bottom:.5rem;}
+  .idea__title{display:block;font-family:var(--font-serif);font-size:1.3rem;color:var(--ink);line-height:1.2;margin-bottom:.6rem;}
+  .article-body .idea p{font-size:.92rem;line-height:1.7;margin:0;}
+  .proof{background:var(--teal-wash);border:1px solid rgba(42,157,143,.25);border-left:4px solid var(--teal);border-radius:4px;padding:1.6rem 1.8rem;margin:2rem 0 2.5rem;}
+  .article-body .proof p{margin-bottom:.8rem;}
+  .article-body .proof p:last-child{margin-bottom:0;}
+  .faq{margin:1.5rem 0 2rem;border-top:1px solid var(--sand);}
+  .faq details{border-bottom:1px solid var(--sand);padding:1rem 0;}
+  .faq summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:1rem;}
+  .article-body .faq p{margin:.75rem 0 0;font-size:.95rem;}
+  .price-line{font-family:var(--font-serif);font-size:1.35rem !important;color:var(--ink) !important;line-height:1.4 !important;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);padding:1.4rem 0;margin:2.5rem 0 !important;}
+  .cta-band__title{font-family:var(--font-serif);font-size:clamp(1.6rem,4vw,2.2rem);color:var(--white);line-height:1.15;margin-bottom:1rem;}
+  .cta-band__email{display:block;margin-top:1rem;font-size:.82rem;color:rgba(255,255,255,.55);}
+  .cta-band__email a{color:var(--teal-light);}
+  .footer__links{flex-wrap:wrap;gap:.75rem 1.5rem;}
+  @media(max-width:560px){.ideas{grid-template-columns:1fr;}.article-body{padding:3.5rem 1rem;}.article-hero{padding:4rem 1rem 3.5rem;}}
+</style>
+<style id="nav-fit">/* menu fit for the longer menu (12 Nov 2026) */
+.nav__links a{white-space:nowrap}
+@media (min-width:769px) and (max-width:1380px){.nav__links{gap:1.3rem}.nav__links a{font-size:.74rem;letter-spacing:.04em}}
+@media (min-width:769px) and (max-width:1150px){.nav{padding-left:1.25rem;padding-right:1.25rem}.nav__links{gap:.85rem}.nav__links a{font-size:.68rem;letter-spacing:.02em}.nav__cta{padding-left:.9rem!important;padding-right:.9rem!important}}
+@media (min-width:769px) and (max-width:1000px){.nav__links li:has(a[href$="/tools"]),.nav__links li:has(a[href$="/investor-hub"]){display:none}}
+</style>
+</head>
+<body>
+
+
+<div style="background:#1B7A6F;padding:0.6rem 2rem;display:flex;align-items:center;justify-content:space-between;font-family:'DM Sans',system-ui,sans-serif;font-size:0.8rem;">
+  <a href="https://www.coasttocoasthomes.ca" target="_top" style="color:rgba(255,255,255,0.9);text-decoration:none;font-weight:500;letter-spacing:0.04em;display:flex;align-items:center;gap:0.5rem;">
+    <span style="font-size:1rem;">&#8592;</span> Coast to Coast Homes Canada
+  </a>
+  <a href="https://www.coasttocoasthomes.ca/investor-hub" target="_top" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;">Investor Hub</a>
+</div>
+
+<nav class="nav">
+  <a href="https://www.coasttocoasthomes.ca/" target="_top" class="nav__logo"><span class="nav__logo-text">Coast to Coast Homes</span></a>
+  <ul class="nav__links">
+    <li><a href="https://www.coasttocoasthomes.ca/" target="_top">Home</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/about" target="_top">About Us</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/opportunities" target="_top">Opportunities</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/investor-hub" target="_top">Investor Hub</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/articles" target="_top">Articles</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/digital-employees" target="_top" class="active">Digital Employees</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/walk-and-talk" target="_top">Walk and Talk</a></li>
+    <li><a href="https://www.coasttocoasthomes.ca/opportunities#inquiry" target="_top" class="nav__cta">Connect</a></li>
+  </ul>
+  <div class="nav__hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<main id="main-content">
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <span class="article-hero__cat">Digital Employees</span>
+    <h1 class="article-hero__title">Let&#8217;s hire your first digital employee.</h1>
+    <p class="article-hero__sub">A digital employee is an AI staff member built around one job in your business. It has a written job description, examples of good work, and a manager: you. It knows what it can do on its own and what it brings to you for approval.</p>
+    <div class="hero-ctas">
+      <a href="mailto:judy@coasttocoasthomes.ca?subject=My%20first%20digital%20employee&amp;body=Hi%20Judy%2C%0A%0AThe%20job%20I%27d%20like%20help%20with%3A%0A%0ABest%20time%20for%20a%20call%3A%0APhone%3A%0A" class="hero-cta">Book a call &#8594;</a>
+      <a href="#ideas" class="hero-cta hero-cta--ghost">Where to start &#8594;</a>
+    </div>
+    <span class="hero-note">Every digital employee is built around your business, so there&#8217;s no price list.</span>
+  </div>
+</section>
+
+<article class="article-body">
+
+  <h2>We run our own portfolio this way</h2>
+  <div class="proof">
+    <p>One of ours reads every invoice, receipt and statement that arrives in our accounting inbox, then names it, files it and labels it.</p>
+    <p>Another keeps track of every bill across our properties and prepares a daily payables report for Colin.</p>
+    <p>They have taken real hours off our week, and we&#8217;ve learned what it takes to make them trustworthy.</p>
+  </div>
+
+  <h2 id="ideas">Perhaps one of these is the place to start</h2>
+  <div class="ideas">
+    <div class="idea"><span class="idea__no">01</span><span class="idea__title">The spreadsheet you approach cautiously</span><p>Your property numbers live in a workbook you built years ago. One formula looks suspicious, and you&#8217;re hoping it has always looked that way.</p></div>
+    <div class="idea"><span class="idea__no">02</span><span class="idea__title">The partner report that takes your weekend</span><p>The information exists. Turning it into a clear update for your investment partners becomes a project of its own.</p></div>
+    <div class="idea"><span class="idea__no">03</span><span class="idea__title">The Canva rabbit hole</span><p>You open it to make one graphic. Forty-five minutes later, you&#8217;re comparing fonts and wondering whether you&#8217;ve ever liked blue.</p></div>
+    <div class="idea"><span class="idea__no">04</span><span class="idea__title">The investment update that looks homemade</span><p>You know your project inside out. Getting it into a clear, attractive one-pager is another skill entirely.</p></div>
+    <div class="idea"><span class="idea__no">05</span><span class="idea__title">The contractor quote comparison</span><p>Three quotes arrive in three formats. You need to see what&#8217;s included, what&#8217;s missing, and what to ask before deciding.</p></div>
+    <div class="idea"><span class="idea__no">06</span><span class="idea__title">The AI subscription waiting for a job</span><p>You&#8217;re paying for a tool and suspect it could help. Figuring out how to put it to work in your business is where you get stuck.</p></div>
+  </div>
+  <p>None of these? Tell us the task that eats an hour of your week. That&#8217;s usually the right first hire.</p>
+
+  <h2>How we work with you</h2>
+  <ol class="step-list">
+    <li><p><strong>Pick one job.</strong> Start with the task that eats an hour of your week.</p></li>
+    <li><p><strong>Walk us through it.</strong> We talk through how you do it now and agree on what a good result looks like.</p></li>
+    <li><p><strong>We build and test it with you.</strong> You see its work before it does anything on its own.</p></li>
+    <li><p><strong>You stay in charge.</strong> We agree what it handles alone, what needs your OK, and how you&#8217;ll check it.</p></li>
+    <li><p><strong>We measure it.</strong> Time saved, errors caught, work you no longer touch. Something concrete to review together.</p></li>
+  </ol>
+
+  <p class="price-line">Every digital employee is built around your business, so there&#8217;s no price list. Start with a call and we&#8217;ll tell you what your first one would take.</p>
+
+  <h2>Questions, answered</h2>
+  <div class="faq">
+    <details><summary>What is a digital employee?</summary><p>An AI staff member built for one recurring job, with a written job description, a manager, and clear limits on what it does without approval.</p></details>
+    <details><summary>Is it the same as a chatbot?</summary><p>No. A chatbot answers questions. A digital employee does a recurring job, like filing invoices or preparing a report, and checks in with you.</p></details>
+    <details><summary>Will it replace my staff?</summary><p>It takes the repetitive part of a job so your people spend their time on the work that needs them.</p></details>
+    <details><summary>How much does it cost?</summary><p>It depends on the job. Book a call and we&#8217;ll scope your first one.</p></details>
+    <details><summary>Is my information safe?</summary><p>You decide what it can see and do. We start read-only where we can, and you approve anything that changes your files.</p></details>
+  </div>
+
+</article>
+
+<section class="cta-band">
+  <div class="cta-band__inner">
+    <h2 class="cta-band__title">Let&#8217;s talk about your first digital employee.</h2>
+    <p class="cta-band__text">Tell us which task you&#8217;d like help with, and we&#8217;ll find a time to talk it through.</p>
+    <div class="cta-band__links"><a href="mailto:judy@coasttocoasthomes.ca?subject=My%20first%20digital%20employee&amp;body=Hi%20Judy%2C%0A%0AThe%20job%20I%27d%20like%20help%20with%3A%0A%0ABest%20time%20for%20a%20call%3A%0APhone%3A%0A" class="cta-band__link">Book a call &#8594;</a></div>
+    <span class="cta-band__email">Or write to <a href="mailto:judy@coasttocoasthomes.ca">judy@coasttocoasthomes.ca</a></span>
+  </div>
+</section>
+
+<section class="back-band">
+  <p>Curious how we think about AI in real estate?</p>
+  <a href="https://www.coasttocoasthomes.ca/what-ai-cant-do-yet" target="_top" class="btn btn--outline">Read: What AI Can&#8217;t Do Yet &#8594;</a>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="footer__logo">Coast to Coast Homes Canada</span>
+    <ul class="footer__links">
+      <li><a href="https://www.coasttocoasthomes.ca/" target="_top">Home</a></li>
+      <li><a href="https://www.coasttocoasthomes.ca/about" target="_top">About</a></li>
+      <li><a href="https://www.coasttocoasthomes.ca/opportunities" target="_top">Opportunities</a></li>
+      <li><a href="https://www.coasttocoasthomes.ca/investor-hub" target="_top">Investor Hub</a></li>
+      <li><a href="https://www.coasttocoasthomes.ca/opportunities#inquiry" target="_top">Contact</a></li>
+    </ul>
+  </div>
+  <p class="footer__copy">&copy; 2026 Coast to Coast Homes Canada &middot; Dream Big. Grow Steady. Lead with Heart.</p>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('.nav__hamburger');
+  var m=document.querySelector('.nav__links');
+  if(h&&m){
+    h.addEventListener('click',function(){m.classList.toggle('is-open');h.classList.toggle('is-active');});
+    m.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){m.classList.remove('is-open');h.classList.remove('is-active');});});
+  }
+})();
+</script>
+<script>
+  function notifyWixHeight(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight);window.parent.postMessage({type:'setHeight',height:h},'*');}
+  var _wixHt;function debouncedWixHeight(){clearTimeout(_wixHt);_wixHt=setTimeout(notifyWixHeight,150);}
+  window.addEventListener('load',function(){notifyWixHeight();setTimeout(notifyWixHeight,300);setTimeout(notifyWixHeight,800);setTimeout(notifyWixHeight,1500);setTimeout(notifyWixHeight,3000);document.querySelectorAll('img').forEach(function(img){img.addEventListener('load',debouncedWixHeight);});});
+  window.addEventListener('resize',debouncedWixHeight);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(notifyWixHeight);}
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
